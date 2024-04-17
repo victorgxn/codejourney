@@ -27,7 +27,7 @@ export const RightSideButtons = () => {
                             <SheetDescription>
                                 <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
                                     <Link
-                                        href="/"
+                                        href=""
                                     >
                                         Sign in
                                     </Link>

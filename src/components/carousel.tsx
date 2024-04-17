@@ -39,12 +39,10 @@ const images = [
         url: "/images/logo/logo-8.svg",
         alt: "Logo",
     },
-
     {
-        url: "/images/logo/logo-9.svg",
+        url: "/images/logo/logo-13.svg",
         alt: "Logo",
     },
-
     {
         url: "/images/logo/logo-10.svg",
         alt: "Logo",
@@ -61,9 +59,9 @@ const images = [
     },
 
     {
-        url: "/images/logo/logo-13.svg",
+        url: "/images/logo/logo-9.svg",
         alt: "Logo",
-    },
+    }
 ];
 
 
