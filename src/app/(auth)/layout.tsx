@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 export default function LoginLayout({
-                                        children,
-                                    }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
@@ -12,13 +12,11 @@ export default function LoginLayout({
                     src="/publiCartel.png"
                     width={500}
                     height={500}
-                    className='object-cover w-full h-full'
+                    className="object-cover w-full h-full"
                     alt="Picture of the author"
                 />
             </div>
-            <div className="w-1/2 flex items-center justify-center">
-                {children}
-            </div>
+            <div className="w-1/2 flex items-center justify-center">{children}</div>
         </div>
     );
 }
