@@ -2,6 +2,7 @@ import {LeftLogo} from "@/components/top-menu/logo";
 import {NavigationBar} from "@/components/top-menu/navigation-bar";
 import {RightSideButtons} from "@/components/top-menu/righ-side-buttons";
 
+//TODO : Improve the responsive design
 export const TopMenu = () => {
     return (
         <div className="
