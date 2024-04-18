@@ -66,6 +66,13 @@
     }
   }
 
+.lucide {
+  /* Change this! */
+  color : #4895e9;
+  width: 36px;
+  height: 36px;
+  stroke-width: 1px;
+}
   @layer base {
     * {
       @apply border-border;
