@@ -57,7 +57,12 @@ export const NavBar = () => {
                                     alt="Codejourney logo"
                                 />
                                 <span
-                                    className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Codejourney</span>
+                                    className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-gradient
+            bg-gradient-to-r
+            from-blue-500
+            to-green-300
+            bg-clip-text
+            text-transparent">Codejourney</span>
                             </Link>
 
                         </div>
