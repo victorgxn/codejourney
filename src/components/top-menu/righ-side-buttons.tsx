@@ -56,9 +56,9 @@ export const RightSideButtons = () => {
 
                                     {userId ? (
                                         <SignOutButton>
-                                            <Link className="btn" href="/">
+                                            <Button className='text-md bg-red-500' variant="destructive">
                                                 Sign Out
-                                            </Link>
+                                            </Button>
                                         </SignOutButton>
                                     ) : undefined}
                                 </div>
