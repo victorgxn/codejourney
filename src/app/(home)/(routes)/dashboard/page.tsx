@@ -1,7 +1,10 @@
 import { UserButton } from "@clerk/nextjs";
+import {SideBarNav} from "@/app/(home)/_components/SideBarNav";
 
 export default function Dashboard() {
-    return <div>Dashboard
-        <UserButton afterSignOutUrl = "/" />
-    </div>
+    return (
+        <SideBarNav/>
+    )
+
+
 }

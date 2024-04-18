@@ -1,3 +1,4 @@
+import {SideBarNav} from "@/app/(home)/_components/SideBarNav";
 
 export default function HomeLayout({
                                    children,
@@ -5,8 +6,11 @@ export default function HomeLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <>
-            <main>{children}</main>
-        </>
+            <div>
+                <div>
+                    <SideBarNav/>
+                </div>
+                {children}
+            </div>
     )
 }
