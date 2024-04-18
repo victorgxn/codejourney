@@ -52,6 +52,7 @@ export const RightSideButtons = () => {
                                     <Link href="/">Contact</Link>
                                     <Link href="/">About</Link>
 
+                                        {/* //TODO: Fix z-index (user profile) */}
                                     {userId ? <ManageAccount /> : undefined}
 
                                     {userId ? (
