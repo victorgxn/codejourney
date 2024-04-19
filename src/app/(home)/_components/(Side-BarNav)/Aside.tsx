@@ -11,7 +11,7 @@ export const Aside = () => {
             id: 1,
             name: 'Cursos',
             icon: BookOpenCheck,
-            path: '/courses',
+            path: '/dashboard',
         },
         {
             id: 2,

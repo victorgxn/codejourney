@@ -12,11 +12,14 @@ export default function HomeLayout({
     children: React.ReactNode;
 }>) {
     return (
-            <div>
-                <div className='h-full w-64 inset-y-0 z-50'>
+            <div >
+                <div className='h-full w-64'>
                     <SideBarNav/>
                 </div>
-                {children}
+                <div className='m-64'>
+                    {children}
+                </div>
+
             </div>
     )
 }

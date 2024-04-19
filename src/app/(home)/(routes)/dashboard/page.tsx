@@ -1,9 +1,10 @@
-import { UserButton } from "@clerk/nextjs";
-import {SideBarNav} from "@/app/(home)/_components/(Side-BarNav)/SideBarNav";
+import {CategoryFilter} from "@/app/(home)/_components";
 
 export default function Dashboard() {
     return (
-        <SideBarNav/>
+       <div>
+           <CategoryFilter/>
+       </div>
     )
 
 
