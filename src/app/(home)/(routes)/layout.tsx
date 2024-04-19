@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {SideBarNav} from "@/app/(home)/_components";
+import {MainEstructure} from "@/app/(home)/_components";
 
 export const metadata: Metadata = {
     title: "Dashboard | Codejourney",
@@ -14,8 +14,8 @@ export default function HomeLayout({
     return (
         <div className='flex flex-col h-full'>
             <div className='flex-1'>
-                <SideBarNav/>
-                <div>
+                <MainEstructure/>
+                <div className='lg:pl-72 pt-[80px]'>
                     {children}
                 </div>
 

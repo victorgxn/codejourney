@@ -4,9 +4,16 @@ import Link from "next/link";
 import React, {useState} from 'react';
 import {FooterAside} from "@/app/(home)/_components/(Side-BarNav)/FooterAside";
 
+interface MenuItem {
+    id: number;
+    name: string;
+    icon: React.ElementType; // Assuming the icon is a React component
+    path: string;
+}
+
 export const Aside = () => {
     const [activeIndex, setActiveIndex] = useState(0)
-    const menuList = [
+    const menuList: MenuItem[] = [
         {
             id: 1,
             name: 'Cursos',
