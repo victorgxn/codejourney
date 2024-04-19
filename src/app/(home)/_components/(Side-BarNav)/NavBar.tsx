@@ -17,7 +17,7 @@ import {SearchBar} from "@/app/(home)/_components/(Side-BarNav)/SearchBar";
 
 export const NavBar = () => {
     return (
-        <div> {/* //TODO: Arreglar el boton del responsive y añadirle los <Link/> */}
+        <div> {/* //TODO: Añadirle los <Link/> y responsive acabarlo*/}
             <nav className="p-4 gap-x-4 h-full flex items-center bg-white border-b">
                 <div className="md:hidden">
                     <Sheet>
