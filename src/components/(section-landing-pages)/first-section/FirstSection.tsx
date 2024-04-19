@@ -1,6 +1,8 @@
 //TODO : Repasar el tema lazyload en los videos para mejorar el rendimiento
-import { SignUpButton} from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs';
+import Link from 'next/link';
 export const FirstSection = () => {
+  const { userId } = auth();
   return (
     <section className="md:py-20 py-10 bg-gradient-to-r from gray-00 to-gray-200 spacey-10">
       <div className="container mx-auto text-center">
@@ -12,9 +14,6 @@ export const FirstSection = () => {
             to-green-300
             bg-clip-text
             text-transparent
-
-
-
             "
         >
           ¡Desbloquea Tu Potencial Hoy Mismo! Tu Centro para Cursos de
@@ -29,19 +28,18 @@ export const FirstSection = () => {
             bg-clip-text
             text-transparent
             font-bold
-
             "
         >
           Sin importar tu edad o experiencia, nuestra plataforma te prepara para
           el éxito en la programación.
         </p>
         <div className="flex gap-4 justify-center pt-10">
-          <SignUpButton redirectUrl="/sign-up">
+          <Link href={userId?"/dashboard":"/sign-up"}>
             <button className="bg-blue-500 text-white px-10 py-4 rounded-md text-lg font-bold">Empieza ahora</button>
-          </SignUpButton>
-          <SignUpButton redirectUrl="/sign-up">
+          </Link>
+          <Link  href={userId?"/dashboard":"/sign-up"}>
             <button className="bg-gray-600 text-white px-10 py-4 rounded-md text-lg font-bold">Saber más</button>
-          </SignUpButton>
+          </Link>
         </div>
 
         <div className="pt-10">
