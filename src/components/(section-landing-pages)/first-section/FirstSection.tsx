@@ -33,7 +33,7 @@ export const FirstSection = () => {
             "
         >
           Sin importar tu edad o experiencia, nuestra plataforma te prepara para
-          el éxito en el aprendizaje de programación.
+          el éxito en la programación.
         </p>
         <div className="flex gap-4 justify-center pt-10">
           <SignUpButton redirectUrl="/sign-up">

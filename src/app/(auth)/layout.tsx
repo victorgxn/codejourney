@@ -6,7 +6,7 @@ export default function LoginLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="bg-gradient-to-br from-blue-500 to-blue-900 flex justify-center items-center h-screen">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-500 flex justify-center items-center h-screen">
             <div className="w-1/2 h-full hidden lg:flex">
                 <Image
                     src="/publiCartel.png"

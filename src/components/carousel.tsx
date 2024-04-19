@@ -93,7 +93,7 @@ export const Carousel = () => {
 
         "
             >
-                More than 100+ enterprises have built their employees with Codejourney
+                Mas de 100+ empresas han formado a sus empleados con Codejourney
             </div>
 
             <div className="grid grid-cols-3 p-4 md:flex">

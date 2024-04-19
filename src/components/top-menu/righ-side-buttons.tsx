@@ -40,7 +40,7 @@ export const RightSideButtons = () => {
                                     </Button>
                                         : <SignUpButton redirectUrl="/sign-up">
                                             <Button className="text-md bg-blue-500">
-                                                Get Started
+                                                Registrarse
                                             </Button>
                                         </SignUpButton>
                                     }
@@ -58,7 +58,7 @@ export const RightSideButtons = () => {
                                     {userId ? (
                                         <SignOutButton>
                                             <Button className='text-md bg-red-500' variant="destructive">
-                                                Sign Out
+                                                Cerrar sesion
                                             </Button>
                                         </SignOutButton>
                                     ) : undefined}
@@ -72,7 +72,7 @@ export const RightSideButtons = () => {
             <div className="hidden md:flex md:space-x-4">
                 <Button asChild className="text-md" variant="ghost">
                     <Link href={userId ? '/dashboard' : '/sign-in'}>
-                        {userId ? 'Dashboard' : 'Sign in'}
+                        {userId ? 'Dashboard' : 'Iniciar sesión'}
                     </Link>
                 </Button>
                 {/* //TODO : Center img */}
@@ -84,7 +84,7 @@ export const RightSideButtons = () => {
                 ) : (
                     <Button asChild className="text-md bg-blue-500">
                         <Link href={userId ? '/' : '/sign-up'}>
-                            {userId ? 'Sign out' : 'Get Started'}
+                            {userId ? 'Cerrar sesión' : 'Registrarse'}
                         </Link>
                     </Button>
                 )}

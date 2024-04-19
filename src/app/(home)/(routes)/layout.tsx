@@ -1,5 +1,5 @@
-import {SideBarNav} from "@/app/(home)/_components/SideBarNav";
 import type {Metadata} from "next";
+import {SideBarNav} from "@/app/(home)/_components";
 
 export const metadata: Metadata = {
     title: "Dashboard | Codejourney",
@@ -13,7 +13,7 @@ export default function HomeLayout({
 }>) {
     return (
             <div>
-                <div>
+                <div className='h-full w-64 inset-y-0 z-50'>
                     <SideBarNav/>
                 </div>
                 {children}

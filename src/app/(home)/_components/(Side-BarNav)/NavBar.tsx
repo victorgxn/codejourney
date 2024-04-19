@@ -13,10 +13,11 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import {AlignJustify} from "lucide-react";
+import {SearchBar} from "@/app/(home)/_components/(Side-BarNav)/SearchBar";
 
 export const NavBar = () => {
     return (
-        <div>
+        <div> {/* //TODO: Arreglar el boton del responsive y añadirle los <Link/> */}
             <nav
                 className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                 <div className="md:hidden">
@@ -30,12 +31,12 @@ export const NavBar = () => {
                                     <div
                                         className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
                                         <Link
-                                            href="/"
+                                            href="/public"
                                         >
                                             Pricing
                                         </Link>
                                         <Link
-                                            href="/"
+                                            href="/public"
                                         >
                                             Contact
                                         </Link>
@@ -48,7 +49,7 @@ export const NavBar = () => {
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start rtl:justify-end">
-                            <Link href="/" className="flex ms-2 md:me-24 items-center">
+                            <Link href="/public" className="flex ms-2 md:me-24 items-center">
                                 <Image
                                     src="/images/logo/codejourneyLogo.png"
                                     className="h-12 w-auto"
@@ -64,6 +65,7 @@ export const NavBar = () => {
             bg-clip-text
             text-transparent">Codejourney</span>
                             </Link>
+                            <SearchBar/>
 
                         </div>
                         <div>
