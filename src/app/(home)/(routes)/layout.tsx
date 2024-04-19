@@ -7,19 +7,20 @@ export const metadata: Metadata = {
 };
 
 export default function HomeLayout({
-                                   children,
-                               }: Readonly<{
+                                       children,
+                                   }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-            <div >
-                <div className='h-full w-64'>
-                    <SideBarNav/>
-                </div>
-                <div className='m-64'>
+        <div className='flex flex-col h-full'>
+            <div className='flex-1'>
+                <SideBarNav/>
+                <div>
                     {children}
                 </div>
 
             </div>
+        </div>
+
     )
 }

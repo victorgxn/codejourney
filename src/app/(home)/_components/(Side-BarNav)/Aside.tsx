@@ -35,13 +35,11 @@ export const Aside = () => {
     ]
     return (
         <aside
-            className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+            className="hidden lg:flex pt-[80px] h-full w-72 flex-col fixed inset-y-0 z-[48]"
             aria-label="Sidebar">
-            <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 ">
-                <div className='w-full '>
-
-
-                    <ul className="space-y-2 font-medium">
+            <div className="h-full flex flex-col bg-white border-r overflow-y-auto">
+                <div className='flex flex-col w-full flex-1'>
+                    <ul className="flex flex-col w-full space-y-1.5 p-3">
                         {menuList.map((item, index: number) => (
                             <li key={item.id}>
                                 <Link href={item.path}
@@ -60,7 +58,7 @@ export const Aside = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="p-1">
+                <div className="p-3.5">
                     <div className="mt-52 rounded-lg border bg-card text-card-foreground shadow-none w-full">
                         <div className="flex flex-col space-y-1.5 p-2 pt-0 md:p-4"><h3
                             className=" flex items-center justify-center font-semibold tracking-tight text-base  bg-gradient-to-r
@@ -79,7 +77,6 @@ export const Aside = () => {
                 </div>
                 <FooterAside/>
             </div>
-
         </aside>
 
 
