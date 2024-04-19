@@ -1,3 +1,5 @@
+import { Html } from "@react-email/html";
+import { Button } from "@react-email/button";
 
 export default function Newsletter() {
     return (
