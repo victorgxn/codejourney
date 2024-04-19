@@ -21,7 +21,7 @@ export const Aside = () => {
         },
         {
             id: 3,
-            name: 'Codejourney Pro',
+            name: 'Plan premium',
             icon: Shield,
             path: '/upgrade',
         },
@@ -52,7 +52,7 @@ export const Aside = () => {
                                     {item.id === 3 && (
                                         <div
                                             className="inline-flex items-center border rounded-md px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-sky-500/10 text-sky-800 ml-auto">
-                                            New
+                                            Nuevo
                                         </div>
                                     )}
                                 </Link>
@@ -68,11 +68,13 @@ export const Aside = () => {
             to-green-300
             bg-clip-text
             text-transparent"
-                        >Mejora a pro</h3><p
-                            className="text-muted-foreground text-sm ">Desbloquea  el contenido de pago con un unico pago mensual.</p></div>
-                        <div className="p-2 pt-0 md:p-4 md:pt-0"><a
-                            className="inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full text-xs"
-                            href="/upgrade">Mejorar</a></div>
+                        >Pasate al plan Premium</h3><p
+                            className="text-muted-foreground text-sm ">Desbloquea todos nuestros cursos por un unico pago de 9,99 € al mes.</p></div>
+                        <div className="p-2 pt-0 md:p-4 md:pt-0"><Link
+                            className="inline-flex items-center justify-center font-medium ring-offset-background bg-gradient-to-r
+            from-blue-900
+            to-blue-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full text-xs"
+                            href="/upgrade">Mejorar</Link></div>
                     </div>
                 </div>
                 <FooterAside/>

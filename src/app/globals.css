@@ -71,7 +71,7 @@
   color : #4895e9;
   width: 26px;
   height: 26px;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
 }
   @layer base {
     * {
