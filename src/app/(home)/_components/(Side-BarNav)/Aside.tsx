@@ -1,8 +1,8 @@
 'use client'
-import {Home, BookOpenCheck, Shield, MailPlus} from "lucide-react";
+import { Home, BookOpenCheck, Shield, MailPlus } from "lucide-react";
 import Link from "next/link";
-import React, {useState} from 'react';
-import {FooterAside} from "@/app/(home)/_components/(Side-BarNav)/FooterAside";
+import React, { useState } from 'react';
+import { FooterAside } from "@/app/(home)/_components/(Side-BarNav)/FooterAside";
 
 interface MenuItem {
     id: number;
@@ -50,9 +50,9 @@ export const Aside = () => {
                         {menuList.map((item, index: number) => (
                             <li key={item.id}>
                                 <Link href={item.path}
-                                      className={`flex items-center p-3 text-gray-700 rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${activeIndex === index ? 'bg-gray-100 dark:bg-gray-900' : ''}`}
-                                      onClick={() => setActiveIndex(index)}>
-                                    <item.icon className="w-6 h-6 mr-2"/>
+                                    className={`flex items-center p-3 text-gray-700 rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${activeIndex === index ? 'bg-gray-100 dark:bg-gray-900' : ''}`}
+                                    onClick={() => setActiveIndex(index)}>
+                                    <item.icon className="w-6 h-6 mr-2" />
                                     <span>{item.name}</span>
                                     {item.id === 3 && (
                                         <div
@@ -82,7 +82,7 @@ export const Aside = () => {
                             href="/upgrade">Mejorar</Link></div>
                     </div>
                 </div>
-                <FooterAside/>
+                <FooterAside />
             </div>
         </aside>
 

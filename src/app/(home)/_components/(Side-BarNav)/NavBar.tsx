@@ -22,7 +22,7 @@ export const NavBar = () => {
       {" "}
       {/* //TODO: Añadirle los <Link/> y responsive acabarlo*/}
       <nav className="p-4 gap-x-4 h-full flex items-center bg-white border-b">
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet>
             <SheetTrigger>
               <AlignJustify />
@@ -30,36 +30,40 @@ export const NavBar = () => {
             <SheetContent className="w-[300px] sm:w-[240px]">
               <SheetHeader>
                 <SheetDescription>
-                  <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
-                    <Link href="/dashboard">Cursos</Link>
-                    <Link href="/">Inicio</Link>
-                    <Link href="/upgrade">Plan premium</Link>
-                    <Link href="/newsletter">Promociones</Link>
-                  </div>
-
-                    {/*LOGO RESPONSIVE */}
-                    <Link href="/" className="flex ms-2 md:me-24 items-center">
-                      <Image
-                        src="/images/logo/codejourneyLogo.png"
-                        className="h-12 w-auto"
-                        width={100}
-                        height={50}
-                        alt="Codejourney logo"
-                      />
-                      <span
-                        className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-gradient
+                  <div className="flex flex-col min-h-screen">
+                    <div className="flex-grow">
+                      {/*LOGO RESPONSIVE */}
+                      <Link href="/" className="flex ms-2 md:me-24 items-center border-b-4 justify-center w-full">
+                        <Image
+                          src="/images/logo/codejourneyLogo.png"
+                          className="h-12 w-auto"
+                          width={100}
+                          height={50}
+                          alt="Codejourney logo"
+                        />
+                        <span
+                          className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-gradient
                         bg-gradient-to-r
                          from-blue-500
                          to-green-300
                         bg-clip-text
                         text-transparent"
-                      >
-                        Codejourney
-                      </span>
-                    </Link>
-
+                        >
+                          Codejourney
+                        </span>
+                      </Link>
+                      <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
+                        <Link href="/dashboard">Cursos</Link>
+                        <Link href="/">Inicio</Link>
+                        <Link href="/upgrade">Plan premium</Link>
+                        <Link href="/newsletter">Promociones</Link>
+                      </div>
+                    </div>
                     {/*DERECHOS*/}
-                    <FooterAside/>
+                    <div className="pb-5">
+                    <FooterAside />
+                    </div>
+                  </div>
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>
