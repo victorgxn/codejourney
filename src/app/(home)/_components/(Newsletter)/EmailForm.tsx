@@ -28,37 +28,35 @@ export function EmailForm() {
 
   const sendEmail = async () => {
     const { email } = data;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
     if (!email) {
       toast({
         title: 'Por favor, introduce tu correo electrónico',
         variant: 'destructive',
       });
-      return;
-    }
-    if (!emailRegex.test(email)) {
+    } else if (!emailRegex.test(email)) {
       toast({
         title: 'Por favor, introduce un correo electrónico válido',
         variant: 'destructive',
       });
-      return;
-    }
-
-    try {
-      setLoading(true);
-      const response = await fetch('../../../api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      toastPopup(response.ok);
-    } catch (error: any) {
-      toastPopup(false);
-      throw new Error(error);
-    } finally {
-      setLoading(false);
+    } else {
+      try {
+        setLoading(true);
+        const response = await fetch('../../../api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        toastPopup(response.ok);
+      } catch (error: any) {
+        toastPopup(false);
+        throw new Error(error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 

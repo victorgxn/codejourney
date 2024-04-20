@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: [email],
-      subject: 'Prueba',
+      subject: 'Bienvenido!',
       react: WelcomeTemplate({
         username: userFirstName,
         company: 'Codejourney',
