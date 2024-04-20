@@ -39,11 +39,10 @@ export default function Page() {
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-md sm:text-center">
                         <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
-                            Sign up for our newsletter
+                            Suscribete para recibir las ultimas noticias
                         </h2>
                         <p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
-                            Stay up to date with the roadmap progress, announcements and
-                            exclusive discounts feel free to sign up with your email.
+                            Estate a la última de todas las novedades y promociones de Codejourney, ademas de recibir notificaciones de los nuevos cursos que se vayan añadiendo.
                         </p>
                         <form action="#">
                             <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
@@ -52,7 +51,7 @@ export default function Page() {
                                         htmlFor="email"
                                         className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                     >
-                                        Email address
+                                        Dirección de correo
                                     </label>
                                     <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                                         <svg
@@ -89,12 +88,12 @@ export default function Page() {
                                 </div>
                             </div>
                             <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-htmlForm-footer dark:text-gray-300">
-                                We care about the protection of your data.{' '}
+                                Nos preocupa tu privacidad.{' '}
                                 <a
                                     href="#"
                                     className="font-medium text-primary-600 dark:text-primary-500 hover:underline"
                                 >
-                                    Read our Privacy Policy
+                                    Lee nuestra politica de privacidad
                                 </a>
                                 .
                             </div>

@@ -6,7 +6,7 @@ export default function Home() {
         <TopMenu/>
         <FirstSection/>
           <Carousel/>
-          <div className='text-7xl items-center'>Aqui va un grid con los cursos mas populares, jaime mariquita</div>
+          <div className='text-7xl items-center'>Aqui va un grid con los cursos mas populares</div>
           <Footer/>
       </>
   );

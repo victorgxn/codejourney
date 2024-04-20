@@ -79,22 +79,22 @@ export const NavigationBar = () => {
                                     >
                                         <LeftLogo  />
                                         <div className="mb-2 mt-4 text-lg font-medium">
-                                            Bird Software
+                                            CodeJourney
                                         </div>
                                         <p className="text-sm leading-tight text-muted-foreground">
-                                            eCommerce platform for selling digital products.
+                                            Plataforma online de venta de cursos de programación.
                                         </p>
                                     </a>
                                 </NavigationMenuLink>
                             </li>
-                            <ListItem  title="Introduction">
-                                Learn about the basics of Bird.
+                            <ListItem  title="Introducción">
+                                ¿Quienes somos?
                             </ListItem>
                             <ListItem  title="Demo">
                                 How to build a store in 60 seconds with Bird
                             </ListItem>
-                            <ListItem  title="Community">
-                                Join the community and get help or support.
+                            <ListItem  title="Comunidad">
+                                Unete para ayuda y consejos.
                             </ListItem>
                         </ul>
                     </NavigationMenuContent>
@@ -120,7 +120,7 @@ export const NavigationBar = () => {
                         <NavigationMenuLink
                             className="font-medium"
                         >
-                            Documentation
+                            Documentación
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -129,7 +129,7 @@ export const NavigationBar = () => {
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink className="
               font-medium">
-                            Pricing
+                            Precios
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
