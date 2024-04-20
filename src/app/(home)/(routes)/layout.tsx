@@ -18,7 +18,6 @@ export default function HomeLayout({
                 <div className='lg:pl-72 pt-[80px]'>
                     {children}
                 </div>
-
             </div>
         </div>
     )

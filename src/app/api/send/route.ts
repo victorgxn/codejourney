@@ -1,27 +1,30 @@
 import WelcomeTemplate from '../../../components/email-template';
 import { Resend } from 'resend';
-import * as React from 'react';
-import { render } from '@react-email/render';
+import { NextResponse } from 'next/server';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const { email, userFirstName } = await req.json();
 
-  const { data, error } = await resend.emails.send({
-    from: 'Acme <onboarding@resend.dev>',
-    to: [email],
-    subject: 'Prueba',
-    react: WelcomeTemplate({
-      username: userFirstName,
-      company: 'Codejourney',
-    }) as React.ReactElement,
-    // html: render(WelcomeTemplate({ userFirstName })),
-  });
-
-  if (error) {
-    return Response.json(error);
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: [email],
+      subject: 'Prueba',
+      react: WelcomeTemplate({
+        username: userFirstName,
+        company: 'Codejourney',
+      }),
+    });
+    if (error?.statusCode >= 500) {
+      return NextResponse.json({ error: error }, { status: 500 });
+    }
+    if (error?.statusCode >= 400) {
+      return NextResponse.json({ error: error }, { status: 400 });
+    }
+    return NextResponse.json({ message: 'Con exito' }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error: 'Error del servidor' }, { status: 500 });
   }
-
-  return Response.json({ message: 'Email sent successfully' });
 }
