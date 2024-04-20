@@ -7,7 +7,7 @@ import {useEffect} from "react";
 export default function Dashboard() {
 
     useEffect(() => {
-        getCourseList()
+        getCourses()
     }, [])
 
     const getCourses = () => {
@@ -33,14 +33,7 @@ export default function Dashboard() {
            <div className='p-6 space-y-4'>
                <Categories/>
            </div>
-           {/*Course grid*/}
-           <div>
-               <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6'>
-
-               </div>
-           </div>
        </div>
     )
-
 
 }
