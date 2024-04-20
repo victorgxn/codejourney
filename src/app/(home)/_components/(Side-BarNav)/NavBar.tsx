@@ -52,8 +52,8 @@ export const NavBar = () => {
                         </span>
                       </Link>
                       <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
-                        <Link href="/dashboard">Cursos</Link>
                         <Link href="/">Inicio</Link>
+                        <Link href="/dashboard">Cursos</Link>
                         <Link href="/upgrade">Plan premium</Link>
                         <Link href="/newsletter">Promociones</Link>
                       </div>
