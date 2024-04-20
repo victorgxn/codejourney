@@ -23,7 +23,7 @@ export default function Page() {
                       type="email"
                       id="email"
                       className="block w-full p-3 text-sm bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                      placeholder="codejourneytech@gmail.com"
+                      placeholder="example@gmail.com"
                       required
                     />
                   </div>
