@@ -68,7 +68,7 @@ export const NavigationBar = () => {
 
             >
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>Inicio</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                             <li className="row-span-3">
@@ -116,20 +116,20 @@ export const NavigationBar = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/programas-estudio" legacyBehavior passHref>
                         <NavigationMenuLink
                             className="font-medium"
                         >
-                            Documentación
+                            Programas de estudio
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/codejourney-empresas" legacyBehavior passHref>
                         <NavigationMenuLink className="
               font-medium">
-                            Precios
+                            Codejourney para empresas
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

@@ -20,14 +20,13 @@ export const NavBar = () => {
   return (
     <div>
       {" "}
-      {/* //TODO: Añadirle los <Link/> y responsive acabarlo*/}
       <nav className="p-4 gap-x-4 h-full flex items-center bg-white border-b">
         <div className="lg:hidden">
           <Sheet>
             <SheetTrigger>
               <AlignJustify />
             </SheetTrigger>
-            <SheetContent className="w-[300px] sm:w-[240px]">
+            <SheetContent className="w-[300px] sm:w-[240px]" side='left'>
               <SheetHeader>
                 <SheetDescription>
                   <div className="flex flex-col min-h-screen">
