@@ -10,7 +10,7 @@ export default function Page() {
                 <h2 className="mb-8 text-4xl font-extrabold text-center text-gray-900 dark:text-white">
                   Contáctanos
                 </h2>
-                <p className="mb-12 text-lg text-center text-gray-600 dark:text-gray-400">
+                <p className="mb-5 text-lg text-center text-gray-600 dark:text-gray-400">
                   ¿Tienes alguna pregunta o comentario? ¡Estamos aquí para
                   ayudarte!
                 </p>
