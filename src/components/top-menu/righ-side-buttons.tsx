@@ -44,24 +44,23 @@ export const RightSideButtons = () => {
                                             </Button>
                                         </SignUpButton>
                                     }
-                                    {userId ?
-                                        undefined
-                                        : <SignInButton />}
+                                    {!userId &&
+                                        <SignInButton />}
 
                                     <Link href="/">Pricing</Link>
                                     <Link href="/">Contact</Link>
                                     <Link href="/">About</Link>
 
-                                        {/* //TODO: Fix z-index (user profile) */}
-                                    {userId ? <ManageAccount /> : undefined}
+                                    {/* //TODO: Fix z-index (user profile) */}
+                                    {userId && <ManageAccount />}
 
-                                    {userId ? (
+                                    {userId && (
                                         <SignOutButton>
                                             <Button className='text-md bg-red-500' variant="destructive">
                                                 Cerrar sesion
                                             </Button>
                                         </SignOutButton>
-                                    ) : undefined}
+                                    )}
                                 </div>
                             </SheetDescription>
                         </SheetHeader>
