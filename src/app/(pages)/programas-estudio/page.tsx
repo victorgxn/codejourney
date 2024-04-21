@@ -6,12 +6,18 @@ import {
   faNodeJs,
   faReact,
   faVuejs,
+  faCodepen,
 } from "@fortawesome/free-brands-svg-icons";
+import CursoAngular from "@/components/courses/CursoAngular";
+import CursoReact from "@/components/courses/CursoReact";
+import CursoVue from "@/components/courses/CursoVue";
+import CursoNode from "@/components/courses/CursoNode";
 
 export default function ProgramaEstudio() {
   return (
     <>
       <TopMenu />
+
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <TypewriterEffect
@@ -32,28 +38,39 @@ export default function ProgramaEstudio() {
 
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-4">Tecnologías</h2>
-          <div className="flex flex-wrap justify-center">
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4">
+          <div className="flex flex-wrap mb-8 bg-white shadow-lg rounded-lg justify-center max-w-ld mx-auto">
+            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
+              <FontAwesomeIcon
+                icon={faCodepen}
+                size="2x"
+                className="w-10 h-10"
+              />
+              <p>Fundamentos</p>
+            </div>
+
+            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
               <FontAwesomeIcon
                 icon={faAngular}
                 size="2x"
                 className="w-10 h-10"
+                style={{ color: 'red' }} 
               />
               <p>Angular</p>
             </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4">
-              <FontAwesomeIcon icon={faReact} size="2x" className="w-10 h-10" />
+            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
+              <FontAwesomeIcon icon={faReact} size="2x" className="w-10 h-10" style={{ color: 'lightblue' }} />
               <p>React</p>
             </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4">
-              <FontAwesomeIcon icon={faVuejs} size="2x" className="w-10 h-10" />
+            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
+              <FontAwesomeIcon icon={faVuejs} size="2x" className="w-10 h-10"  />
               <p>Vue.js</p>
             </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4">
+            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
               <FontAwesomeIcon
                 icon={faNodeJs}
                 size="2x"
                 className="w-10 h-10"
+                style={{ color: 'green' }} 
               />
               <p>Node.js</p>
             </div>
@@ -83,90 +100,10 @@ export default function ProgramaEstudio() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-4">Curso de Angular</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-lg">
-            <ul className="list-none pl-6 mb-4">
-              <li className="font-bold">893 Lecciones</li>
-              <li className="font-bold">80.5 Horas de contenido en video</li>
-            </ul>
-            <ul className="list-decimal pl-6">
-              <li>Introducción a Angular</li>
-              <li>Componentes en Angular</li>
-              <li>Directivas en Angular</li>
-              <li>Servicios y dependencias en Angular</li>
-              <li>Rutas y navegación en Angular</li>
-              <li>Formularios en Angular</li>
-              <li>Gestión de estado en Angular</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-4">Curso de React</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-lg">
-            <ul className="list-none pl-6 mb-4">
-              <li className="font-bold">893 Lecciones</li>
-              <li className="font-bold">80.5 Horas de contenido en video</li>
-            </ul>
-            <ul className="list-decimal pl-6">
-              <li>Introducción a React</li>
-              <li>Componentes en React</li>
-              <li>Estado y ciclo de vida en React</li>
-              <li>Manejo de eventos en React</li>
-              <li>React Hooks</li>
-              <li>Routing en React</li>
-              <li>Manejo de formularios en React</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-4">Curso de Vue.js</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-lg">
-            <ul className="list-none pl-6 mb-4">
-              <li className="font-bold">893 Lecciones</li>
-              <li className="font-bold">80.5 Horas de contenido en video</li>
-            </ul>
-            <ul className="list-decimal pl-6">
-              <li>Introducción a Vue.js</li>
-              <li>Componentes en Vue.js</li>
-              <li>Directivas en Vue.js</li>
-              <li>Vue Router</li>
-              <li>Estado de la aplicación en Vue.js</li>
-              <li>Gestión de formularios en Vue.js</li>
-              <li>Vue CLI</li>
-            </ul>
-          </div>
-        </div>
-      </div>  
-
-      <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold mb-4">Curso de Node.js</h2>
-        <div className="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-lg">
-          <ul className="list-none pl-6 mb-4">
-            <li className="font-bold">893 Lecciones</li>
-            <li className="font-bold">80.5 Horas de contenido en video</li>
-          </ul>
-          <ul className="list-decimal pl-6">
-            <li>Introducción a Node.js</li>
-            <li>Gestión de paquetes con npm</li>
-            <li>Creación de servidores con Express</li>
-            <li>Manejo de bases de datos con MongoDB</li>
-            <li>Autenticación y autorización</li>
-            <li>Despliegue de aplicaciones Node.js</li>
-            <li>Pruebas unitarias y de integración</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+        <CursoAngular></CursoAngular>
+        <CursoReact></CursoReact>
+        <CursoVue></CursoVue>
+        <CursoNode></CursoNode>
       </div>
 
       <Footer />
