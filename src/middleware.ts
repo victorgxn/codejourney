@@ -1,16 +1,19 @@
 import { authMiddleware } from '@clerk/nextjs';
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, NextRequest, NextFetchEvent } from 'next/server';
 import { rateLimiter } from '@/lib/rate-limiter';
 
-// See https://clerk.com/docs/references/nextjs/auth-middleware
-// for more information about configuring your Middleware
-export default authMiddleware({
-  // Allow signed out users to access the specified routes:
-  publicRoutes: ['/'],
-});
+export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
+  // Run the authMiddleware
+  const authResult = await authMiddleware({
+    publicRoutes: ['/'],
+  })(req, ev);
 
-export async function middleware(req: NextRequest) {
+  // If the authMiddleware returned a response, return it immediately
+  if (authResult) {
+    return authResult;
+  }
+
+  // Otherwise, continue with your custom middleware logic
   const ip = req.ip ?? '127.0.0.1';
 
   try {
@@ -27,11 +30,8 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Exclude files with a "." followed by an extension, which are typically static files.
-    // Exclude files in the _next directory, which are Next.js internals.
     '/((?!.+\\.[\\w]+$|_next).*)',
-    // Re-include any files in the api or trpc folders that might have an extension
     '/(api|trpc)(.*)',
-    '/api/message/:path'
+    '/api/message/:path',
   ],
 };
