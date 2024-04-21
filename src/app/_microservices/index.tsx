@@ -22,7 +22,7 @@ export const getCourseList = async () => {
     return data;
 }
 
-export const getCourseById = async (id) => {
+export const getCourseById = async (id: string) => {
     const query = gql`
     query course {
         courseList(where: {id: "` + id + `"}) {

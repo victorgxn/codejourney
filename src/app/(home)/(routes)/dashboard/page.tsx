@@ -33,6 +33,7 @@ export default function Dashboard() {
         // @ts-ignore
         getCourseList().then((resp: CourseListResponse) => {
             setCourses(resp.courseLists)
+            console.log(resp.courseLists)
         })
     }
     return (
