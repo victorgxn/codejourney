@@ -19,9 +19,9 @@ export default function ProgramaEstudio() {
       <TopMenu />
 
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 ">
           <TypewriterEffect
-            words={[
+              words={[
               { text: "Programas " },
               { text: "de " },
               { text: "Estudios " },
