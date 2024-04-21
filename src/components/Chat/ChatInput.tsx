@@ -23,6 +23,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     setIsMessageUpdating,
   } = useContext(MessagesContext)
 
+
   const { mutate: sendMessage, isPending } = useMutation({
     mutationKey: ['sendMessage'],
     // include message to later use it in onMutate
