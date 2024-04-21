@@ -5,15 +5,15 @@ export default function Page() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-md">
-            <h1><b>Política de Privacidad</b></h1>
-            <p>Última actualización: 20 de abril de 2024</p>
-            <p>
+            <h1 className="text-3xl font-bold mb-4">Política de Privacidad</h1>
+            <p className="mb-4">Última actualización: 20 de abril de 2024</p>
+            <p className="mb-4">
               Esta Política de Privacidad describe nuestras políticas y
               procedimientos sobre la recopilación, uso y divulgación de su
               información cuando utiliza el Servicio y le informa sobre sus
               derechos de privacidad y cómo la ley lo protege.
             </p>
-            <p>
+            <p className="mb-4">
               Utilizamos sus datos personales para proporcionar y mejorar el
               Servicio. Al utilizar el Servicio, usted acepta la recopilación y
               el uso de información de acuerdo con esta Política de Privacidad.
@@ -21,80 +21,85 @@ export default function Page() {
               <a
                 href="https://www.termsfeed.com/privacy-policy-generator/"
                 target="_blank"
+                className="text-blue-500 hover:underline"
               >
                 Generador de Política de Privacidad
               </a>
               .
             </p>
-            <h2><b>Interpretación y Definiciones</b></h2>
-            <h3>Interpretación</h3>
-            <p>
+            <h2 className="text-2xl font-bold mb-2">
+              Interpretación y Definiciones
+            </h2>
+            <h3 className="text-xl mb-1 font-bold">Interpretación</h3>
+            <p className="mb-4">
               Las palabras cuya inicial está en mayúscula tienen significados
               definidos en las siguientes condiciones. Las siguientes
               definiciones tendrán el mismo significado independientemente de si
               aparecen en singular o en plural.
             </p>
-            <h3>Definiciones</h3>
-            <p>Para los fines de esta Política de Privacidad:</p>
-            <ul>
-              <li>
-                <p>
+            <h3 className="text-xl mb-1 font-bold">Definiciones</h3>
+            <p className="mb-4">
+              Para los fines de esta Política de Privacidad:
+            </p>
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>
                   <strong>Cuenta</strong> significa una cuenta única creada para
                   que usted acceda a nuestro Servicio o partes de nuestro
                   Servicio.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Afiliado</strong> significa una entidad que controla,
                   está controlada por o está bajo control común con una parte,
                   donde "control" significa propiedad del 50% o más de las
                   acciones, participaciones de capital u otros valores con
                   derecho a voto para la elección de directores u otra autoridad
                   administrativa.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Empresa</strong> (referida como "la Empresa",
                   "Nosotros", "Nuestro" o "Nuestro" en este Acuerdo) se refiere
                   a CodeJourney, bocatas Juanma 30.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Cookies</strong> son archivos pequeños que se colocan
                   en su computadora, dispositivo móvil o cualquier otro
                   dispositivo por un sitio web, que contienen los detalles de su
                   historial de navegación en ese sitio web entre sus muchos
                   usos.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>País</strong> se refiere a: España
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Dispositivo</strong> significa cualquier dispositivo
                   que pueda acceder al Servicio, como una computadora, un
                   teléfono celular o una tableta digital.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Datos Personales</strong> es cualquier información que
                   se relacione con un individuo identificado o identificable.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Servicio</strong> se refiere al Sitio Web.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Proveedor de Servicios</strong> significa cualquier
                   persona natural o jurídica que procese los datos en nombre de
                   la Empresa. Se refiere a empresas o individuos de terceros
@@ -102,480 +107,388 @@ export default function Page() {
                   proporcionar el Servicio en nombre de la Empresa, para
                   realizar servicios relacionados con el Servicio o para ayudar
                   a la Empresa a analizar cómo se utiliza el Servicio.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Datos de Uso</strong> se refiere a datos recopilados
                   automáticamente, ya sea generados por el uso del Servicio o
                   por la infraestructura del Servicio en sí (por ejemplo, la
                   duración de una visita a la página).
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Sitio Web</strong> se refiere a CodeJourney, accesible
                   desde{" "}
                   <a
                     href="codejourney.es"
                     rel="external nofollow noopener"
                     target="_blank"
+                    className="text-blue-500 hover:underline"
                   >
                     codejourney.es
                   </a>
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Usted</strong> se refiere al individuo que accede o
                   utiliza el Servicio, o a la empresa u otra entidad legal en
                   nombre de la cual dicho individuo accede o utiliza el
                   Servicio, según corresponda.
-                </p>
-              </li>
+                </li>
+              </p>
             </ul>
-            <h2><b>Recopilación y Uso de Sus Datos Personales</b></h2>
-            <h3>Tipos de Datos Recopilados</h3>
-            <h4>Datos Personales</h4>
-            <p>
+            <h2 className="text-2xl font-bold mb-2">
+              Recopilación y Uso de Sus Datos Personales
+            </h2>
+            <h3 className="text-xl mb-1 font-bold">
+              Tipos de Datos Recopilados
+            </h3>
+            <h4 className="text-lg font-bold mb-1">Datos Personales</h4>
+            <p className="mb-4">
               Mientras utiliza Nuestro Servicio, es posible que le solicitemos
               que nos proporcione cierta información de identificación personal
               que se pueda utilizar para contactarlo o identificarlo. La
               información de identificación personal puede incluir, entre otras
               cosas:
             </p>
-            <ul>
-              <li>
-                <p>Dirección de correo electrónico</p>
-              </li>
-              <li>
-                <p>Nombre y apellido</p>
-              </li>
-              <li>
-                <p>Número de teléfono</p>
-              </li>
-              <li>
-                <p>Dirección, Estado, Provincia, Código postal, Ciudad</p>
-              </li>
-              <li>
-                <p>Datos de uso</p>
-              </li>
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>Dirección de correo electrónico</li>
+              </p>
+              <p className="mb-2">
+                <li>Nombre y apellido</li>
+              </p>
+              <p className="mb-2">
+                <li>Número de teléfono</li>
+              </p>
+              <p className="mb-2">
+                <li>Dirección, Estado, Provincia, Código postal, Ciudad</li>
+              </p>
+              <p className="mb-2">
+                <li>Datos de uso</li>
+              </p>
             </ul>
-            <h4>Datos de Uso</h4>
-            <p>
+            <h4 className="text-lg font-bold mb-1">Datos de Uso</h4>
+            <p className="mb-4">
               Los Datos de Uso se recopilan automáticamente al utilizar el
               Servicio.
             </p>
-            <p>
+            <p className="mb-4">
               Los Datos de Uso pueden incluir información como la dirección IP
               de su dispositivo (por ejemplo, dirección IP), tipo de navegador,
               versión del navegador, las páginas de nuestro Servicio que visita,
               la hora y la fecha de su visita, el tiempo que pasa en esas
-              páginas, identificadores de dispositivos únicos y otros datos de
+              páginas, identificadores de dispositivo único y otros datos de
               diagnóstico.
             </p>
-            <p>
-              Cuando accede al Servicio a través de un dispositivo móvil, es
-              posible que recopilemos cierta información automáticamente,
-              incluido, entre otros, el tipo de dispositivo móvil que utiliza,
-              la ID única de su dispositivo móvil, la dirección IP de su
-              dispositivo móvil, su sistema operativo móvil, el tipo de
-              navegador de Internet móvil que utiliza, identificadores de
-              dispositivos únicos y otros datos de diagnóstico.
+            <p className="mb-4">
+              Cuando accede al Servicio mediante un dispositivo móvil o desde un
+              dispositivo móvil, podemos recopilar cierta información
+              automáticamente, incluidos, entre otros, el tipo de dispositivo
+              móvil que utiliza, el identificador único de su dispositivo móvil,
+              la dirección IP de su dispositivo móvil, el sistema operativo
+              móvil que utiliza, el tipo de navegador de Internet móvil que
+              utiliza, identificadores de dispositivos únicos y otros datos de
+              diagnóstico.
             </p>
-            <p>
+            <p className="mb-4">
               También podemos recopilar información que su navegador envía cada
-              vez que visita nuestro Servicio o cuando accede al Servicio a
-              través de un dispositivo móvil.
+              vez que visita nuestro Servicio o cuando accede al Servicio
+              mediante un dispositivo móvil.
             </p>
-            <h4>Tecnologías de seguimiento y cookies</h4>
-            <p>
+            <h4 className="text-lg font-bold mb-1">Información de Cookies</h4>
+            <p className="mb-4">
               Utilizamos cookies y tecnologías de seguimiento similares para
-              rastrear la actividad en nuestro Servicio y almacenar cierta
-              información. Las tecnologías de seguimiento utilizadas son
-              balizas, etiquetas y scripts para recopilar y rastrear información
-              y para mejorar y analizar nuestro Servicio. Las tecnologías que
-              utilizamos pueden incluir:
+              rastrear la actividad en nuestro Servicio y mantener cierta
+              información.
             </p>
-            <ul>
-              <li>
-                <strong>Cookies o Cookies del Navegador.</strong> Una cookie es
-                un archivo pequeño colocado en Su Dispositivo. Puede instruir a
-                Su navegador para que rechace todas las Cookies o para que le
-                indique cuándo se envía una Cookie. Sin embargo, si no acepta
-                Cookies, es posible que no pueda utilizar algunas partes de
-                nuestro Servicio. A menos que haya ajustado Su configuración de
-                navegador para que rechace Cookies, nuestro Servicio puede usar
-                Cookies.
-              </li>
-              <li>
-                <strong>Web Beacons.</strong> Ciertas secciones de nuestro
-                Servicio y nuestros correos electrónicos pueden contener
-                pequeños archivos electrónicos conocidos como web beacons
-                (también denominados gifs transparentes, etiquetas de píxeles y
-                gifs de un solo píxel) que permiten a la Empresa, por ejemplo,
-                contar usuarios que han visitado esas páginas o abierto un
-                correo electrónico y para otras estadísticas relacionadas con el
-                sitio web (por ejemplo, registrar la popularidad de una
-                determinada sección y verificar la integridad del sistema y del
-                servidor).
-              </li>
+            <p className="mb-4">
+              Las cookies son archivos con una pequeña cantidad de datos que
+              pueden incluir un identificador único anónimo. Las cookies se
+              envían a su navegador desde un sitio web y se almacenan en su
+              dispositivo. También se utilizan otras tecnologías de seguimiento,
+              como balizas, etiquetas y scripts, para recopilar y rastrear
+              información y para mejorar y analizar nuestro Servicio.
+            </p>
+            <p className="mb-4">
+              Puede indicar a su navegador que rechace todas las cookies o que
+              indique cuándo se está enviando una cookie. Sin embargo, si no
+              acepta cookies, es posible que no pueda utilizar algunas partes de
+              nuestro Servicio.
+            </p>
+            <p className="mb-4">Los ejemplos de cookies que utilizamos:</p>
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>
+                  <strong>Cookies de Sesión.</strong> Utilizamos Cookies de
+                  Sesión para operar nuestro Servicio.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Cookies de Preferencia.</strong> Utilizamos Cookies de
+                  Preferencia para recordar sus preferencias y diversos ajustes.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Cookies de Seguridad.</strong> Utilizamos Cookies de
+                  Seguridad para fines de seguridad.
+                </li>
+              </p>
             </ul>
-            <p>
-              Las cookies pueden ser "Persistentes" o "de Sesión". Las Cookies
-              Persistentes permanecen en Su computadora personal o dispositivo
-              móvil cuando se desconecta, mientras que las Cookies de Sesión se
-              eliminan tan pronto como cierra Su navegador web. Puede obtener
-              más información sobre las cookies en el{" "}
-              <a
-                href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies"
-                target="_blank"
-              >
-                artículo del sitio web de TermsFeed
-              </a>
-              .
-            </p>
-            <p>
-              Utilizamos tanto Cookies de Sesión como Cookies Persistentes para
-              los fines establecidos a continuación:
-            </p>
-            <ul>
-              <li>
-                <p>
-                  <strong>Cookies Necesarias / Esenciales</strong>
-                </p>
-                <p>Tipo: Cookies de Sesión</p>
-                <p>Administrado por: Nosotros</p>
-                <p>
-                  Propósito: Estas Cookies son esenciales para proporcionarle
-                  servicios disponibles a través del Sitio Web y para permitirle
-                  utilizar algunas de sus características. Ayudan a autenticar a
-                  los usuarios y a prevenir el uso fraudulento de cuentas de
-                  usuario. Sin estas Cookies, los servicios que ha solicitado no
-                  pueden ser proporcionados, y solo utilizamos estas Cookies
-                  para proporcionarle esos servicios.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>
-                    Cookies de Política de Cookies / Aceptación de Aviso
-                  </strong>
-                </p>
-                <p>Tipo: Cookies Persistentes</p>
-                <p>Administrado por: Nosotros</p>
-                <p>
-                  Propósito: Estas Cookies identifican si los usuarios han
-                  aceptado el uso de cookies en el Sitio Web.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Cookies de Funcionalidad</strong>
-                </p>
-                <p>Tipo: Cookies Persistentes</p>
-                <p>Administrado por: Nosotros</p>
-                <p>
-                  Propósito: Estas Cookies nos permiten recordar las elecciones
-                  que usted hace cuando utiliza el Sitio Web, como recordar sus
-                  detalles de inicio de sesión o preferencia de idioma. El
-                  propósito de estas Cookies es proporcionarle una experiencia
-                  más personal y evitar que tenga que volver a ingresar sus
-                  preferencias cada vez que utilice el Sitio Web.
-                </p>
-              </li>
-            </ul>
-            <p>
-              Para obtener más información sobre las cookies que utilizamos y
-              sus opciones con respecto a las cookies, visite nuestra Política
-              de Cookies o la sección de Cookies de nuestra Política de
-              Privacidad.
-            </p>
-            <h3>Uso de Sus Datos Personales</h3>
-            <p>
+            <h2 className="text-2xl font-bold mb-2">
+              Uso de Sus Datos Personales
+            </h2>
+            <p className="mb-4">
               La Empresa puede utilizar Datos Personales para los siguientes
               fines:
             </p>
-            <ul>
-              <li>
-                <p>
-                  <strong>Para proporcionar y mantener nuestro Servicio</strong>
-                  , incluido el monitoreo del uso de nuestro Servicio.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para gestionar Su Cuenta:</strong> para gestionar Su
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>
+                  <strong>
+                    Para proporcionar y mantener nuestro Servicio,
+                  </strong>{" "}
+                  incluida la supervisión del uso de nuestro Servicio.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Para gestionar su Cuenta:</strong> para gestionar su
                   registro como usuario del Servicio. Los Datos Personales que
                   proporcione pueden darle acceso a diferentes funcionalidades
                   del Servicio que están disponibles para usted como usuario
                   registrado.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para el cumplimiento de un contrato:</strong> el
-                  desarrollo, cumplimiento y ejecución del contrato de compra de
-                  los productos, artículos o servicios que ha adquirido o de
-                  cualquier otro contrato con nosotros a través del Servicio.
-                </p>
-              </li>
-              <li>
-                <p>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Para el rendimiento del contrato:</strong> para
+                  cumplir con nuestras obligaciones y hacer cumplir nuestros
+                  derechos derivados de los contratos celebrados con usted,
+                  incluida la provisión de servicios, la facturación y el cobro.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Para el seguimiento del uso del Servicio:</strong>{" "}
+                  para supervisar el uso de nuestro Servicio y para realizar
+                  análisis.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
                   <strong>Para contactarlo:</strong> Para contactarlo por correo
-                  electrónico, llamadas telefónicas, SMS u otras formas
-                  equivalentes de comunicación electrónica, como notificaciones
-                  push de aplicaciones móviles sobre actualizaciones o
-                  comunicaciones informativas relacionadas con las
-                  funcionalidades, productos o servicios contratados, incluidas
-                  las actualizaciones de seguridad, cuando sea necesario o
+                  electrónico, llamadas telefónicas, mensajes de texto u otras
+                  formas equivalentes de comunicación electrónica, como las
+                  notificaciones push de una aplicación móvil sobre
+                  actualizaciones o comunicaciones informativas relacionadas con
+                  las funcionalidades, productos o servicios contratados,
+                  incluidas actualizaciones de seguridad, cuando sea necesario o
                   razonable para su implementación.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para proporcionarle</strong> noticias, ofertas
-                  especiales e información general sobre otros bienes, servicios
-                  y eventos que ofrecemos y que son similares a los que ya ha
-                  adquirido o sobre los que ha preguntado, a menos que haya
-                  optado por no recibir dicha información.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para gestionar Sus solicitudes:</strong> Para atender
-                  y gestionar Sus solicitudes hacia nosotros.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para transferencias comerciales:</strong> Podemos
-                  utilizar su información para evaluar o llevar a cabo una
-                  fusión, disolución, reestructuración, reorganización,
-                  disolución u otra venta o transferencia de la totalidad o
-                  parte de nuestros activos, ya sea como empresa en
-                  funcionamiento o como parte de un proceso de quiebra,
-                  liquidación o procedimiento similar, en el que los Datos
-                  Personales en nuestro poder sobre los usuarios de nuestro
-                  Servicio se encuentran entre los activos transferidos.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <strong>Para otros fines</strong>: Podemos utilizar su
-                  información para otros fines, como análisis de datos,
-                  identificación de tendencias de uso, determinación de la
-                  efectividad de nuestras campañas promocionales y para evaluar
-                  y mejorar nuestro Servicio, productos, servicios, marketing y
-                  su experiencia.
-                </p>
-              </li>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>
+                    Para proporcionarle noticias, ofertas especiales y
+                    información general sobre otros bienes, servicios y eventos
+                    que ofrecemos que son similares a los que ya ha adquirido o
+                    sobre los que ha consultado, a menos que haya optado por no
+                    recibir dicha información.
+                  </strong>
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  <strong>Para gestionar sus solicitudes:</strong> Para atender
+                  y gestionar sus solicitudes.
+                </li>
+              </p>
             </ul>
-            <p>
-              Podemos compartir su información personal en las siguientes
-              situaciones:
-            </p>
-            <ul>
-              <li>
-                <strong>Con Proveedores de Servicios:</strong> Podemos compartir
-                su información personal con Proveedores de Servicios para
-                monitorear y analizar el uso de nuestro Servicio, para
-                contactarlo.
-              </li>
-              <li>
-                <strong>Para transferencias comerciales:</strong> Podemos
-                compartir o transferir su información personal en relación con,
-                o durante negociaciones de, cualquier fusión, venta de activos
-                de la Compañía, financiamiento o adquisición de todo o parte de
-                nuestro negocio a otra compañía.
-              </li>
-              <li>
-                <strong>Con Afiliados:</strong> Podemos compartir su información
-                con nuestros afiliados, en cuyo caso requeriremos que esos
-                afiliados cumplan con esta Política de Privacidad. Los afiliados
-                incluyen nuestra empresa matriz y cualquier otra subsidiaria,
-                socios de empresa conjunta u otras empresas que controlamos o
-                que están bajo control común con nosotros.
-              </li>
-              <li>
-                <strong>Con socios comerciales:</strong> Podemos compartir su
-                información con nuestros socios comerciales para ofrecerle
-                ciertos productos, servicios o promociones.
-              </li>
-              <li>
-                <strong>Con otros usuarios:</strong> cuando comparta información
-                personal u interactúe de otra manera en las áreas públicas con
-                otros usuarios, esa información puede ser vista por todos los
-                usuarios y puede ser distribuida públicamente fuera de ellas.
-              </li>
-              <li>
-                <strong>Con Su consentimiento</strong>: Podemos divulgar su
-                información personal para cualquier otro propósito con Su
-                consentimiento.
-              </li>
-            </ul>
-            <h3>Retención de Sus Datos Personales</h3>
-            <p>
-              La Empresa retendrá Sus Datos Personales solo durante el tiempo
-              que sea necesario para los fines establecidos en esta Política de
-              Privacidad. Retendremos y utilizaremos Sus Datos Personales en la
-              medida necesaria para cumplir con nuestras obligaciones legales
-              (por ejemplo, si estamos obligados a retener sus datos para
-              cumplir con las leyes aplicables), resolver disputas y hacer
-              cumplir nuestros acuerdos y políticas legales.
-            </p>
-            <p>
-              La Empresa también retendrá Datos de Uso con fines de análisis
-              interno. Los Datos de Uso generalmente se retienen por un período
-              de tiempo más corto, excepto cuando estos datos se utilizan para
-              fortalecer la seguridad o mejorar la funcionalidad de nuestro
-              Servicio, o estamos legalmente obligados a retener estos datos por
-              períodos de tiempo más largos.
-            </p>
-            <h3>Transferencia de Sus Datos Personales</h3>
-            <p>
+            <h2 className="text-2xl font-bold mb-2">
+              Transferencia de Sus Datos Personales
+            </h2>
+            <p className="mb-4">
               Su información, incluidos los Datos Personales, se procesa en las
               oficinas operativas de la Empresa y en cualquier otro lugar donde
-              se encuentren las partes involucradas en el procesamiento.
-              Significa que esta información puede ser transferida a — y
-              mantenida en — computadoras ubicadas fuera de Su estado,
-              provincia, país o otra jurisdicción gubernamental donde las leyes
-              de protección de datos pueden diferir de las de Su jurisdicción.
+              se encuentren las partes involucradas en el procesamiento. Esto
+              significa que esta información puede transferirse a, y mantenido
+              en, computadoras ubicadas fuera de su estado, provincia, país u
+              otra jurisdicción gubernamental donde las leyes de protección de
+              datos pueden diferir de las de su jurisdicción.
             </p>
-            <p>
-              Su consentimiento a esta Política de Privacidad seguido de Su
-              envío de dicha información representa Su acuerdo con esa
+            <p className="mb-4">
+              Si se encuentra fuera de España y elige proporcionarnos
+              información, tenga en cuenta que transferimos los datos, incluidos
+              los Datos Personales, a España y los procesamos allí.
+            </p>
+            <p className="mb-4">
+              Su consentimiento a esta Política de Privacidad seguido de su
+              envío de dicha información representa su aceptación de esa
               transferencia.
             </p>
-            <p>
+            <p className="mb-4">
               La Empresa tomará todas las medidas razonablemente necesarias para
-              garantizar que Sus datos se traten de manera segura y de acuerdo
-              con esta Política de Privacidad y ninguna transferencia de Sus
-              Datos Personales se llevará a cabo a una organización o país a
-              menos que haya controles adecuados en su lugar, incluida la
-              seguridad de Sus datos y otra información personal.
+              garantizar que sus datos se traten de forma segura y de acuerdo
+              con esta Política de Privacidad y no se realizará ninguna
+              transferencia de sus Datos Personales a una organización o país a
+              menos que haya controles adecuados establecidos, incluida la
+              seguridad de sus datos y otra información personal.
             </p>
-            <h3>Borrar Sus Datos Personales</h3>
-            <p>
-              Usted tiene derecho a eliminar o solicitar que le ayudemos a
-              eliminar los Datos Personales que hemos recopilado sobre Usted.
-            </p>
-            <p>
-              Nuestro Servicio puede darle la capacidad de eliminar cierta
-              información sobre Usted desde dentro del Servicio.
-            </p>
-            <p>
-              Puede actualizar, modificar o eliminar Su información en cualquier
-              momento iniciando sesión en Su Cuenta, si tiene una, y visitando
-              la sección de configuración de la cuenta que le permite
-              administrar Su información personal. También puede contactarnos
-              para solicitar acceso, corrección o eliminación de cualquier
-              información personal que nos haya proporcionado.
-            </p>
-            <p>
-              Tenga en cuenta, sin embargo, que es posible que necesitemos
-              retener cierta información cuando tengamos una obligación legal o
-              base legal para hacerlo.
-            </p>
-            <h3>Divulgación de Sus Datos Personales</h3>
-            <h4>Transacciones Comerciales</h4>
-            <p>
+            <h2 className="text-2xl font-bold mb-2">
+              Divulgación de Sus Datos Personales
+            </h2>
+            <h3 className="text-xl mb-1 font-bold">
+              Transacciones Comerciales
+            </h3>
+            <p className="mb-4">
               Si la Empresa está involucrada en una fusión, adquisición o venta
-              de activos, Sus Datos Personales pueden ser transferidos.
-              Proporcionaremos aviso antes de que Sus Datos Personales sean
-              transferidos y se sometan a una Política de Privacidad diferente.
+              de activos, sus Datos Personales pueden ser transferidos. Le
+              avisaremos antes de que sus Datos Personales sean transferidos y
+              estén sujetos a una Política de Privacidad diferente.
             </p>
-            <h4>Aplicación de la ley</h4>
-            <p>
-              Bajo ciertas circunstancias, la Empresa puede estar obligada a
-              divulgar Sus Datos Personales si así lo requiere la ley o en
-              respuesta a solicitudes válidas de autoridades públicas (por
-              ejemplo, un tribunal o una agencia gubernamental).
+            <h3 className="text-xl mb-1 font-bold">Cumplimiento de la Ley</h3>
+            <p className="mb-4">
+              En determinadas circunstancias, es posible que se le exija a la
+              Empresa que revele sus Datos Personales si así lo requiere la ley
+              o en respuesta a solicitudes válidas de las autoridades públicas
+              (por ejemplo, un tribunal o una agencia gubernamental).
             </p>
-            <h4>Otros requisitos legales</h4>
-            <p>
-              La Empresa puede divulgar Sus Datos Personales de buena fe cuando
-              considere que dicha acción es necesaria para:
+            <h3 className="text-xl mb-1 font-bold">Otros Requisitos Legales</h3>
+            <p className="mb-4">
+              La Empresa puede divulgar sus Datos Personales en la creencia de
+              que dicha acción es necesaria para:
             </p>
-            <ul>
-              <li>Cumplir con una obligación legal</li>
-              <li>
-                Proteger y defender los derechos o propiedades de la Empresa
-              </li>
-              <li>
-                Prevenir o investigar posibles irregularidades en relación con
-                el Servicio
-              </li>
-              <li>
-                Proteger la seguridad personal de los usuarios del Servicio o
-                del público
-              </li>
-              <li>Protegerse contra la responsabilidad legal</li>
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>Cumplir con una obligación legal.</li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  Proteger y defender los derechos o bienes de la Empresa.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  Prevenir o investigar posibles irregularidades en relación con
+                  el Servicio.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>
+                  Proteger la seguridad personal de los usuarios del Servicio o
+                  del público.
+                </li>
+              </p>
+              <p className="mb-2">
+                <li>Protegerse contra la responsabilidad legal.</li>
+              </p>
             </ul>
-            <h3>Seguridad de Sus Datos Personales</h3>
-            <p>
-              La seguridad de Sus Datos Personales es importante para nosotros,
-              pero recuerde que ningún método de transmisión por Internet o
-              método de almacenamiento electrónico es 100% seguro. Si bien nos
-              esforzamos por utilizar medios comercialmente aceptables para
-              proteger Sus Datos Personales, no podemos garantizar su seguridad
-              absoluta.
+            <h2 className="text-2xl font-bold mb-2">
+              Seguridad de Sus Datos Personales
+            </h2>
+            <p className="mb-4">
+              La seguridad de sus Datos Personales es importante para nosotros,
+              pero recuerde que ningún método de transmisión a través de
+              Internet o método de almacenamiento electrónico es 100% seguro.
+              Aunque nos esforzamos por utilizar medios comercialmente
+              aceptables para proteger sus Datos Personales, no podemos
+              garantizar su seguridad absoluta.
             </p>
-            <h2><b>Privacidad de los Niños</b></h2>
-            <p>
-              Nuestro Servicio no está dirigido a nadie menor de 13 años. No
-              recopilamos conscientemente información de identificación personal
-              de nadie menor de 13 años. Si usted es padre, madre o tutor y sabe
-              que su hijo nos ha proporcionado Datos Personales, contáctenos. Si
-              nos damos cuenta de que hemos recopilado Datos Personales de
-              cualquier persona menor de 13 años sin verificar el consentimiento
-              de los padres, tomamos medidas para eliminar esa información de
-              nuestros servidores.
+            <h2 className="text-2xl font-bold mb-2">
+              Proveedores de Servicios
+            </h2>
+            <p className="mb-4">
+              Podemos emplear a empresas e individuos de terceros para facilitar
+              nuestro Servicio ("Proveedores de Servicios"), para proporcionar
+              el Servicio en nuestro nombre, para realizar servicios
+              relacionados con el Servicio o para ayudarnos a analizar cómo se
+              utiliza nuestro Servicio.
             </p>
-            <p>
-              Si necesitamos depender del consentimiento como base legal para el
-              procesamiento de su información y su país requiere el
-              consentimiento de un padre, podemos requerir el consentimiento de
-              sus padres antes de recopilar y usar esa información.
+            <p className="mb-4">
+              Estos terceros tienen acceso a sus Datos Personales solo para
+              realizar estas tareas en nuestro nombre y están obligados a no
+              divulgarlos ni utilizarlos para ningún otro fin.
             </p>
-            <h2><b>Enlaces a Otros Sitios Web</b></h2>
-            <p>
-              Nuestro Servicio puede contener enlaces a otros sitios web que no
-              son operados por nosotros. Si hace clic en un enlace de un
-              tercero, será dirigido al sitio web de ese tercero. Le
-              recomendamos encarecidamente que revise la Política de Privacidad
-              de cada sitio que visite.
+            <h3 className="text-xl mb-1 font-bold">Analítica</h3>
+            <p className="mb-4">
+              Podemos utilizar Proveedores de Servicios de terceros para
+              monitorear y analizar el uso de nuestro Servicio.
             </p>
-            <p>
+            <ul className="list-disc list-inside mb-4">
+              <p className="mb-2">
+                <li>
+                  <strong>Google Analytics</strong>
+                </li>
+              </p>
+            </ul>
+            <h2 className="text-2xl font-bold mb-2">Enlaces a Otros Sitios</h2>
+            <p className="mb-4">
+              Nuestro Servicio puede contener enlaces a otros sitios que no son
+              operados por nosotros. Si hace clic en un enlace de un tercero,
+              será dirigido al sitio de ese tercero. Le recomendamos
+              encarecidamente que revise la Política de Privacidad de cada sitio
+              que visite.
+            </p>
+            <p className="mb-4">
               No tenemos control ni asumimos responsabilidad alguna por el
               contenido, las políticas de privacidad o las prácticas de sitios o
               servicios de terceros.
             </p>
-            <h2><b>Cambios en esta Política de Privacidad</b></h2>
-            <p>
-              Podemos actualizar nuestra Política de Privacidad de vez en
-              cuando. Le notificaremos cualquier cambio publicando la nueva
-              Política de Privacidad en esta página.
+            <h2 className="text-2xl font-bold mb-2">Privacidad del Niño</h2>
+            <p className="mb-4">
+              Nuestro Servicio no está dirigido a menores de 18 años ("Niños").
             </p>
-            <p>
-              Le informaremos por correo electrónico y / o un aviso destacado
+            <p className="mb-4">
+              No recopilamos a sabiendas información personalmente identificable
+              de menores de 18 años. Si usted es padre/madre/tutor y sabe que su
+              hijo nos ha proporcionado Datos Personales, contáctenos. Si nos
+              damos cuenta de que hemos recopilado Datos Personales de menores
+              sin verificación del consentimiento parental, tomamos medidas para
+              eliminar esa información de nuestros servidores.
+            </p>
+            <p className="mb-4">
+              Si usted es menor de 18 años, por favor no nos proporcione sus
+              Datos Personales. Si se da cuenta de que su hijo nos ha
+              proporcionado Datos Personales, contáctenos. Si nos damos cuenta
+              de que hemos recopilado Datos Personales de menores sin
+              verificación del consentimiento parental, tomamos medidas para
+              eliminar esa información de nuestros servidores.
+            </p>
+            <h2 className="text-2xl font-bold mb-2">
+              Cambios a Esta Política de Privacidad
+            </h2>
+            <p className="mb-4">
+              Es posible que actualicemos nuestra Política de Privacidad
+              periódicamente. Le notificaremos cualquier cambio publicando la
+              nueva Política de Privacidad en esta página.
+            </p>
+            <p className="mb-4">
+              Le informaremos por correo electrónico y/o un aviso destacado
               sobre nuestro Servicio antes de que el cambio entre en vigencia y
-              actualizaremos la "fecha de vigencia" en la parte superior de esta
+              actualizaremos la "fecha efectiva" en la parte superior de esta
               Política de Privacidad.
             </p>
-            <p>
-              Se recomienda que revise esta Política de Privacidad
-              periódicamente para cualquier cambio. Los cambios en esta Política
-              de Privacidad entran en vigencia cuando se publican en esta
-              página.
+            <p className="mb-4">
+              Le recomendamos que revise esta Política de Privacidad
+              periódicamente para ver si se han realizado cambios. Los cambios a
+              esta Política de Privacidad son efectivos cuando se publican en
+              esta página.
             </p>
-            <h2><b>Contacte con Nosotros</b></h2>
-            <p>
-              Si tiene alguna pregunta sobre esta Política de Privacidad, puede
-              contactarnos:
+            <h2 className="text-2xl font-bold mb-2">Contáctenos</h2>
+            <p className="mb-4">
+              Si tiene alguna pregunta sobre esta Política de Privacidad,
+              contáctenos:
             </p>
-            <ul>
-              <li>Por correo electrónico: contact@codejourney.es</li>
+            <ul className="mb-4 list-disc list-inside">
+              <p className="mb-2">
+                <li>Por correo electrónico: info@startup.com</li>
+              </p>
             </ul>
           </div>
         </div>
