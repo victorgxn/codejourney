@@ -1,4 +1,5 @@
 import { Footer, TopMenu } from "@/components";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 export default function PaginaEmpresas() {
   return (
     <>
@@ -6,15 +7,24 @@ export default function PaginaEmpresas() {
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-            <h1
-              className="text-5xl font-bold tracking-tight bg-gradient-to-r
+            <div
+              className="text-6xl flex justify-center font-bold md:px-20 pb-10
+            text-gradient
+            bg-gradient-to-r
             from-blue-500
             to-green-300
             bg-clip-text
             text-transparent"
             >
-              CodeJourney orientado a empresas
-            </h1>
+              <TypewriterEffect
+                words={[
+                  { text: "CodeJourney " },
+                  { text: "orientado " },
+                  { text: "a " },
+                  { text: "empresas " },
+                ]}
+              />
+            </div>
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
               Acelera el crecimiento de tu empresa con nuestros cursos
               personalizados de programación, diseñados para mejorar las
