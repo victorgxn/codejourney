@@ -4,6 +4,7 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Toaster } from '@/components/ui/toaster';
 import Chat from '@/components/Chat/Chat';
+import Providers from '@/components/Chat/Providers';
 
 const font = Outfit({ subsets: ['latin'] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${font.className} bg-gray-50 min-h-screen`}>
-          {children}
-          <Toaster />
-          <Chat />
-        </body>
+        <Providers>
+          <body className={`${font.className} bg-gray-50 min-h-screen`}>
+            {children}
+            <Toaster />
+            <Chat />
+          </body>
+        </Providers>
       </html>
     </ClerkProvider>
   );
