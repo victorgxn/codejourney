@@ -56,12 +56,9 @@ export default function Dashboard() {
                 {/*Course grid*/}
                 <div>
                         {/* //TODO:Hacer aqui o tener en cuenta para lo del skeleton */}
-                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
                             { courses? <CourseList courses={courses}/>: null}
-                        </div>
                 </div>
             </div>
-
         </div>
     )
 
