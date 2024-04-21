@@ -30,7 +30,7 @@ export const Aside = () => {
             id: 3,
             name: 'Plan premium',
             icon: Shield,
-            path: '/upgrade',
+            path: '/plan-premium',
         },
         {
             id: 4,
