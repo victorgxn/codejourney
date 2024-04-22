@@ -17,7 +17,7 @@ export default function ProgramaEstudio() {
   return (
     <>
       <TopMenu />
-
+    
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8 ">
           <TypewriterEffect
