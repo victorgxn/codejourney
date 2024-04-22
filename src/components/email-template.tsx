@@ -65,7 +65,7 @@ const WelcomeEmail = ({
             </Text>
             <Section className="text-center mt-[32px] mb-[32px]">
               <Button
-                className="bg-blue-500 rounded font-semibold p-2 text-white text-lg"
+                className="bg-blue-500 rounded font-semibold p-2 text-white text-lg hover:bg-blue-200"
                 href={`${baseUrl}/dashboard`}
               >
                 Get Started
