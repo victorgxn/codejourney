@@ -1,11 +1,10 @@
 import {Metadata} from "next";
-
-const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
-
-import {request, gql} from "graphql-request";
+import {gql, request} from "graphql-request";
 import {notFound} from "next/navigation";
 import VideoPlayer from "@/app/(home)/(routes)/course-preview/[courseId]/_components/VideoPlayer";
 import CourseDetails from "@/app/(home)/(routes)/course-preview/[courseId]/_components/CourseDetails";
+
+const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
 
 interface Props {
     params: {
@@ -53,8 +52,7 @@ const getCourseById = async (id: string) => {
   }
 }`
 
-        const result = await request(MASTER_URL, query)
-        return result;
+        return await request(MASTER_URL, query);
     } catch (error) {
         notFound();
     }
@@ -66,13 +64,14 @@ export default async function CoursePreview({params}: Props) {
 
     try {
         const {courseList} = await getCourseById(params.courseId);
+        const courseDetails = []
 
         return (
             <div className='p-6 max-w-screen-xl mx-auto'>
                     <div className='grid grid-cols-1 md:grid-cols-3'>
                         <div className='col-span-2'>
                             <VideoPlayer video={courseList.chapter[0].video.url}/>
-                            <CourseDetails/>
+                            <CourseDetails courseDetails={courseList}/>
                         </div>
                         <div>
                             Enroll Option
