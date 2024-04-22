@@ -1,35 +1,78 @@
-'use client'
+import {Metadata} from "next";
 
+const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
+
+import {request, gql} from "graphql-request";
 import {useEffect} from "react";
-import {getCourseById} from "@/app/_microservices";
+import {notFound} from "next/navigation";
 
-interface Params {
-    course: {
-        Id: string;
+interface Props {
+    params: {
+        courseId: string
     };
 }
 
-interface CoursePreviewProps {
-    params: Params;
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+    try {
+        const {courseList} = await getCourseById(params.courseId)
+        return {
+            title: `${courseList.name}`,
+            description: `${courseList.description}`,
+        }
+    } catch (error) {
+        return {
+            title: 'Pagina del curso',
+            description: 'Pagina de la empresa codejourney'
+        }
+    }
 }
 
-export default function CoursePreview({params}: CoursePreviewProps) {
+{/*TODO: Mejorar escalabilidad creando una interface*/
+}
+const getCourseById = async (id: string) => {
 
-    useEffect(() => {
-        if (params && params.course) {
-            getCourse(params.course.Id);
+    try {
+        const query = gql`
+    query course {
+  courseList(where: {id: "${id}"}) {
+    chapter {
+      ... on Chapter {
+        id
+        name
+        video {
+          url
         }
-    }, [])
+      }
+    }
+    name
+    id
+    description
+    totalChapters
+  }
+}`
 
-    const getCourse = (Id: string) => {
-        getCourseById(Id).then(resp => {
-            console.log(resp)
-        })
+        const result = await request(MASTER_URL, query)
+        return result;
+    } catch (error) {
+        notFound();
     }
 
-    return (
-           <div>
-               Course preview
-           </div>
-    );
+}
+
+
+export default async function CoursePreview({params}: Props) {
+
+    try {
+        const {courseList} = await getCourseById(params.courseId)
+        console.log(courseList)
+        return (
+            <div>
+                {courseList.name}
+                {courseList.description}
+            </div>
+        );
+    } catch (error) {
+        notFound();
+    }
 }

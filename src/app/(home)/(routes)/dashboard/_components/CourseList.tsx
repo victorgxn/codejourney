@@ -31,6 +31,7 @@ export const CourseList = ({courses}: CourseListProps) => {
                        width={1000}
                        height={500}
                        className='rounded-lg'
+                       priority={false}
                 />
                 <div className='mt-1.5'>
                     <h2 className='text-[18px] md:text-[16] font-medium '>{course.name}</h2>
