@@ -1,4 +1,3 @@
-"use client";
 export default function Page() {
   return (
     <section className="bg-gray-50 w-full flex items-center justify-center min-h-[calc(100vh-80px)]">

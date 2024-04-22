@@ -1,4 +1,3 @@
-"use client";
 export default function Page() {
   return (
     <section className="bg-gray-50 w-full flex items-center justify-center min-h-[calc(100vh-80px)]">
@@ -17,15 +16,6 @@ export default function Page() {
               Utilizamos sus datos personales para proporcionar y mejorar el
               Servicio. Al utilizar el Servicio, usted acepta la recopilación y
               el uso de información de acuerdo con esta Política de Privacidad.
-              Esta Política de Privacidad ha sido creada con la ayuda del{" "}
-              <a
-                href="https://www.termsfeed.com/privacy-policy-generator/"
-                target="_blank"
-                className="text-blue-500 hover:underline"
-              >
-                Generador de Política de Privacidad
-              </a>
-              .
             </p>
             <h2 className="text-2xl font-bold mb-2">
               Interpretación y Definiciones
@@ -53,17 +43,18 @@ export default function Page() {
                 <li>
                   <strong>Afiliado</strong> significa una entidad que controla,
                   está controlada por o está bajo control común con una parte,
-                  donde "control" significa propiedad del 50% o más de las
-                  acciones, participaciones de capital u otros valores con
+                  donde &quot;control&quot; significa propiedad del 50% o más de
+                  las acciones, participaciones de capital u otros valores con
                   derecho a voto para la elección de directores u otra autoridad
                   administrativa.
                 </li>
               </p>
               <p className="mb-2">
                 <li>
-                  <strong>Empresa</strong> (referida como "la Empresa",
-                  "Nosotros", "Nuestro" o "Nuestro" en este Acuerdo) se refiere
-                  a CodeJourney, bocatas Juanma 30.
+                  <strong>Empresa</strong> (referida como &quot;la
+                  Empresa&quot;, &quot;Nosotros&quot;, &quot;Nuestro&quot; o
+                  &quot;Nuestro&quot; en este Acuerdo) se refiere a CodeJourney,
+                  bocatas Juanma 30.
                 </li>
               </p>
               <p className="mb-2">
@@ -120,7 +111,7 @@ export default function Page() {
               <p className="mb-2">
                 <li>
                   <strong>Sitio Web</strong> se refiere a CodeJourney, accesible
-                  desde{" "}
+                  desde{' '}
                   <a
                     href="codejourney.es"
                     rel="external nofollow noopener"
@@ -252,7 +243,7 @@ export default function Page() {
                 <li>
                   <strong>
                     Para proporcionar y mantener nuestro Servicio,
-                  </strong>{" "}
+                  </strong>{' '}
                   incluida la supervisión del uso de nuestro Servicio.
                 </li>
               </p>
@@ -275,7 +266,7 @@ export default function Page() {
               </p>
               <p className="mb-2">
                 <li>
-                  <strong>Para el seguimiento del uso del Servicio:</strong>{" "}
+                  <strong>Para el seguimiento del uso del Servicio:</strong>{' '}
                   para supervisar el uso de nuestro Servicio y para realizar
                   análisis.
                 </li>
@@ -405,10 +396,10 @@ export default function Page() {
             </h2>
             <p className="mb-4">
               Podemos emplear a empresas e individuos de terceros para facilitar
-              nuestro Servicio ("Proveedores de Servicios"), para proporcionar
-              el Servicio en nuestro nombre, para realizar servicios
-              relacionados con el Servicio o para ayudarnos a analizar cómo se
-              utiliza nuestro Servicio.
+              nuestro Servicio (&quot;Proveedores de Servicios&quot;), para
+              proporcionar el Servicio en nuestro nombre, para realizar
+              servicios relacionados con el Servicio o para ayudarnos a analizar
+              cómo se utiliza nuestro Servicio.
             </p>
             <p className="mb-4">
               Estos terceros tienen acceso a sus Datos Personales solo para
@@ -442,7 +433,8 @@ export default function Page() {
             </p>
             <h2 className="text-2xl font-bold mb-2">Privacidad del Niño</h2>
             <p className="mb-4">
-              Nuestro Servicio no está dirigido a menores de 18 años ("Niños").
+              Nuestro Servicio no está dirigido a menores de 18 años
+              (&quot;Niños&quot;).
             </p>
             <p className="mb-4">
               No recopilamos a sabiendas información personalmente identificable
@@ -471,8 +463,8 @@ export default function Page() {
             <p className="mb-4">
               Le informaremos por correo electrónico y/o un aviso destacado
               sobre nuestro Servicio antes de que el cambio entre en vigencia y
-              actualizaremos la "fecha efectiva" en la parte superior de esta
-              Política de Privacidad.
+              actualizaremos la &quot;fecha efectiva&quot; en la parte superior
+              de esta Política de Privacidad.
             </p>
             <p className="mb-4">
               Le recomendamos que revise esta Política de Privacidad

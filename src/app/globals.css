@@ -73,6 +73,11 @@
   height: 26px;
   stroke-width: 1.5px;
 }
+.chat-icon {
+  width: 36px;
+  height: 36px;
+  color: black;
+}
 @layer base {
   * {
     @apply border-border;
