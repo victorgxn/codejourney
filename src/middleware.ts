@@ -3,17 +3,15 @@ import { NextResponse, NextRequest, NextFetchEvent } from 'next/server';
 import { rateLimiter } from '@/lib/rate-limiter';
 
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
-  // Run the authMiddleware
+
   const authResult = await authMiddleware({
     publicRoutes: ['/'],
   })(req, ev);
 
-  // If the authMiddleware returned a response, return it immediately
   if (authResult) {
     return authResult;
   }
 
-  // Otherwise, continue with your custom middleware logic
   const ip = req.ip ?? '127.0.0.1';
 
   try {
