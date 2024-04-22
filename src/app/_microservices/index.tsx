@@ -22,27 +22,3 @@ export const getCourseList = async () => {
     return data;
 }
 
-export const getCourseById = async (id) => {
-    const query = gql`
-    query course {
-        courseList(where: {id: "` + id + `"}) {
-            chapter {
-                ... on Chapter {
-                    id
-                    name
-                    video {
-                        url
-                    }
-        }
-    }
-        name
-        id
-        description
-        totalChapters
-    }
-    }`
-
-    const result = await request(MASTER_URL, query)
-    return result;
-
-}

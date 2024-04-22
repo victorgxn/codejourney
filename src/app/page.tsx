@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {Carousel, FirstSection, Footer, TopMenu} from "@/components";
 export default function Home() {
   return (

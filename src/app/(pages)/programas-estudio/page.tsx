@@ -13,6 +13,11 @@ import CursoReact from "@/components/courses/CursoReact";
 import CursoVue from "@/components/courses/CursoVue";
 import CursoNode from "@/components/courses/CursoNode";
 
+export const metadata = {
+  title: 'Programas estudio | Codejourney',
+  description: 'Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. '
+}
+
 export default function ProgramaEstudio() {
   return (
     <>

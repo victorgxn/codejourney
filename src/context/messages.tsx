@@ -2,10 +2,11 @@ import { createContext, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { Message } from '@/lib/validators/message'
 
+
 const defaultValue = [
   {
     id: nanoid(),
-    text: 'Hello, how can I help you?',
+    text: 'Buenas, ¿En que podemos ayudarte?',
     isUserMessage: false,
   },
 ]
