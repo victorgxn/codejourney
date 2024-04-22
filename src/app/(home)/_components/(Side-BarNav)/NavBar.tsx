@@ -69,7 +69,7 @@ export const NavBar = () => {
           </Sheet>
         </div>
         <div className="items-center gap-x-2 hidden lg:flex hover:opacity-75 transition-opacity">
-          <Link href="/" className="flex ms-2 md:me-24 items-center">
+          <Link href="/dashboard" className="flex ms-2 md:me-24 items-center">
             <Image
               src="/images/logo/codejourneyLogo.png"
               className="h-12 w-auto"

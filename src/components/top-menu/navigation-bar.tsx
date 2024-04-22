@@ -77,7 +77,7 @@ export const NavigationBar = () => {
               className="
               font-medium"
             >
-              Preguntas y respuestas
+              FAQ
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

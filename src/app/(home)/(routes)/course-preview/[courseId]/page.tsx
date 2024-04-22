@@ -3,14 +3,26 @@
 import {useEffect} from "react";
 import {getCourseById} from "@/app/_microservices";
 
-export default function CoursePreview({params}) {
+interface Params {
+    course: {
+        Id: string;
+    };
+}
+
+interface CoursePreviewProps {
+    params: Params;
+}
+
+export default function CoursePreview({params}: CoursePreviewProps) {
 
     useEffect(() => {
-        getCourse(params.course.Id);
+        if (params && params.course) {
+            getCourse(params.course.Id);
+        }
     }, [])
 
-    const getCourse = (Id: any) => {
-        getCourseById(params.course.Id).then(resp => {
+    const getCourse = (Id: string) => {
+        getCourseById(Id).then(resp => {
             console.log(resp)
         })
     }
