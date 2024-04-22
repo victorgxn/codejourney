@@ -5,6 +5,7 @@ const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PU
 import {request, gql} from "graphql-request";
 import {notFound} from "next/navigation";
 import VideoPlayer from "@/app/(home)/(routes)/course-preview/[courseId]/_components/VideoPlayer";
+import CourseDetails from "@/app/(home)/(routes)/course-preview/[courseId]/_components/CourseDetails";
 
 interface Props {
     params: {
@@ -67,15 +68,16 @@ export default async function CoursePreview({params}: Props) {
         const {courseList} = await getCourseById(params.courseId);
 
         return (
-            <div className='border'>
-                <div className='grid grid-cols-1 md:grid-cols-3'>
-                    <div className='col-span-2'>
-                        <VideoPlayer video={courseList.chapter[0].video.url}/>
+            <div className='p-6 max-w-screen-xl mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-3'>
+                        <div className='col-span-2'>
+                            <VideoPlayer video={courseList.chapter[0].video.url}/>
+                            <CourseDetails/>
+                        </div>
+                        <div>
+                            Enroll Option
+                        </div>
                     </div>
-                    <div>
-                        Enroll Option
-                    </div>
-                </div>
             </div>
         );
     } catch (error) {
