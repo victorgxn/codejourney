@@ -1,5 +1,13 @@
 import { Footer, TopMenu } from "@/components";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import type {Metadata} from "next";
+
+export const metadata:Metadata = {
+  title: 'Codejourney para empresas',
+  description: 'Codejourney para Empresas nace de la necesidad del sector empresarial de impulsar el crecimiento de sus colaboradores, al motivarlos a desarrollar nuevas habilidades y competencias a través del aprendizaje, con una oportunidad y herramienta de aprendizaje para mantenerse actualizados en las cambiantes tecnologías. '
+}
+
+
 export default function PaginaEmpresas() {
   return (
     <>

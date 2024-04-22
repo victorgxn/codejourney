@@ -7,6 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+
+export const metadata = {
+  title: 'FAQ | Codejourney',
+  description: 'Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. '
+}
+
 export default function PaginaEmpresas() {
   return (
     <>
