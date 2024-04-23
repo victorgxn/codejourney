@@ -15,6 +15,7 @@ interface Props {
     };
 }
 
+{/*Metadata dinamica para los cursos*/}
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     try {
         // @ts-ignore
@@ -31,7 +32,8 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-const getCourseById = async (id: string, userEmail: string) => {
+{/*Query para conseguir el curso por el id*/}
+const getCourseById = async (id: string) => {
     try {
         const query = gql`
     query course {
@@ -51,7 +53,21 @@ const getCourseById = async (id: string, userEmail: string) => {
     totalChapters
     tag
   }
-   userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
+}`
+        return await request(MASTER_URL, query);
+    } catch (error) {
+        notFound();
+    }
+
+}
+
+
+{/*Query para saber si el usuario esta inscrito en el curso*/}
+const isUserEnrollCourse = async (id: string, userEmail: string) => {
+    try {
+        const query = gql`
+    query course {
+    userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
     courseId
     userEmail
     completedChapter
@@ -68,13 +84,19 @@ export default async function CoursePreview({params}: Props) {
 
     try {
 
+
         const { userId } = auth();
 
-        const userResponse = await clerkClient.users.getUser(userId);
-
+        const userResponse = await clerkClient.users.getUser(userId as string);
 
         // @ts-ignore
-        const {courseList} = await getCourseById(params.courseId, userResponse?.emailAddresses[0]?.emailAddress );
+        const {courseList} = await getCourseById(params.courseId);
+
+        // @ts-ignore
+        const {userEnrollCourses} = await isUserEnrollCourse(params.courseId, userResponse.emailAddresses[0].emailAddress);
+
+        //console.log(courseList);
+        //console.log(userEnrollCourses);
 
         return (
             <div className='p-6 max-w-screen-xl mx-auto'>
