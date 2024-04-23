@@ -51,7 +51,7 @@ const getCourseById = async (id: string, userEmail: string) => {
     totalChapters
     tag
   }
-   userEnrollCourses(where: {courseId: "${id}, userEmail: "${userEmail}}){
+   userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
     courseId
     userEmail
     completedChapter

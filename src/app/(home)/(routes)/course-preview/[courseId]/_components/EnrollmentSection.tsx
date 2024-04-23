@@ -1,7 +1,7 @@
 export default function EnrollmentSection({ courseDetails }: any) {
     return (
         <div>
-            {!courseDetails.free ? (
+            {courseDetails.free ? (
                 <div className='mt-5 border rounded-lg p-2 text-center'>
                     <p className='text-gray-500'>Aprende, y construye este mini-curso</p>
                     <p className='text-gray-500'>¡Pero espera, eso no es todo! Te  invitamos a explorar nuestras opciones premium donde obtendras una variedad de cursos diseñados para llevar tus habilidades de desarrollo al siguiente nivel.</p>
