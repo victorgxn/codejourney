@@ -1,4 +1,3 @@
-import {PageNotFound} from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 

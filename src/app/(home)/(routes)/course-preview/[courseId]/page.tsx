@@ -5,6 +5,7 @@ import VideoPlayer from "@/app/(home)/(routes)/course-preview/[courseId]/_compon
 import CourseDetails from "@/app/(home)/(routes)/course-preview/[courseId]/_components/CourseDetails";
 import ButtonsSection from "@/app/(home)/(routes)/course-preview/[courseId]/_components/ButtonsSection";
 import EnrollmentSection from "@/app/(home)/(routes)/course-preview/[courseId]/_components/EnrollmentSection";
+import {auth, clerkClient} from "@clerk/nextjs";
 
 const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
 
@@ -13,7 +14,6 @@ interface Props {
         courseId: string
     };
 }
-
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     try {
@@ -31,10 +31,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-{/*TODO: Mejorar escalabilidad creando una interface*/
-}
-const getCourseById = async (id: string) => {
-
+const getCourseById = async (id: string, userEmail: string) => {
     try {
         const query = gql`
     query course {
@@ -54,8 +51,12 @@ const getCourseById = async (id: string) => {
     totalChapters
     tag
   }
+   userEnrollCourses(where: {courseId: "${id}, userEmail: "${userEmail}}){
+    courseId
+    userEmail
+    completedChapter
+  }
 }`
-
         return await request(MASTER_URL, query);
     } catch (error) {
         notFound();
@@ -63,13 +64,17 @@ const getCourseById = async (id: string) => {
 
 }
 
-
 export default async function CoursePreview({params}: Props) {
 
     try {
-        {/*TODO: Crearle interfaz en cuanto no me de pereza*/}
+
+        const { userId } = auth();
+
+        const userResponse = await clerkClient.users.getUser(userId);
+
+
         // @ts-ignore
-        const {courseList} = await getCourseById(params.courseId);
+        const {courseList} = await getCourseById(params.courseId, userResponse?.emailAddresses[0]?.emailAddress );
 
         return (
             <div className='p-6 max-w-screen-xl mx-auto'>
