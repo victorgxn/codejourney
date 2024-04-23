@@ -32,7 +32,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-{/*Query para conseguir el curso por el id*/}
+{/*Query para conseguir el curso por él, id*/}
 const getCourseById = async (id: string) => {
     try {
         const query = gql`
@@ -62,7 +62,7 @@ const getCourseById = async (id: string) => {
 }
 
 
-{/*Query para saber si el usuario esta inscrito en el curso*/}
+{/*Query para saber si el usuario está inscrito en el curso*/}
 const isUserEnrollCourse = async (id: string, userEmail: string) => {
     try {
         const query = gql`
@@ -105,7 +105,6 @@ export default async function CoursePreview({params}: Props) {
                         <VideoPlayer video={courseList.chapter[0].video.url}/>
                         <CourseDetails courseDetails={courseList}/>
                     </div>
-                    {/*TODO: Arreglar responsive*/}
                     <div className='mt-5 md:mt-0'>
                         <ButtonsSection/>
                         <EnrollmentSection courseDetails={courseList}/>
