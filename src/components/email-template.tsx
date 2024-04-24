@@ -1,81 +1,115 @@
 import {
   Body,
   Button,
-  Column,
   Container,
   Head,
-  Heading,
   Hr,
   Html,
   Img,
   Link,
-  Preview,
-  Row,
   Section,
   Text,
   Tailwind,
 } from '@react-email/components';
-import * as React from 'react';
 
-const WelcomeEmail = ({
+const baseUrl = process.env.URL ? process.env.URL : '';
+
+interface WelcomeEmailProps {
+  username?: string;
+  company?: string;
+}
+
+export const WelcomeEmail = ({
   username,
   company = 'Codejourney',
 }: WelcomeEmailProps) => {
-  const previewText = `Welcome to ${company}, ${username}!`;
-
   return (
     <Html>
       <Head />
-      <Preview>{previewText}</Preview>
       <Tailwind>
-        <Body className="bg-dark my-auto mx-auto font-sans">
-          <Container className="my-10 mx-auto p-5 w-[465px]">
-            <Section className="mt-8">
+        <Body className="bg-slate-100 font-serif">
+          <Container className="bg-white">
+            <Section>
               <Link
                 href={baseUrl}
-                className="flex ms-2 items-center border-b-2 justify-center w-full"
+                className="flex items-center justify-center w-full"
               >
                 <Img
                   src={`${baseUrl}/images/logo/codejourneyLogo.png`}
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                   alt="Codejourney logo"
                 />
                 <Text
-                  className="self-center text-xl font-semibold whitespace-nowrap text-gradient
-                        bg-gradient-to-r
-                         from-blue-500
-                         to-green-300
-                        bg-clip-text
-                        "
+                  style={title}
+                  className="self-center text-2xl font-semibold whitespace-nowrap"
                 >
                   Codejourney
                 </Text>
               </Link>
+              <Hr className="my-5" />
+              <Section className="mx-3">
+                <Text>Hola {username},</Text>
+                <Text>Gracias por suscribirte en {company}.</Text>
+                <Text>
+                  Recibiras noticias de los todos nuestros productos. Puedes
+                  mirar los cursos aquí:
+                </Text>
+                <Container className="w-full flex items-center justify-center">
+                  <Button
+                    style={button}
+                    className="w-80 text-lg bg-blue-500 rounded-md text-center hover:bg-blue-400 font-semibold text-white"
+                    href={`${baseUrl}/dashboard`}
+                  >
+                    Dashboard
+                  </Button>
+                </Container>
+              </Section>
+              <Hr className="my-5" />
+              <Section className="mx-3">
+                <Text>
+                  Si tiene alguna pregunta, no dude en{' '}
+                  <Link href={`${baseUrl}/contacto`}>contactarnos</Link> y le
+                  responderemos lo antes posible.
+                </Text>
+                <Text>
+                  También puede encontrar la mayoría de respuestas a sus
+                  preguntas en nuestro{' '}
+                  <Link href={`${baseUrl}/preguntas-y-respuestas`}>FAQ</Link>.
+                </Text>
+                <Text>
+                  — El equipo de{' '}
+                  <span className="font-semibold">{company}</span>
+                </Text>
+              </Section>
+              <Hr className="my-5" />
+              <Section className="text-center">
+                <Text>{company} | Bocatas Juanma 30 | Malaga, Spain 69069</Text>
+              </Section>
             </Section>
-            <Heading className="text-2xl font-normal text-center p-0 my-8 mx-0">
-              Welcome to <strong>{company}</strong>, {username}!
-            </Heading>
-            <Text className="text-sm">Hello {username},</Text>
-            <Text className="text-sm">
-              We&apos;re excited to have you onboard at{' '}
-              <strong>{company}</strong>. We hope you enjoy your journey with
-              us. If you have any questions or need assistance, feel free to
-              reach out.
-            </Text>
-            <Section className="text-center mt-[32px] mb-[32px]">
-              <Button
-                className="bg-blue-500 rounded font-semibold p-2 text-white text-lg hover:bg-blue-200"
-                href={`${baseUrl}/dashboard`}
-              >
-                Get Started
-              </Button>
-            </Section>
-            <Text className="text-sm">
-              Cheers,
-              <br />
-              The {company} Team
-            </Text>
+          </Container>
+          <Container className="flex flex-wrap w-full justify-around items-center">
+            <Link href={baseUrl} className="text-xs text-center m-2">
+              Cancelar Suscripción
+            </Link>
+            <Link
+              href={`${baseUrl}/privacidad-generico`}
+              className="text-xs text-center m-2"
+            >
+              Política de privacidad
+            </Link>
+            <Link
+              href={`${baseUrl}/terminos-y-condiciones`}
+              className="text-xs text-center m-2"
+            >
+              Terminos y servicios
+            </Link>
+            <Link
+              href={`${baseUrl}/contacto`}
+              className="text-xs text-center m-2"
+            >
+              Contacto
+            </Link>
           </Container>
         </Body>
       </Tailwind>
@@ -83,11 +117,15 @@ const WelcomeEmail = ({
   );
 };
 
-interface WelcomeEmailProps {
-  username?: string;
-  company?: string;
-}
+const title = {
+  fontSize: '24px',
+  fontWeight: 'bold',
+  background: 'linear-gradient(to right, #3b82f6, #6ee7b7)',
+  webkitBackgroundClip: 'text',
+  backgroundClip: 'text',
+  color: 'transparent',
+};
 
-const baseUrl = process.env.URL ? process.env.URL : '';
-
-export default WelcomeEmail;
+const button = {
+  padding: '5px 0',
+};
