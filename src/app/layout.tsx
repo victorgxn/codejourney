@@ -21,8 +21,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
           <body className={`${font.className} bg-gray-50 min-h-screen`}>
+        
             {children}
             <Toaster />
+          
           </body>
       </html>
     </ClerkProvider>

@@ -1,17 +1,15 @@
-import { Footer, TopMenu } from "@/components";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 
-export const metadata:Metadata = {
-  title: 'Codejourney para empresas',
-  description: 'Codejourney para Empresas nace de la necesidad del sector empresarial de impulsar el crecimiento de sus colaboradores, al motivarlos a desarrollar nuevas habilidades y competencias a través del aprendizaje, con una oportunidad y herramienta de aprendizaje para mantenerse actualizados en las cambiantes tecnologías. '
-}
-
+export const metadata: Metadata = {
+  title: "Codejourney para empresas",
+  description:
+    "Codejourney para Empresas nace de la necesidad del sector empresarial de impulsar el crecimiento de sus colaboradores, al motivarlos a desarrollar nuevas habilidades y competencias a través del aprendizaje, con una oportunidad y herramienta de aprendizaje para mantenerse actualizados en las cambiantes tecnologías. ",
+};
 
 export default function PaginaEmpresas() {
   return (
     <>
-      <TopMenu />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
@@ -87,7 +85,7 @@ export default function PaginaEmpresas() {
         </div>
       </section>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap items-center justify-center">
+        <div className="container px-5 py-10 mx-auto flex flex-wrap items-center justify-center">
           <div className="lg:w-1/2 lg:pr-10 lg:py-6 mb-6 lg:mb-0">
             <video
               className="rounded-xl"
@@ -185,7 +183,7 @@ export default function PaginaEmpresas() {
         </div>
       </section>
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-24 mx-auto border rounded-sm shadow-sm">
           <div className="flex flex-col text-center w-full mb-12">
             <h2 className="text-xs text-primary-500 tracking-widest font-medium title-font mb-1">
               CONTACTO
@@ -272,7 +270,6 @@ export default function PaginaEmpresas() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

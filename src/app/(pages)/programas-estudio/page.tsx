@@ -1,4 +1,3 @@
-import { Footer, TopMenu } from "@/components";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,19 +13,18 @@ import CursoVue from "@/components/courses/CursoVue";
 import CursoNode from "@/components/courses/CursoNode";
 
 export const metadata = {
-  title: 'Programas estudio | Codejourney',
-  description: 'Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. '
-}
+  title: "Programas estudio | Codejourney",
+  description:
+    "Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. ",
+};
 
 export default function ProgramaEstudio() {
   return (
     <>
-      <TopMenu />
-    
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8 ">
           <TypewriterEffect
-              words={[
+            words={[
               { text: "Programas " },
               { text: "de " },
               { text: "Estudios " },
@@ -58,16 +56,21 @@ export default function ProgramaEstudio() {
                 icon={faAngular}
                 size="2x"
                 className="w-10 h-10"
-                style={{ color: 'red' }} 
+                style={{ color: "red" }}
               />
               <p>Angular</p>
             </div>
             <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon icon={faReact} size="2x" className="w-10 h-10" style={{ color: 'lightblue' }} />
+              <FontAwesomeIcon
+                icon={faReact}
+                size="2x"
+                className="w-10 h-10"
+                style={{ color: "lightblue" }}
+              />
               <p>React</p>
             </div>
             <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon icon={faVuejs} size="2x" className="w-10 h-10"  />
+              <FontAwesomeIcon icon={faVuejs} size="2x" className="w-10 h-10" />
               <p>Vue.js</p>
             </div>
             <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
@@ -75,7 +78,7 @@ export default function ProgramaEstudio() {
                 icon={faNodeJs}
                 size="2x"
                 className="w-10 h-10"
-                style={{ color: 'green' }} 
+                style={{ color: "green" }}
               />
               <p>Node.js</p>
             </div>
@@ -110,8 +113,6 @@ export default function ProgramaEstudio() {
         <CursoVue></CursoVue>
         <CursoNode></CursoNode>
       </div>
-
-      <Footer />
     </>
   );
 }
