@@ -1,20 +1,17 @@
-import { WelcomeEmail } from '@/components/email-template';
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { email, userFirstName } = await req.json();
+  const { email, subject, message } = await req.json();
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Codejourney <codejourney@codejourney.es>',
-      to: [email],
-      subject: `Bienvenido, ${userFirstName}!`,
-      react: WelcomeEmail({
-        username: userFirstName,
-        company: 'Codejourney',
-      }),
+      from: email,
+      to: ['codejourneytech@gmail.com'],
+      subject: subject,
+      text: message
     });
     if (error) {
       return NextResponse.json({ error: error }, { status: 400 });

@@ -42,7 +42,7 @@ const FormSchema = z.object({
   subject: z.string({
     required_error: 'Por favor, indique el asunto de su mensaje.',
   }),
-  mensaje: z
+  message: z
     .string({
       required_error: 'Por favor, deje su mensaje.',
     })
@@ -76,7 +76,7 @@ export function ContactForm() {
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
       setLoading(true);
-      const response = await fetch('../../../api/send', {
+      const response = await fetch('@/app/api/sendContact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,39 +84,34 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
-        toast({
-          title: 'Correo enviado con éxito',
-          description: (
-            <p>
-              Correo enviado a{' '}
-              <Link
-                href={`mailto:${data.email}`}
-                className="bold text-blue-500"
-              >
-                {data.email}
-              </Link>
-              . Revise su bandeja de entrada.
-            </p>
-          ),
-        });
+        showToast(
+          'Correo enviado con éxito',
+          'Su correo ha sido enviado con éxito! Lo revisaremos cuanto antes.'
+        );
       } else {
-        toast({
-          title: 'Algo ha salido mal',
-          description:
-            'Ha habido un error al enviar el correo. Inténtelo de nuevo.',
-          variant: 'destructive',
-        });
+        showToast(
+          'Algo ha salido mal',
+          'Ha habido un error al enviar el correo. Inténtelo de nuevo.',
+          'destructive'
+        );
       }
     } catch (error: any) {
-      toast({
-        title: 'Algo ha salido mal',
-        description:
-          'Ha habido un error al enviar el correo. Inténtelo de nuevo.',
-        variant: 'destructive',
-      });
+      showToast(
+        'Algo ha salido mal',
+        'Ha habido un error al enviar el correo. Inténtelo de nuevo.',
+        'destructive'
+      );
     } finally {
       setLoading(false);
     }
+  };
+
+  const showToast = (title: string, description: string, variant?: any) => {
+    toast({
+      title: title,
+      description: description,
+      variant: variant ?? undefined,
+    });
   };
 
   return (
@@ -144,6 +139,7 @@ export function ContactForm() {
                   ))}
                 </SelectContent>
               </Select>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -170,7 +166,7 @@ export function ContactForm() {
         <div>
           <FormField
             control={form.control}
-            name="mensaje"
+            name="message"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">

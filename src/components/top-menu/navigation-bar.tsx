@@ -72,7 +72,7 @@ export const NavigationBar = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/preguntasyrespuestas" legacyBehavior passHref>
+          <Link href="/preguntas-y-respuestas" legacyBehavior passHref>
             <NavigationMenuLink
               className="
               font-medium"
