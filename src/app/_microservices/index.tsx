@@ -23,7 +23,7 @@ export const getCourseList = async () => {
 }
 
 {/*Crear el draft para que un usuario pueda inscribirse a un curso*/}
-export const EnrollCourse = async (courseId: string, userEMail:string) => {
+export const EnrollCourse = async (courseId: string, userEMail: string | undefined) => {
     const mutationQuery = gql`
     mutation EnrollCourse {
         createUserEnrollCourse(data: {userEmail: "${userEMail}", courseId: "${courseId}"}) {
@@ -34,12 +34,12 @@ export const EnrollCourse = async (courseId: string, userEMail:string) => {
     return await request(MASTER_URL, mutationQuery);
 }
 
-
+{/*//TODO : Pensar mejor que estado devolver cuando se haga la peticion, facilidades futuras*/}
 {/*Publicar el draft creado anteriormente*/}
-export const PublishCourse = async (id : string) => {
+export const PublishCourse = async (idDraft : string) => {
     const mutationQuery = gql`
     mutation EnrollCoursePublish {
-        publishUserEnrollCourse(where: {id: "${id}"}) {
+        publishUserEnrollCourse(where: {id: "${idDraft}"}) {
             id
         }
     }`
