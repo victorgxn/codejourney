@@ -43,9 +43,11 @@ const Chat: FC = () => {
               {isOpen ? (
                 <X className="chat-icon" />
               ) : (
-                <span className="bg-gradient-to-r
+                <span
+                  className="bg-gradient-to-r
                 from-blue-400
-                to-green-300 p-3 rounded-full">
+                to-green-300 p-3 rounded-full animate-bounce"
+                >
                   <MessageCircleQuestion fill="white" className="chat-icon " />
                 </span>
               )}
