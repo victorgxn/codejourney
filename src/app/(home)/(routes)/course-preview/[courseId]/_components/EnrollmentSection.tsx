@@ -1,5 +1,28 @@
+'use client'
+import {EnrollCourse, PublishCourse} from "@/app/_microservices";
+import {useUser} from "@clerk/nextjs";
 
 export default function EnrollmentSection({courseDetails}: any) {
+
+    const {user} = useUser();
+
+    const EnrollCourseFunction = async () => {
+        try {
+            const response = await EnrollCourse(courseDetails.id, user.primaryEmailAddress.emailAddress)
+                .then(async response => {
+                    console.log("EnrollCourseResponse -->", response);
+                    if (response) {
+                        await PublishCourse(response.createUserEnrollCourse.id)
+                            .then(result => {
+                                console.log(result);
+                            })
+                    }
+                });
+
+        } catch (error) {
+            console.error("Error enrolling in course:", error);
+        }
+    }
 
     return (
         <div>
@@ -11,7 +34,7 @@ export default function EnrollmentSection({courseDetails}: any) {
                         desarrollo al siguiente nivel.</p>
                     <button
                         className='p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700'
-                        onClick={() => enrollCourse()}> Inscribirse GRATIS
+                        onClick={() => EnrollCourseFunction()}> Inscribirse GRATIS
                     </button>
                 </div>
             ) : (

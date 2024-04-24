@@ -15,7 +15,7 @@ interface Props {
     };
 }
 
-{/*Metadata dinamica para los cursos*/}
+{/*Metadata dynamic para los cursos*/}
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     try {
         // @ts-ignore
@@ -32,7 +32,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-{/*Query para conseguir el curso por él, id*/}
+{/*Query para obtener la información de un curso por él, id*/}
 const getCourseById = async (id: string) => {
     try {
         const query = gql`
@@ -49,6 +49,7 @@ const getCourseById = async (id: string) => {
     }
     name
     id
+    free
     description
     totalChapters
     tag
