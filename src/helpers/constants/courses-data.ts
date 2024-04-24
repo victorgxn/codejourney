@@ -1,4 +1,4 @@
-export const bookData = `
+export const coursesData = `
 <url>
 <loc>https://books.toscrape.com/</loc>
 <desc>Your book store</desc>

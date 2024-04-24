@@ -59,7 +59,7 @@ export function EmailForm() {
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
       setLoading(true);
-      const response = await fetch('../../../api/send', {
+      const response = await fetch('../../../api/sendNewsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

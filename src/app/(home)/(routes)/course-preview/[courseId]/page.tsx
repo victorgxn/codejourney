@@ -102,7 +102,7 @@ export default async function CoursePreview({params}: Props) {
             <div className='p-6 max-w-screen-xl mx-auto'>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                     <div className='col-span-2'>
-                        <VideoPlayer video={courseList.chapter[0].video.url}/>
+                        <VideoPlayer video={courseList.chapter[0]?.video.url}/>
                         <CourseDetails courseDetails={courseList}/>
                     </div>
                     <div className='mt-5 md:mt-0'>
@@ -113,6 +113,7 @@ export default async function CoursePreview({params}: Props) {
             </div>
         );
     } catch (error) {
+        console.log(error);
         notFound();
     }
 }

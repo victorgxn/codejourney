@@ -36,7 +36,7 @@ const WelcomeEmail = ({
                 className="flex ms-2 items-center border-b-2 justify-center w-full"
               >
                 <Img
-                  src="/images/logo/codejourneyLogo.png"
+                  src={`${baseUrl}/images/logo/codejourneyLogo.png`}
                   width={100}
                   height={100}
                   alt="Codejourney logo"

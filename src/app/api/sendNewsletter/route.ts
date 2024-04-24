@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Codejourney <codejourney@codejourney.es>',
       to: [email],
       subject: `Bienvenido, ${userFirstName}!`,
       react: WelcomeTemplate({
@@ -17,10 +17,7 @@ export async function POST(req: Request) {
         company: 'Codejourney',
       }),
     });
-    if (error?.statusCode >= 500) {
-      return NextResponse.json({ error: error }, { status: 500 });
-    }
-    if (error?.statusCode >= 400) {
+    if (error) {
       return NextResponse.json({ error: error }, { status: 400 });
     }
     return NextResponse.json({ message: 'Con exito' }, { status: 200 });
