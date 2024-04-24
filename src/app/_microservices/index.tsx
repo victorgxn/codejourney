@@ -16,6 +16,7 @@ export const getCourseList = async () => {
             }
             tag
             totalChapters
+            author
         }
     }`
 

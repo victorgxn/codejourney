@@ -1,12 +1,19 @@
 'use client'
 import {EnrollCourse, PublishCourse} from "@/app/_microservices";
 import {useUser} from "@clerk/nextjs";
-import {router} from "next/client";
+import { useRouter } from 'next/navigation';
 
 export default function EnrollmentSection({courseDetails, userEnrollCourses} : any) {
 
     //console.log(userEnrollCourses[0].courseId);
     //console.log(courseDetails.id);
+
+    const router = useRouter();
+
+    {/*En una function porque si no me dejaba usarlo xD*/}
+    const handleContinue = () => {
+        router.push('/view-course/' + courseDetails.id);
+    }
 
     const {user} = useUser();
 
@@ -21,7 +28,11 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
                         if (createUserEnrollCourse && createUserEnrollCourse.id) {
                             await PublishCourse(createUserEnrollCourse.id)
                                 .then(result => {
-                                    console.log(result);
+                                    //console.log(result);
+                                    if (result) {
+                                        // @ts-ignore
+                                        redirect('/view-course'+courseDetails.id);
+                                    }
                                 })
                         }
                     }
@@ -31,7 +42,7 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
             console.error("Error enrolling in course:", error);
         }
     }
-    {/*Primer ternario comprueba si el usuario esta inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/}
+    {/*Primer ternario comprueba si el usuario está inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/}
     return (
         <div>
             {userEnrollCourses.some((course: any) => course.courseId === courseDetails.id) ? (
@@ -40,7 +51,7 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
                         <p className='text-gray-500'>Sigue aprendiendo y construyendo de forma interactiva con nuestro
                             curso.</p>
                         <button
-                            className='p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700'  onClick={() => router.push('/view-course'+courseDetails.id)}> Continuar
+                            className='p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700'  onClick={handleContinue}> Continuar
                             viendo
                         </button>
                     </div>

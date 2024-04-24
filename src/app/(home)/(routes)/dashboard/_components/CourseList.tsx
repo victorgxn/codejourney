@@ -12,6 +12,7 @@ interface Course {
     };
     tag: string;
     totalChapters: number;
+    author: string;
 }
 
 interface CourseListProps {
@@ -35,7 +36,7 @@ export const CourseList = ({courses}: CourseListProps) => {
                 />
                 <div className='mt-1.5'>
                     <h2 className='text-[18px] md:text-[16] font-medium '>{course.name}</h2>
-                    <h2 className='text-gray-400 text-[13px]'>victor-g</h2>
+                    <h2 className='text-gray-400 text-[13px]'>{course?.author ? course.author : 'Codejourney'}</h2>
                 </div>
                 <div className='flex items-center gap-2 mt-1.5'>
                     <Book className='h-6 w-6 text-blue-600 rounded-full bg-blue-100 p-1'/>
