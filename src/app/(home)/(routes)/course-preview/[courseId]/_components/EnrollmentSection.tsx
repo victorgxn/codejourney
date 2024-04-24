@@ -1,6 +1,7 @@
 'use client'
 import {EnrollCourse, PublishCourse} from "@/app/_microservices";
 import {useUser} from "@clerk/nextjs";
+import {router} from "next/client";
 
 export default function EnrollmentSection({courseDetails, userEnrollCourses} : any) {
 
@@ -20,7 +21,10 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
                         if (createUserEnrollCourse && createUserEnrollCourse.id) {
                             await PublishCourse(createUserEnrollCourse.id)
                                 .then(result => {
-                                    console.log(result);
+                                    //console.log(result);
+                                    if (result) {
+                                        router.push('/view-course'+courseDetails.id);
+                                    }
                                 })
                         }
                     }
@@ -33,13 +37,14 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
     {/*Primer ternario comprueba si el usuario esta inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/}
     return (
         <div>
+            {/*TODO: Posible error de comparison en un futuro porque estamos comparando el curso del array 0 pero no siempre va estar en el 0 */}
             {userEnrollCourses[0].courseId === courseDetails.id ? (
                 <>
                     <div className='mt-5 border rounded-lg p-2 text-center'>
                         <p className='text-gray-500'>Sigue aprendiendo y construyendo de forma interactiva con nuestro
                             curso.</p>
                         <button
-                            className='p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700'> Continuar
+                            className='p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700'  onClick={() => router.push('/view-course'+courseDetails.id)}> Continuar
                             viendo
                         </button>
                     </div>
