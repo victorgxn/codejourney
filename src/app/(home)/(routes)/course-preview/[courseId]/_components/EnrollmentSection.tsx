@@ -31,7 +31,7 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
                                     //console.log(result);
                                     if (result) {
                                         // @ts-ignore
-                                        redirect('/view-course'+courseDetails.id);
+                                        handleContinue();
                                     }
                                 })
                         }

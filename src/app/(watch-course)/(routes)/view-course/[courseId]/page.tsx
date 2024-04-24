@@ -4,8 +4,10 @@ import {Metadata} from "next";
 import {gql, request} from "graphql-request";
 import {notFound} from "next/navigation";
 import {auth, clerkClient} from "@clerk/nextjs";
-
-{/*TODO: Sacar a un componente o a la carpeta microservices estas funciones se repite codigo con la pagina de CoursePreview*/}
+import {useState} from "react";
+'use client'
+{/*TODO: Sacar a un componente o a la carpeta microservices estas funciones se repite codigo con la pagina de CoursePreview*/
+}
 
 const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
 
@@ -32,7 +34,8 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-{/*Query para obtener la información de un curso por él, id*/}
+{/*Query para obtener la información de un curso por él, id*/
+}
 const getCourseById = async (id: string) => {
     try {
         const query = gql`
@@ -64,8 +67,10 @@ const getCourseById = async (id: string) => {
 }
 
 
-{/*Query para saber si el usuario está inscrito en el curso*/}
-{/*A diferencia del course-preview necesitamos esta función aquí por el dato de retorno completedChapter*/}
+{/*Query para saber si el usuario está inscrito en el curso*/
+}
+{/*A diferencia del course-preview necesitamos esta función aquí por el dato de retorno completedChapter*/
+}
 const isUserEnrollCourse = async (id: string, userEmail: string) => {
     try {
         const query = gql`
@@ -83,10 +88,12 @@ const isUserEnrollCourse = async (id: string, userEmail: string) => {
 
 }
 
-export default async function ChapterPage({params}: Props) {
+export default  function ChapterPage({params}: Props) {
 
 
     try {
+
+        const [activeChapter, setActiveChapter] = useState()
 
         const {userId} = auth();
 
@@ -104,10 +111,14 @@ export default async function ChapterPage({params}: Props) {
         return (
             <div className='flex'>
                 <div className='w-72 border shawdow-sm h-screen z-50'>
-                    <ChapterNavigation courseDetails={courseList} userEnrollCourse={userEnrollCourses}/>
+                    <ChapterNavigation
+                        courseDetails={courseList}
+                        userEnrollCourse={userEnrollCourses}
+                        setActiveChapter={(chapter) => setActiveChapter(chapter)}
+                    />
                 </div>
                 <div>
-                    <ChapterVideoPlayer/>
+                    <ChapterVideoPlayer activeChapter = {activeChapter}/>
                 </div>
             </div>
         );
