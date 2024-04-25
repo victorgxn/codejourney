@@ -11,6 +11,7 @@ export default function ChapterPage({params}: any) {
   const {user} = useUser()
   const [course, setCourse] = useState([]);
   const [userCourse, setUserCourse] = useState();
+  const [activeChapter, setActiveChapter] = useState();
 
   useEffect(() => {
     if (user) {
@@ -26,6 +27,8 @@ export default function ChapterPage({params}: any) {
             //console.log(response)
             // @ts-ignore
             setCourse(response.courseList);
+            // @ts-ignore || única solución que se me ha ocurrido para inicializar el video al primero y que no llegue null
+            setActiveChapter(response.courseList.chapter[0])
           })
 
 
@@ -52,10 +55,10 @@ export default function ChapterPage({params}: any) {
     return (
       <div className='flex'>
         <div className='w-72 border shawdow-sm h-screen z-50'>
-          <ChapterNavigation course={course} userCourse={userCourse}/>
+          <ChapterNavigation course={course} userCourse={userCourse} setActiveChapter={setActiveChapter} />
         </div>
         <div>
-          <ChapterVideoPlayer/>
+          <ChapterVideoPlayer activeChapter={activeChapter}/>
         </div>
       </div>
     )
