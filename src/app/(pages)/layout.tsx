@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { TopMenu , Footer } from '@/components';
+import CarouselPibes from "@/components/integrantes";
 
 const font = Outfit({ subsets: ["latin"] });
 export const metadata: Metadata = {
