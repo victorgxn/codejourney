@@ -1,10 +1,4 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export const metadata = {
   title: "FAQ | Codejourney",

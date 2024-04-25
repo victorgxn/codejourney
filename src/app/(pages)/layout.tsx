@@ -16,8 +16,8 @@ export default function HomeLayout({
   return (
     <div className={`${font.className} bg-gray-50 min-h-screen`}>
           <TopMenu/>
-          <Footer />
       {children}
+          <Footer />
     </div>
 
   );

@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -22,34 +23,46 @@ export const Footer = () => {
           </div>
           <ul className="text-lg text-center sm:flex items-center justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
             <li>
-              <a href="javascript:;" className="text-white hover:text-blue-400">
+              <Link href="/" className="text-white hover:text-blue-400">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="sm:my-0 my-2">
-              <a href="javascript:;" className="text-white hover:text-blue-400">
+              <Link
+                href="/programas-estudio"
+                className="text-white hover:text-blue-400"
+              >
                 Programas de estudio
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="javascript:;" className="text-white hover:text-blue-400">
+              <Link
+                href="/codejourney-empresas"
+                className="text-white hover:text-blue-400"
+              >
                 CodeJourney para empresas
-              </a>
+              </Link>
             </li>
             <li className="sm:my-0 my-2">
-              <a href="javascript:;" className="text-white hover:text-blue-400">
+              <Link
+                href="/preguntas-y-respuestas"
+                className="text-white hover:text-blue-400"
+              >
                 FAQ
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="javascript:;" className="text-white hover:text-blue-400">
+              <Link
+                href="/dashboard"
+                className="text-blue-200 hover:text-blue-400"
+              >
                 Dashboard
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="flex space-x-4 sm:justify-center">
-            <a
-              href="javascript:;"
+            <Link
+              href="#"
               className="w-9 h-9 rounded-full bg-slate-200 flex justify-center items-center hover:bg-blue-400"
             >
               <svg
@@ -59,16 +72,16 @@ export const Footer = () => {
                 viewBox="0 0 24 24"
                 fill="black"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-twitter"
               >
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
               </svg>
-            </a>
-            <a
-              href="javascript:;"
+            </Link>
+            <Link
+              href="#"
               className="w-9 h-9 rounded-full bg-slate-200 flex justify-center items-center hover:bg-blue-400"
             >
               <svg
@@ -78,16 +91,16 @@ export const Footer = () => {
                 viewBox="0 0 24 24"
                 fill="black"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-facebook"
               >
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
-            </a>
-            <a
-              href="javascript:;"
+            </Link>
+            <Link
+              href="#"
               className="w-9 h-9 rounded-full bg-slate-200 flex justify-center items-center hover:bg-blue-400"
             >
               <svg
@@ -97,22 +110,21 @@ export const Footer = () => {
                 viewBox="0 0 24 24"
                 fill="black"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-youtube"
               >
                 <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
                 <path d="m10 15 5-3-5-3z" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="py-7 border-t border-gray-700">
           <div className="flex items-center justify-center">
             <span className="text-white">
-              ©CodeJourney 2024, Todos los
-              derechos reservados.
+              ©CodeJourney 2024, Todos los derechos reservados.
             </span>
           </div>
         </div>
