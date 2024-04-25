@@ -3,7 +3,7 @@
 import {PauseCircle, PlayCircle} from "lucide-react";
 import {useEffect, useState} from "react";
 
-export const ChapterNavigation = ({courseDetails, userEnrollCourses, setActiveChapter}: any) => {
+export const ChapterNavigation = () => {
 
     {/*Poner en activo, el que le des en el clic*/}
     const [activeIndex, setActiveIndex] = useState(0);
@@ -11,9 +11,6 @@ export const ChapterNavigation = ({courseDetails, userEnrollCourses, setActiveCh
     useEffect(() => {
         setActiveChapter(courseDetails?.chapter[0])
     }, [])
-    console.log(courseDetails);
-
-    {/*TODO: Esto da undefined problemas futuros*/}
     //console.log(userEnrollCourses)
 
     return (

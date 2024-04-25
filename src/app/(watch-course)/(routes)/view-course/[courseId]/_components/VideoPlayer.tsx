@@ -1,6 +1,5 @@
 
-export const ChapterVideoPlayer = ({activeChapter}) => {
-    //console.log(activeChapter);
+export const ChapterVideoPlayer = () => {
     return (
         <div>
             VideoPlayer

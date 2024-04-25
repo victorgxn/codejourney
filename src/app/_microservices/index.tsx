@@ -1,4 +1,5 @@
 import {gql, request} from "graphql-request";
+import {notFound} from "next/navigation";
 
 const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
 
@@ -21,6 +22,56 @@ export const getCourseList = async () => {
     }`
 
     return await request(MASTER_URL, query);
+}
+
+{/*Query para obtener la información de un curso por él, id*/}
+export const getCourseById = async (id: string) => {
+    try {
+        const query = gql`
+    query course {
+  courseList(where: {id: "${id}"}) {
+    chapter {
+      ... on Chapter {
+        id
+        name
+        video {
+          url
+        }
+      }
+    }
+    name
+    id
+    free
+    description
+    totalChapters
+    tag
+    author
+  }
+}`
+        return await request(MASTER_URL, query);
+    } catch (error) {
+        notFound();
+    }
+
+}
+
+
+{/*Query para saber si el usuario está inscrito en el curso*/}
+export const isUserEnrollCourse = async (id: string, userEmail: string | undefined) => {
+    try {
+        const query = gql`
+    query course {
+    userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
+    courseId
+    userEmail
+    completedChapter
+  }
+}`
+        return await request(MASTER_URL, query);
+    } catch (error) {
+        notFound();
+    }
+
 }
 
 {/*Crear el draft para que un usuario pueda inscribirse a un curso*/}
