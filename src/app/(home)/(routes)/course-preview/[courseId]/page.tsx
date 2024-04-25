@@ -32,88 +32,87 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     }
 }
 
-{/*Query para obtener la información de un curso por él, id*/}
+{/*Query para obtener la información de un curso por él, id*/
+}
 const getCourseById = async (id: string) => {
     try {
-        const query = gql`
-    query course {
-  courseList(where: {id: "${id}"}) {
-    chapter {
-      ... on Chapter {
-        id
-        name
-        video {
-          url
+    const query = gql`
+    query GetCourseById {
+        courseList(where: {id: "${id}"}) {
+            chapter {
+                ... on Chapter {
+                    id
+                    name
+                    video {
+                        url
+                    }
+                }
+            }
+            name
+            id
+            free
+            description
+            totalChapters
+            tag
+            author
         }
-      }
-    }
-    name
-    id
-    free
-    description
-    totalChapters
-    tag
-    author
-  }
-}`
-        return await request(MASTER_URL, query);
+    }`
+    return await request(MASTER_URL, query);
     } catch (error) {
         notFound();
     }
-
 }
 
-
-{/*Query para saber si el usuario está inscrito en el curso*/}
 const isUserEnrollCourse = async (id: string, userEmail: string) => {
     try {
-        const query = gql`
-    query course {
-    userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
-    courseId
-    userEmail
-    completedChapter
-  }
-}`
-        return await request(MASTER_URL, query);
+    const query = gql`
+    query IsUserEnrollCourse {
+        userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
+            courseId
+            userEmail
+            completedChapter {
+                ... on CompletedChapter {
+                    chapterId
+                }
+            }
+        }
+    }`
+    return await request(MASTER_URL, query);
     } catch (error) {
         notFound();
     }
-
 }
-
 export default async function CoursePreview({params}: Props) {
 
     try {
 
+    const {userId} = auth();
 
-        const { userId } = auth();
+    const userResponse = await clerkClient.users.getUser(userId as string);
 
-        const userResponse = await clerkClient.users.getUser(userId as string);
+    // @ts-ignore
+    const {courseList} = await getCourseById(params.courseId);
 
-        // @ts-ignore
-        const {courseList} = await getCourseById(params.courseId);
+    // @ts-ignore
+    const {userEnrollCourses} = await isUserEnrollCourse(params.courseId, userResponse.emailAddresses[0].emailAddress);
 
-        // @ts-ignore
-        const {userEnrollCourses} = await isUserEnrollCourse(params.courseId, userResponse.emailAddresses[0].emailAddress);
+    //console.log(courseList);
+    console.log(userEnrollCourses);
 
-        //console.log(courseList);
-        console.log(userEnrollCourses);
-
-        return (
-            <div className='p-6 max-w-screen-xl mx-auto'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                    <div className='col-span-2'>
-                        <VideoPlayer video={courseList.chapter[0]?.video.url}/>
-                        <CourseDetails courseDetails={courseList}/>
-                    </div>
-                    <div className='mt-5 md:mt-0'>
-                        <ButtonsSection/>
-                        <EnrollmentSection courseDetails={courseList} userEnrollCourses={userEnrollCourses}/>
-                    </div>
+    return (
+        <div className='p-6 max-w-screen-xl mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                <div className='col-span-2'>
+                    <VideoPlayer video={courseList.chapter[0]?.video.url}/>
+                    <CourseDetails courseDetails={courseList}/>
+                </div>
+                <div className='mt-5 md:mt-0'>
+                    <ButtonsSection/>
+                    <EnrollmentSection courseDetails={courseList} userEnrollCourses={userEnrollCourses}/>
                 </div>
             </div>
-        );
+        </div>
+    );
     } catch (error) {
         console.log(error);
         notFound();

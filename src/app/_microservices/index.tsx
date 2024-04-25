@@ -64,7 +64,10 @@ export const isUserEnrollCourse = async (id: string, userEmail: string | undefin
     userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
     courseId
     userEmail
-    completedChapter
+     completedChapter {
+      ... on CompletedChapter {
+        chapterId
+      }
   }
 }`
         return await request(MASTER_URL, query);
