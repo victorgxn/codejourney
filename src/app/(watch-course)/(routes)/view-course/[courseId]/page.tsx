@@ -3,7 +3,7 @@
 import {notFound} from "next/navigation";
 import {ChapterNavigation} from "@/app/(watch-course)/(routes)/view-course/[courseId]/_components/ChapterNavigation";
 import {ChapterVideoPlayer} from "@/app/(watch-course)/(routes)/view-course/[courseId]/_components/VideoPlayer";
-import {useUser} from "@clerk/nextjs";
+import {UserButton, useUser} from "@clerk/nextjs";
 import {useEffect, useState} from "react";
 import {getCourseById, isUserEnrollCourse} from "@/app/_microservices";
 
@@ -41,7 +41,7 @@ export default function ChapterPage({params}: any) {
     try {
       await isUserEnrollCourse(params?.courseId, user?.primaryEmailAddress?.emailAddress)
           .then(response => {
-            //console.log(response)
+            console.log('respuesta del userEnrollCourses -->', response)
             // @ts-ignore
             setUserCourse(response.userEnrollCourses)
           })
@@ -58,6 +58,9 @@ export default function ChapterPage({params}: any) {
           <ChapterNavigation course={course} userCourse={userCourse} setActiveChapter={setActiveChapter} />
         </div>
         <div>
+            <div className='float-right p-5'>
+                <UserButton/>
+            </div>
           <ChapterVideoPlayer activeChapter={activeChapter}/>
         </div>
       </div>
