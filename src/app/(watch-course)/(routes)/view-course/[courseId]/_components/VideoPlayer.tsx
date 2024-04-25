@@ -1,7 +1,7 @@
 import {CheckCircle} from "lucide-react";
 
 export const ChapterVideoPlayer = ({ activeChapter }: any) => {
-    console.log(activeChapter);
+    //console.log(activeChapter);
 
     {/*Skeleton*/}
     if (!activeChapter || !activeChapter.video) {

@@ -3,7 +3,8 @@ import {notFound} from "next/navigation";
 
 const MASTER_URL = "https://api-eu-west-2.hygraph.com/v2/" + process.env.NEXT_PUBLIC_HYGRAPH_KEY + "/master";
 
-{/*Obtener toda la lista de cursos disponibles*/}
+{/*Obtener toda la lista de cursos disponibles*/
+}
 export const getCourseList = async () => {
     const query = gql`
     query courseList {
@@ -24,11 +25,12 @@ export const getCourseList = async () => {
     return await request(MASTER_URL, query);
 }
 
-{/*Query para obtener la información de un curso por él, id*/}
+{/*Query para obtener la información de un curso por él, id*/
+}
 export const getCourseById = async (id: string) => {
     try {
         const query = gql`
-    query course {
+    query getCourseById {
   courseList(where: {id: "${id}"}) {
     chapter {
       ... on Chapter {
@@ -57,27 +59,28 @@ export const getCourseById = async (id: string) => {
 
 
 {/*Query para saber si el usuario está inscrito en el curso*/}
-export const isUserEnrollCourse = async (id: string, userEmail: string | undefined) => {
+export const isUserEnrollCourse = async (id: string, userEmail: string) => {
     try {
         const query = gql`
-    query course {
-    userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
-    courseId
-    userEmail
-     completedChapter {
-      ... on CompletedChapter {
-        chapterId
-      }
-  }
-}`
+            query isUserEnrollCourse {
+                userEnrollCourses(where: {courseId: "${id}", userEmail: "${userEmail}"}){
+                    courseId
+                    userEmail
+                    completedChapter {
+                        ... on CompletedChapter {
+                            chapterId
+                        }
+                    }
+                }
+            }`
         return await request(MASTER_URL, query);
     } catch (error) {
         notFound();
     }
-
 }
 
-{/*Crear el draft para que un usuario pueda inscribirse a un curso*/}
+{/*Crear el draft para que un usuario pueda inscribirse a un curso*/
+}
 export const EnrollCourse = async (courseId: string, userEMail: string | undefined) => {
     const mutationQuery = gql`
     mutation EnrollCourse {
@@ -89,9 +92,11 @@ export const EnrollCourse = async (courseId: string, userEMail: string | undefin
     return await request(MASTER_URL, mutationQuery);
 }
 
-{/*//TODO : Pensar mejor que estado devolver cuando se haga la peticion, facilidades futuras*/}
-{/*Publicar el draft creado anteriormente*/}
-export const PublishCourse = async (idDraft : string) => {
+{/*//TODO : Pensar mejor que estado devolver cuando se haga la peticion, facilidades futuras*/
+}
+{/*Publicar el draft creado anteriormente*/
+}
+export const PublishCourse = async (idDraft: string) => {
     const mutationQuery = gql`
     mutation EnrollCoursePublish {
         publishUserEnrollCourse(where: {id: "${idDraft}"}) {

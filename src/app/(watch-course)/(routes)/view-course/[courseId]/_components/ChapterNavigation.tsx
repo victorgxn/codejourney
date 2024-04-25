@@ -5,12 +5,17 @@ import {useEffect, useState} from "react";
 
 export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) => {
     //console.log('info del curso -->', course);
-    //console.log('user course -->', userCourse);
+    console.log('user course -->', userCourse);
+
 
     {/*Poner en activo, el que le des en el clic*/
     }
     const [activeIndex, setActiveIndex] = useState(0);
-
+  useEffect(() => {
+    if (course && course.chapter) {
+        setActiveChapter(course.chapter[0]);
+    }
+}, [course]);
 
     {/*Aquí va el skeleton*/}
     if (!course || !course.chapter) {

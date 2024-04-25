@@ -27,8 +27,6 @@ export default function ChapterPage({params}: any) {
             //console.log(response)
             // @ts-ignore
             setCourse(response.courseList);
-            // @ts-ignore || única solución que se me ha ocurrido para inicializar el video al primero y que no llegue null
-            setActiveChapter(response.courseList.chapter[0])
           })
 
 
@@ -39,13 +37,13 @@ export default function ChapterPage({params}: any) {
 
   const userEnrollCourses = async () => {
     try {
-      await isUserEnrollCourse(params?.courseId, user?.primaryEmailAddress?.emailAddress)
+      // @ts-ignore
+        await isUserEnrollCourse(params?.courseId, user.primaryEmailAddress.emailAddress)
           .then(response => {
-            console.log('respuesta del userEnrollCourses -->', response)
+            //console.log('respuesta del userEnrollCourses -->', response)
             // @ts-ignore
             setUserCourse(response.userEnrollCourses)
           })
-
     } catch (error) {
       console.error(error)
     }
@@ -55,7 +53,7 @@ export default function ChapterPage({params}: any) {
     return (
       <div className='flex'>
         <div className='w-72 border shawdow-sm h-screen z-50'>
-          <ChapterNavigation course={course} userCourse={userCourse} setActiveChapter={setActiveChapter} />
+          <ChapterNavigation course={course} userCourse={userCourse} setActiveChapter={ (chapter: any) => setActiveChapter (chapter)} />
         </div>
         <div>
             <div className='float-right p-5'>
