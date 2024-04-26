@@ -16,36 +16,41 @@ export const Categories = ({
   const filterOptions: FilterOption[] = [
     {
       id: 1,
-      name: 'All',
+      name: 'Todos',
       value: 'all',
     },
     {
       id: 2,
+      name: 'Gratis',
+      value: 'free',
+    },
+    {
+      id: 3,
       name: 'React',
       value: 'react',
     },
     {
-      id: 3,
+      id: 4,
       name: 'Tailwind',
       value: 'tailwind',
     },
     {
-      id: 4,
+      id: 5,
       name: 'Astro',
       value: 'astro',
     },
     {
-      id: 5,
+      id: 6,
       name: 'MySQL',
       value: 'mysql',
     },
     {
-      id: 6,
+      id: 7,
       name: 'Laravel',
       value: 'laravel',
     },
     {
-      id: 7,
+      id: 8,
       name: 'Java',
       value: 'java',
     },

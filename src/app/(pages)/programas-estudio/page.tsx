@@ -1,90 +1,39 @@
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngular,
-  faNodeJs,
-  faReact,
-  faVuejs,
-  faCodepen,
-} from "@fortawesome/free-brands-svg-icons";
-import CursoAngular from "@/components/courses/CursoAngular";
-import CursoReact from "@/components/courses/CursoReact";
-import CursoVue from "@/components/courses/CursoVue";
-import CursoNode from "@/components/courses/CursoNode";
-
-export const metadata = {
-  title: "Programas estudio | Codejourney",
-  description:
-    "Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. ",
-};
+'use client';
+import { TypewriterEffect } from '@/components/ui/typewriter-effect';
+import { Categories } from './_components/Categories';
+import { useState } from 'react';
 
 export default function ProgramaEstudio() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8 ">
           <TypewriterEffect
             words={[
-              { text: "Programas " },
-              { text: "de " },
-              { text: "Estudios " },
+              { text: 'Programas ' },
+              { text: 'de ' },
+              { text: 'Estudios ' },
             ]}
           />
         </div>
         <div className="text-center">
           <p className="mb-8">
-            Agrupados por tecnología y fundamentales. Creamos cada listado en un
-            orden que sugerimos seguir, así tendrás la mejor base para estudiar
-            cada programa.
+            Agrupados por tecnología que ofrecen nuestros cursos. Podrá ver que
+            cursos están disponibles para cada tecnología.
           </p>
         </div>
-
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-4">Tecnologías</h2>
           <div className="flex flex-wrap mb-8 bg-white shadow-lg rounded-lg justify-center max-w-ld mx-auto">
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon
-                icon={faCodepen}
-                size="2x"
-                className="w-10 h-10"
-              />
-              <p>Fundamentos</p>
-            </div>
-
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon
-                icon={faAngular}
-                size="2x"
-                className="w-10 h-10"
-                style={{ color: "red" }}
-              />
-              <p>Angular</p>
-            </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon
-                icon={faReact}
-                size="2x"
-                className="w-10 h-10"
-                style={{ color: "lightblue" }}
-              />
-              <p>React</p>
-            </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon icon={faVuejs} size="2x" className="w-10 h-10" />
-              <p>Vue.js</p>
-            </div>
-            <div className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center">
-              <FontAwesomeIcon
-                icon={faNodeJs}
-                size="2x"
-                className="w-10 h-10"
-                style={{ color: "green" }}
-              />
-              <p>Node.js</p>
-            </div>
+            <Categories
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
           </div>
         </div>
-
+        {/* //TODO Curso seleccionado */}
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold mb-4">Fundamentos</h2>
@@ -107,11 +56,6 @@ export default function ProgramaEstudio() {
             </div>
           </div>
         </div>
-
-        <CursoAngular></CursoAngular>
-        <CursoReact></CursoReact>
-        <CursoVue></CursoVue>
-        <CursoNode></CursoNode>
       </div>
     </>
   );
