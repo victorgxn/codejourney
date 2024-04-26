@@ -11,7 +11,7 @@ export const ChapterVideoPlayer = ({ activeChapter }: any) => {
 
     {/*TODO: No cambia el video, llega correctamente la url, probar a renderizar el componente???*/}
 
-    console.log(activeChapter.video.url);
+    //console.log(activeChapter.video.url);
     return (
         <div className='p-5'>
             <video width='1000' height='250' controls controlsList='nodownload'>

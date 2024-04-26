@@ -10,13 +10,8 @@ export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) =
     {/*Poner en activo, el que le des en el clic*/
     }
     const [activeIndex, setActiveIndex] = useState(0);
-    const context = useContext(CompletedChapterContext);
 
-    if (!context) {
-        throw new Error('estás intentando acceder al contexto CompletedChapterContext desde un componente que no está dentro del árbol de componentes que está envuelto por el CompletedChapterContext.Provider. Esto no es posible y por eso se lanza este error..');
-    }
-
-    const {completedChapter, setCompletedChapter} = context;
+    const {completedChapter, setCompletedChapter} = useContext(CompletedChapterContext);
 
     useEffect(() => {
         if (course && course.chapter) {
@@ -26,7 +21,7 @@ export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) =
 
 
     const isChapterCompleted = (chapterId: any) =>{
-         return completedChapter.find((item: { chapterId: any; })  => item.chapterId == chapterId)
+        return completedChapter.find((item: { chapterId: any; })  => item.chapterId == chapterId)
     }
 
     {/*Aquí va el skeleton*/}
@@ -51,7 +46,7 @@ export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) =
                     ${activeIndex == index ? 'bg-blue-100 text-blue-700' : null}`}>
                         {activeIndex == index ?
                             <PauseCircle/>
-                            : isChapterCompleted(chapter.chapterNumber) ? <CheckCircle/> : <PlayCircle/>}
+                            : isChapterCompleted(chapter.id) ? <CheckCircle/> : <PlayCircle/>}
                         <h2>{chapter.name}</h2>
                     </div>
                 ))}

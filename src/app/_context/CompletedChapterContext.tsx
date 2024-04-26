@@ -1,8 +1,7 @@
-import React, {createContext} from "react";
+import {createContext} from "react";
 
-type CompletedChapterContextType = {
-    completedChapter: any;
-    setCompletedChapter: React.Dispatch<React.SetStateAction<any>>;
-};
-
-export const CompletedChapterContext = React.createContext<CompletedChapterContextType | null>(null);
+interface CompletedChapterContextType {
+    completedChapter: any[];
+    setCompletedChapter: (completedChapter: any[]) => void;
+}
+export const CompletedChapterContext = createContext<any>(null);
