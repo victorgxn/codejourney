@@ -15,6 +15,7 @@ export default function EnrollmentSection({courseDetails, userEnrollCourses} : a
         router.push('/view-course/' + courseDetails.id);
     }
 
+
     const {user} = useUser();
 
     const EnrollCourseFunction = async () => {

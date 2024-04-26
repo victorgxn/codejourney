@@ -1,5 +1,5 @@
 'use client'
-import { Home, BookOpenCheck, Shield, MailPlus } from "lucide-react";
+import {Home, BookOpenCheck, Shield, MailPlus, MonitorPlay} from "lucide-react";
 import Link from "next/link";
 import React, { useState } from 'react';
 import { FooterAside } from "@/app/(home)/_components/(Side-BarNav)/FooterAside";
@@ -34,6 +34,12 @@ export const Aside = () => {
         },
         {
             id: 4,
+            name: 'Mis cursos',
+            icon: MonitorPlay,
+            path: '/inscrito',
+        },
+        {
+            id: 5,
             name: 'Promociones',
             icon: MailPlus,
             path: '/newsletter',
