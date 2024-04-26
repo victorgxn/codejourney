@@ -1,11 +1,10 @@
 'use client';
 import { Categories } from '@/app/(home)/_components';
-import { Search } from 'lucide-react';
 import { getCourseList } from '@/app/_microservices';
 import { useEffect, useState } from 'react';
 import { CourseList } from '@/app/(home)/(routes)/dashboard/_components/CourseList';
 import { SearchBar } from '@/app/(home)/_components/(Side-BarNav)/SearchBar';
-import { Autocomplete, AutocompleteItem } from '@nextui-org/autocomplete';
+import { useSearch } from '@/context/SearchContext';
 
 interface Course {
   free: boolean;
@@ -26,12 +25,8 @@ interface CourseListResponse {
 
 export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
-  const [search, setSearch] = useState<string>('');
+  const { search } = useSearch();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-
-  const handleSearch = (e: any) => {
-    setSearch(e.target.value);
-  };
 
   useEffect(() => {
     getCourses();
@@ -48,17 +43,7 @@ export default function Dashboard() {
     <div className="max-w-screen-xl mx-auto">
       {/*Buscador responsive*/}
       <div className="px-6 pt-6 lg:hidden lg:mb-0 block">
-        {/* <Autocomplete
-          defaultItems={courses}
-          label="Busca un curso"
-          placeholder="Busca un curso"
-          className="max-w-xs"
-        >
-          {courses.map(course => (
-            <AutocompleteItem key={course.id}>{course.name}</AutocompleteItem>
-          ))}
-        </Autocomplete> */}
-        <SearchBar handleSearch={handleSearch} />
+        <SearchBar />
       </div>
       {/*Categories*/}
       {/* //TODO: Problema linea esta por aqui pero estoy cansado jefe*/}
