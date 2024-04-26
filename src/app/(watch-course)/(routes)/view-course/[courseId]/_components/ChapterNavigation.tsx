@@ -1,21 +1,33 @@
 'use client'
 
-import {PauseCircle, PlayCircle} from "lucide-react";
-import {useEffect, useState} from "react";
+import {CheckCircle, PauseCircle, PlayCircle} from "lucide-react";
+import {useContext, useEffect, useState} from "react";
+import {CompletedChapterContext} from "@/app/_context/CompletedChapterContext";
 
 export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) => {
     //console.log('info del curso -->', course);
-    console.log('user course -->', userCourse);
-
-
+    //console.log('user course -->', userCourse);
     {/*Poner en activo, el que le des en el clic*/
     }
     const [activeIndex, setActiveIndex] = useState(0);
-  useEffect(() => {
-    if (course && course.chapter) {
-        setActiveChapter(course.chapter[0]);
+    const context = useContext(CompletedChapterContext);
+
+    if (!context) {
+        throw new Error('estás intentando acceder al contexto CompletedChapterContext desde un componente que no está dentro del árbol de componentes que está envuelto por el CompletedChapterContext.Provider. Esto no es posible y por eso se lanza este error..');
     }
-}, [course]);
+
+    const {completedChapter, setCompletedChapter} = context;
+
+    useEffect(() => {
+        if (course && course.chapter) {
+            setActiveChapter(course.chapter[0]);
+        }
+    }, [course]);
+
+
+    const isChapterCompleted = (chapterId: any) =>{
+         return completedChapter.find((item: { chapterId: any; })  => item.chapterId == chapterId)
+    }
 
     {/*Aquí va el skeleton*/}
     if (!course || !course.chapter) {
@@ -37,7 +49,9 @@ export const ChapterNavigation = ({course, userCourse, setActiveChapter}: any) =
                          }}
                          className={`flex gap-2 text-gray-500 text-[16px] px-5 p-4 cursor-pointer border hover:bg-grey-100
                     ${activeIndex == index ? 'bg-blue-100 text-blue-700' : null}`}>
-                        {activeIndex == index ? <PauseCircle/> : <PlayCircle/>}
+                        {activeIndex == index ?
+                            <PauseCircle/>
+                            : isChapterCompleted(chapter.chapterNumber) ? <CheckCircle/> : <PlayCircle/>}
                         <h2>{chapter.name}</h2>
                     </div>
                 ))}

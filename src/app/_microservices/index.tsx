@@ -36,6 +36,7 @@ export const getCourseById = async (id: string) => {
       ... on Chapter {
         id
         name
+        chapterNumber
         video {
           url
         }
@@ -54,7 +55,6 @@ export const getCourseById = async (id: string) => {
     } catch (error) {
         notFound();
     }
-
 }
 
 

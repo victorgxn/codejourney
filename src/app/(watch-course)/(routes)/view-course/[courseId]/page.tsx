@@ -6,12 +6,14 @@ import {ChapterVideoPlayer} from "@/app/(watch-course)/(routes)/view-course/[cou
 import {UserButton, useUser} from "@clerk/nextjs";
 import {useEffect, useState} from "react";
 import {getCourseById, isUserEnrollCourse} from "@/app/_microservices";
+import {CompletedChapterContext} from "@/app/_context/CompletedChapterContext";
 
 export default function ChapterPage({params}: any) {
   const {user} = useUser()
   const [course, setCourse] = useState([]);
   const [userCourse, setUserCourse] = useState();
   const [activeChapter, setActiveChapter] = useState();
+  const [completedChapter, setCompletedChapter] = useState();
 
   useEffect(() => {
     if (user) {
@@ -24,7 +26,7 @@ export default function ChapterPage({params}: any) {
     try {
       await getCourseById(params?.courseId)
           .then(response => {
-            //console.log(response)
+            console.log('respuesta del getCourseByid', response)
             // @ts-ignore
             setCourse(response.courseList);
           })
@@ -41,26 +43,33 @@ export default function ChapterPage({params}: any) {
         await isUserEnrollCourse(params?.courseId, user.primaryEmailAddress.emailAddress)
           .then(response => {
             //console.log('respuesta del userEnrollCourses -->', response)
+            //console.log('Complete chapter',response.userEnrollCourses[0].completedChapter)
             // @ts-ignore
-            setUserCourse(response.userEnrollCourses)
+            setUserCourse(response.userEnrollCourses);
+              // @ts-ignore
+              setCompletedChapter(response.userEnrollCourses[0].completedChapter);
+
           })
     } catch (error) {
       console.error(error)
     }
   }
 
+
   try {
-    return (
-      <div className='flex'>
-        <div className='w-72 border shawdow-sm h-screen z-50'>
+      return (
+      <div className=''>
+          <CompletedChapterContext.Provider value={{completedChapter: [], setCompletedChapter: () => {}}}>
+        <div className='hidden fixed bg-white md:block md:w-80 border shadow-sm h-screen z-50'>
           <ChapterNavigation course={course} userCourse={userCourse} setActiveChapter={ (chapter: any) => setActiveChapter (chapter)} />
         </div>
-        <div>
+        <div className='ml-80'>
             <div className='float-right p-5'>
                 <UserButton/>
             </div>
           <ChapterVideoPlayer activeChapter={activeChapter}/>
         </div>
+          </CompletedChapterContext.Provider>
       </div>
     )
   } catch (error) {
