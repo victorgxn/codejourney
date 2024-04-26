@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { MainEstructure } from '@/app/(home)/_components';
 import Providers from '@/components/Chat/Providers';
 import Chat from '@/components/Chat/Chat';
+import { SearchProvider } from '@/context/SearchContext';
 
 export const metadata: Metadata = {
   title: 'Dashboard | Codejourney',
@@ -15,13 +16,15 @@ export default function HomeLayout({
 }>) {
   return (
     <Providers>
-      <div className="flex flex-col h-full">
-        <div className="flex-1">
-          <MainEstructure />
-          <div className="lg:pl-72 pt-[80px]">{children}</div>
-          <Chat />
+      <SearchProvider>
+        <div className="flex flex-col h-full">
+          <div className="flex-1">
+            <MainEstructure />
+            <div className="lg:pl-72 pt-[80px]">{children}</div>
+            <Chat />
+          </div>
         </div>
-      </div>
+      </SearchProvider>
     </Providers>
   );
 }
