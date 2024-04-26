@@ -27,10 +27,18 @@ export const CourseList = ({
   search,
 }: CourseListProps) => {
   const cursosFiltrados = (courses ?? []).filter(course => {
-    const categoryMatch =
-      selectedCategory === 'all' || course.tag.includes(selectedCategory);
+    let categoryMatch = false;
+
+    if (selectedCategory === 'free') {
+      categoryMatch = course.free;
+    } else {
+      categoryMatch =
+        selectedCategory === 'all' || course.tag.includes(selectedCategory);
+    }
+
     const searchMatch =
       !search || course.name.toLowerCase().includes(search.toLowerCase());
+
     return categoryMatch && searchMatch;
   });
 
