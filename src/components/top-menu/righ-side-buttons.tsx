@@ -25,7 +25,10 @@ export const RightSideButtons = () => {
 
   return (
     <div>
-      <div className="md:hidden">
+      <div className="md:hidden flex items-center justify-between">
+        <div className="mr-4"> {/* Agregar margen derecho */}
+          <UserButton afterSignOutUrl="/" />
+        </div>
         <Sheet>
           <SheetTrigger>
             <AlignJustify />
@@ -34,7 +37,7 @@ export const RightSideButtons = () => {
             <SheetHeader>
               <SheetDescription>
                 <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
-                  {/* <UserButton afterSignOutUrl="/"></UserButton> */}
+                  {/* Contenido del Sheet */}
                   {userId ? (
                     <Button asChild className="text-md bg-blue-500">
                       <Link href="/dashboard">Dashboard</Link>
@@ -47,14 +50,14 @@ export const RightSideButtons = () => {
                     </SignUpButton>
                   )}
                   {!userId && <SignInButton />}
-
+  
                   <Link href="/">Pricing</Link>
                   <Link href="/">Contact</Link>
                   <Link href="/">About</Link>
-
+  
                   {/* //TODO: Fix z-index (user profile) */}
                   {userId && <ManageAccount />}
-
+  
                   {userId && (
                     <SignOutButton>
                       <Button
@@ -71,27 +74,43 @@ export const RightSideButtons = () => {
           </SheetContent>
         </Sheet>
       </div>
-
-      <div className="hidden md:flex md:space-x-4">
+  
+      <div className="hidden md:flex md:space-x-4 items-center">
+        {/* Contenido para pantallas grandes */}
         <Button asChild className="text-md" variant="ghost">
           <Link href={userId ? '/dashboard' : '/sign-in'}>
             {userId ? 'Dashboard' : 'Iniciar sesión'}
           </Link>
         </Button>
-        {/* //TODO : Center img */}
-
-        {userId ? (
-          <div className="flex items-center h-full">
-            <UserButton afterSignOutUrl="/" />
-          </div>
-        ) : (
-          <Button asChild className="text-md bg-blue-500">
-            <Link href={userId ? '/' : '/sign-up'}>
-              {userId ? 'Cerrar sesión' : 'Registrarse'}
-            </Link>
-          </Button>
-        )}
+        
+        <div className="md:hidden"> {/* Solo visible en dispositivos móviles */}
+          <Sheet>
+            <SheetTrigger>
+              <AlignJustify />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetDescription>
+                  <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
+                    {/* Contenido del Sheet */}
+                    {userId ? (
+                      <UserButton afterSignOutUrl="/" />
+                    ) : (
+                      <Button asChild className="text-md bg-blue-500">
+                        <Link href={userId ? '/' : '/sign-up'}>
+                          {userId ? 'Cerrar sesión' : 'Registrarse'}
+                        </Link>
+                      </Button>
+                    )}
+                  </div>
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </div>
   );
+  
+  
 };
