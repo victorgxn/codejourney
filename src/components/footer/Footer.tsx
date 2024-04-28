@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="py-4 mt-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8">
+        <div className="py-4 mt-6 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-4">
           <div className="flex items-center justify-center lg:justify-start gap-4">
             <Image
               src="/images/logo/codejourneyLogo.png"

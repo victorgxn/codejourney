@@ -21,14 +21,14 @@ export default function Home() {
         <Carousel />
         <div className="flex flex-wrap flex-col justify-center items-center">
           <h1
-            className="text-4xl pb-10 font-bold mt-10 text-gradient
+            className="text-3xl sm:text-4xl pb-10 font-bold mt-10 text-gradient
               bg-gradient-to-r
               from-blue-500
               to-green-300
               bg-clip-text
               text-transparent"
           >
-            Cursos que ofrecemos
+            Descubre todos nuestros cursos
           </h1>
           <Cursos />
         </div>
