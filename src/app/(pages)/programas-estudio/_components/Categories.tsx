@@ -1,4 +1,4 @@
-'use client';
+import React from 'react';
 import {
   SiAstro,
   SiReact,
@@ -11,6 +11,12 @@ import { FaJava } from 'react-icons/fa';
 
 import { useCategory } from '@/context/CategoryContext';
 
+export type Technology = 'react' | 'tailwind' | 'astro' | 'mysql' | 'laravel' | 'java' | 'nextjs'; // Exporta el tipo Technology
+
+interface CategoriesProps {
+  setSelectedTechnology: (technology: Technology) => void;
+}
+
 interface FilterOption {
   id: number;
   name: string;
@@ -18,7 +24,7 @@ interface FilterOption {
   icon: any;
 }
 
-export const Categories = () => {
+export const Categories: React.FC<CategoriesProps> = ({ setSelectedTechnology }) => {
   const categories: FilterOption[] = [
     {
       id: 1,
@@ -70,7 +76,7 @@ export const Categories = () => {
     <>
       {categories.map((category: any) => (
         <div
-          onClick={() => setSelectedCategory(category.value)}
+          onClick={() => setSelectedTechnology(category.value as Technology)}
           key={category.id}
           className="m-2 text-center hover:bg-gray-200 transition duration-300 ease-in-out rounded-lg p-4 flex flex-col justify-center items-center"
         >
