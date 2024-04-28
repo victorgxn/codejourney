@@ -3,7 +3,7 @@ export default function Integrantes() {
   const integrantes = [
     {
       nombre: 'Elliot Moyano',
-      imagen: '/images/victor.jpeg',
+      imagen: '/images/elliot.jpg',
       descripcion:
         'Desarrollador full-stack con experiencia en el diseño y desarrollo de aplicaciones web y móviles. Especializado en tecnologías como React, Node.js y MongoDB. Apasionado por crear soluciones tecnológicas innovadoras que satisfagan las necesidades del usuario.',
     },
