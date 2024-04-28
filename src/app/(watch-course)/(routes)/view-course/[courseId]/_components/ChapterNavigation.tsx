@@ -2,12 +2,13 @@
 
 import { CheckCircle, PauseCircle, PlayCircle } from 'lucide-react';
 import { useContext, useEffect, useState } from 'react';
-import { CompletedChapterContext } from '@/app/_context/CompletedChapterContext';
+import { useCompletedChapter } from '@/app/_context/CompletedChapterContext';
 
 export const ChapterNavigation = ({
   course,
   userCourse,
   setActiveChapter,
+  completedChapter,
 }: any) => {
   //console.log('info del curso -->', course);
   //console.log('user course -->', userCourse);
@@ -16,10 +17,6 @@ export const ChapterNavigation = ({
   }
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const { completedChapter, setCompletedChapter } = useContext(
-    CompletedChapterContext
-  );
-
   useEffect(() => {
     if (course && course.chapter) {
       setActiveChapter(course.chapter[0]);
@@ -27,7 +24,7 @@ export const ChapterNavigation = ({
   }, [course]);
 
   const isChapterCompleted = (chapterId: any) => {
-    return completedChapter.find(
+    return Array.isArray(completedChapter) && completedChapter.find(
       (item: { chapterId: any }) => item.chapterId == chapterId
     );
   };
@@ -63,7 +60,7 @@ export const ChapterNavigation = ({
           >
             {activeIndex == index ? (
               <PauseCircle />
-            ) : isChapterCompleted(chapter.id) ? (
+            ) : isChapterCompleted(chapter.chapterNumber) ? (
               <CheckCircle />
             ) : (
               <PlayCircle />

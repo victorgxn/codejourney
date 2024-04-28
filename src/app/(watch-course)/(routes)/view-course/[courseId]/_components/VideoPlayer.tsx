@@ -1,8 +1,21 @@
 import { CheckCircle } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-export const ChapterVideoPlayer = ({ activeChapter }: any) => {
-  console.log(activeChapter);
-
+export const ChapterVideoPlayer = ({
+  activeChapter,
+  handleCompletedChapter,
+  completedChapter,
+}: any) => {
+  // console.log(activeChapter);
+  const [isChapterCompleted, setIsChapterCompleted] = useState<boolean>(false);
+  useEffect(() => {
+    const completed =
+      completedChapter &&
+      completedChapter.find(
+        (chapter: any) => chapter.chapterId == activeChapter.chapterNumber
+      );
+    setIsChapterCompleted(!!completed);
+  }, [activeChapter, completedChapter]);
   {
     /*Skeleton*/
   }
@@ -35,7 +48,11 @@ export const ChapterVideoPlayer = ({ activeChapter }: any) => {
           {' '}
           <span className="text-blue-600">Capitulo: </span> {activeChapter.name}
         </h2>
-        <button className="bg-blue-500 text-white p-2 px-5 rounded-lg flex gap-2 hover:bg-blue-800">
+        <button
+          disabled={isChapterCompleted}
+          onClick={handleCompletedChapter}
+          className="bg-blue-500 text-white p-2 px-5 rounded-lg flex gap-2 hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:text-gray-700"
+        >
           <CheckCircle color="#ffffff" /> <h2>Marcar como completado</h2>
         </button>
       </div>

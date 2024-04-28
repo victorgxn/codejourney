@@ -1,7 +1,26 @@
-import {createContext} from "react";
+'use client';
+import { useContext, useState, FC, createContext } from 'react';
 
-interface CompletedChapterContextType {
-    completedChapter: any[];
-    setCompletedChapter: (completedChapter: any[]) => void;
-}
-export const CompletedChapterContext = createContext<any>(null);
+const CompletedChapterContext = createContext<{
+  completedChapter: any[];
+  setCompletedChapter: React.Dispatch<React.SetStateAction<any[]>>;
+}>({
+  completedChapter: [],
+  setCompletedChapter: () => {},
+});
+
+export const CompletedChapterProvider: FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [completedChapter, setCompletedChapter] = useState<any[]>([]);
+
+  return (
+    <CompletedChapterContext.Provider
+      value={{ completedChapter, setCompletedChapter }}
+    >
+      {children}
+    </CompletedChapterContext.Provider>
+  );
+};
+
+export const useCompletedChapter = () => useContext(CompletedChapterContext);

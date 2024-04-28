@@ -78,6 +78,7 @@ export const isUserEnrollCourse = async (id: string, userEmail: string) => {
                             chapterId
                         }
                     }
+                    id
                 }
             }`;
     return await request(MASTER_URL, query);
@@ -144,4 +145,41 @@ export const getEnrollCourses = async (userEmail: string | undefined) => {
         }
     `;
   return await request(MASTER_URL, query);
+};
+
+// Actualizar cursos completados
+
+export const updateCompletedChapter = async (
+  userEmail: string | undefined,
+  userEnrollId: string,
+  chapterId: string
+) => {
+  const mutationQuery = gql`
+    mutation CompletedChapter {
+      updateUserEnrollCourse(
+        where: { id: "${userEnrollId}" }
+        data: {
+          userEmail: "${userEmail}"
+          completedChapter: {
+            create: { CompletedChapter: { data: { chapterId: "${chapterId}" } } }
+          }
+        }
+      )
+      {
+        completedChapter {
+          ... on CompletedChapter {
+            chapterId
+          }
+        }
+      }
+      publishUserEnrollCourse(where: {id: "${userEnrollId}"}) {
+        id
+      }
+    }
+  `;
+  return await request(MASTER_URL, mutationQuery, {
+    userEmail,
+    userEnrollId,
+    chapterId,
+  });
 };

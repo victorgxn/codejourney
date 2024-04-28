@@ -5,8 +5,12 @@ import { ChapterNavigation } from '@/app/(watch-course)/(routes)/view-course/[co
 import { ChapterVideoPlayer } from '@/app/(watch-course)/(routes)/view-course/[courseId]/_components/VideoPlayer';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
-import { getCourseById, isUserEnrollCourse } from '@/app/_microservices';
-import { CompletedChapterContext } from '@/app/_context/CompletedChapterContext';
+import {
+  PublishCourse,
+  getCourseById,
+  isUserEnrollCourse,
+  updateCompletedChapter,
+} from '@/app/_microservices';
 
 export default function ChapterPage({ params }: any) {
   const { user } = useUser();
@@ -53,26 +57,42 @@ export default function ChapterPage({ params }: any) {
     }
   };
 
+  const updatedCompletedChapter = async () => {
+    try {
+      await updateCompletedChapter(
+        user?.primaryEmailAddress?.emailAddress,
+        userCourse?.[0]?.id,
+        activeChapter?.chapterNumber
+      ).then((response: any) => {
+        setCompletedChapter(response.updateUserEnrollCourse.completedChapter);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   try {
     return (
       <div className="">
-        <CompletedChapterContext.Provider
-          value={{ completedChapter: [], setCompletedChapter: () => {} }}
-        >
-          <div className="hidden fixed bg-white md:block md:w-80 border shadow-sm h-screen z-50">
-            <ChapterNavigation
-              course={course}
-              userCourse={userCourse}
-              setActiveChapter={(chapter: any) => setActiveChapter(chapter)}
-            />
+        <div className="hidden fixed bg-white md:block md:w-80 border shadow-sm h-screen z-50">
+          <ChapterNavigation
+            course={course}
+            userCourse={userCourse}
+            activeChapter={activeChapter}
+            setActiveChapter={setActiveChapter}
+            completedChapter={completedChapter}
+          />
+        </div>
+        <div className="ml-80">
+          <div className="float-right p-5">
+            <UserButton />
           </div>
-          <div className="ml-80">
-            <div className="float-right p-5">
-              <UserButton />
-            </div>
-            <ChapterVideoPlayer activeChapter={activeChapter} />
-          </div>
-        </CompletedChapterContext.Provider>
+          <ChapterVideoPlayer
+            handleCompletedChapter={updatedCompletedChapter}
+            activeChapter={activeChapter}
+            completedChapter={completedChapter}
+          />
+        </div>
       </div>
     );
   } catch (error) {
