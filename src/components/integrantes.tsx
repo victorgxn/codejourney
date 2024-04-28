@@ -39,7 +39,7 @@ export default function Integrantes() {
             bg-clip-text
             text-transparent"
           >
-            Nuestro equipo de Codejourney
+            El equipo de Codejourney
           </h1>
           <div className="flex flex-wrap -m-2">
             {integrantes.map((integrante, index) => (
