@@ -1,9 +1,9 @@
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 
 export const metadata = {
-  title: "FAQ | Codejourney",
+  title: 'FAQ | Codejourney',
   description:
-    "Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. ",
+    'Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. ',
 };
 
 export default function PaginaEmpresas() {
@@ -18,9 +18,9 @@ export default function PaginaEmpresas() {
           >
             <TypewriterEffect
               words={[
-                { text: "Preguntas " },
-                { text: "y " },
-                { text: "respuestas " },
+                { text: 'Preguntas ' },
+                { text: 'y ' },
+                { text: 'respuestas ' },
               ]}
             />
           </div>

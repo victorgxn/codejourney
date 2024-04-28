@@ -12,7 +12,7 @@ export const ChapterVideoPlayer = ({
     const completed =
       completedChapter &&
       completedChapter.find(
-        (chapter: any) => chapter.chapterId == activeChapter.chapterNumber
+        (chapter: any) => chapter?.chapterId == activeChapter?.chapterNumber
       );
     setIsChapterCompleted(!!completed);
   }, [activeChapter, completedChapter]);

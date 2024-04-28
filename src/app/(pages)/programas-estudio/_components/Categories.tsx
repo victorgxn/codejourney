@@ -1,11 +1,15 @@
+'use client';
 import {
   SiAstro,
   SiReact,
   SiTailwindcss,
   SiMysql,
   SiLaravel,
+  SiNextdotjs,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
+
+import { useCategory } from '@/context/CategoryContext';
 
 interface FilterOption {
   id: number;
@@ -14,15 +18,7 @@ interface FilterOption {
   icon: any;
 }
 
-interface CategoriesProps {
-  selectedCategory: string;
-  setSelectedCategory: (value: string) => void;
-}
-
-export const Categories = ({
-  selectedCategory,
-  setSelectedCategory,
-}: CategoriesProps) => {
+export const Categories = () => {
   const categories: FilterOption[] = [
     {
       id: 1,
@@ -60,7 +56,16 @@ export const Categories = ({
       value: 'java',
       icon: FaJava,
     },
+    {
+      id: 7,
+      name: 'NextJs',
+      value: 'nextjs',
+      icon: SiNextdotjs,
+    },
   ];
+
+  const { selectedCategory, setSelectedCategory } = useCategory();
+
   return (
     <>
       {categories.map((category: any) => (

@@ -54,6 +54,11 @@ export const Categories = ({
       name: 'Java',
       value: 'java',
     },
+    {
+      id: 9,
+      name: 'NextJs',
+      value: 'nextjs',
+    },
   ];
   return (
     <div className="flex items-center gap-x-2 overflow-x-auto pb-2">
