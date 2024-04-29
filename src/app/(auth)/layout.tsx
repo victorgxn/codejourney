@@ -9,7 +9,7 @@ export default function LoginLayout({
         <div className="bg-gradient-to-r from-blue-600 to-cyan-500 flex justify-center items-center h-screen">
             <div className="w-1/2 h-full hidden lg:flex">
                 <Image
-                    src="/publiCartel.png"
+                    src="/publiCartel.jpeg"
                     width={500}
                     height={500}
                     className="object-cover w-full h-full"
