@@ -40,10 +40,12 @@ export const CategoryProvider: FC<{ children: React.ReactNode }> = ({
     const getCourses = () => {
       getCourseList().then((resp: unknown) => {
         const courseListResponse = resp as CourseListResponse;
-        const course = courseListResponse.courseLists
-          .filter((course: any) => course.tag.includes(selectedCategory))
-          .slice(0, 3);
-        setCourses(course);
+        const filteredCourses = courseListResponse.courseLists.filter(
+          (course: any) => course.tag.includes(selectedCategory)
+        );
+        const randomCourses = filteredCourses.sort(() => Math.random() - 0.5);
+        const selectedCourses = randomCourses.slice(0, 2);
+        setCourses(selectedCourses);
       });
     };
 
