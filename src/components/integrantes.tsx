@@ -21,7 +21,7 @@ export default function Integrantes() {
     },
     {
       nombre: 'Ayyoub Amjahed',
-      imagen: '/images/jaime.jpg',
+      imagen: '/images/Ayyoub.jpeg',
       descripcion:
         'Programador backend con experiencia en el desarrollo de sistemas escalables y seguros. Especializado en tecnologías como Node.js, Python y SQL. Con un enfoque en la eficiencia y la seguridad, trabaja para construir soluciones backend robustas que impulsen el rendimiento y la fiabilidad de las aplicaciones.',
     },
