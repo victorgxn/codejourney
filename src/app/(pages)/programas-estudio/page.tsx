@@ -20,7 +20,7 @@ export default function ProgramaEstudio() {
             words={[
               { text: 'Programas ' },
               { text: 'de ' },
-              { text: 'Estudios ' },
+              { text: 'estudios ' },
             ]}
           />
         </div>

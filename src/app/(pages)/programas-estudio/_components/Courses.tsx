@@ -110,7 +110,7 @@ export const Courses: React.FC<{ technology: Technology }> = ({
   return (
     <div className="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col">
       <div className="flex-1">
-        <h3 className="text-xl font-semibold ">
+        <h3 className="text-xl font-semibold text-center">
           {courses.title || "Courses"}
         </h3>
         <ul className="list-none pl-6 mb-4">
