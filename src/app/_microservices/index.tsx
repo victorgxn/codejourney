@@ -12,7 +12,7 @@ const MASTER_URL =
 export const getCourseList = async () => {
   const query = gql`
     query courseList {
-      courseLists {
+      courseLists(first: 16) {
         free
         id
         name
@@ -23,6 +23,12 @@ export const getCourseList = async () => {
         tag
         totalChapters
         author
+        chapter {
+          ... on Chapter {
+            name
+            id
+          }
+        }
       }
     }
   `;

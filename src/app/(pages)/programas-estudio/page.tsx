@@ -33,8 +33,8 @@ export default function ProgramaEstudio() {
         </div>
         <div className="text-center">
           <p className="mb-8">
-            Agrupados por tecnología que ofrecen nuestros cursos. Podrá ver que
-            cursos están disponibles para cada tecnología.
+            Agrupados por tecnología que ofrecen nuestros cursos. Podrá ver
+            algunos que estén disponibles para cada tecnología.
           </p>
         </div>
         <div className="text-center mb-8">

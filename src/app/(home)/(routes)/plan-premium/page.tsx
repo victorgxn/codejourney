@@ -101,7 +101,7 @@ export default function PlanPremium() {
             to-blue-500 text-white hover:bg-emerald-100 mt-8 block w-full py-3 px-6 border-w-0 border-transparent rounded-md text-center font-medium"
               href="/auth/login"
           >
-            Registrarse
+            Comprar
           </a>
         </div>
         <div className="relative p-8  border border-gray-200 rounded-2xl shadow-sm flex flex-col">
@@ -222,7 +222,7 @@ export default function PlanPremium() {
             to-green-300 text-white  mt-8 block w-full py-3 px-6 border-w-0 border-transparent rounded-md text-center font-medium"
             href="/auth/login"
           >
-            Registrarse
+            Comprar
           </a>
         </div>
       </div>

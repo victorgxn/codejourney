@@ -1,6 +1,13 @@
 import React from 'react';
 
-type Technology = 'react' | 'tailwind' | 'astro' | 'mysql' | 'laravel' | 'java' | 'nextjs';
+type Technology =
+  | 'react'
+  | 'tailwind'
+  | 'astro'
+  | 'mysql'
+  | 'laravel'
+  | 'java'
+  | 'nextjs';
 
 type CourseInfo = {
   title: string;
@@ -9,7 +16,9 @@ type CourseInfo = {
   topics: string[];
 };
 
-export const Courses: React.FC<{ technology: Technology }> = ({ technology }) => {
+export const Courses: React.FC<{ technology: Technology }> = ({
+  technology,
+}) => {
   const courseData: Record<Technology, CourseInfo> = {
     react: {
       title: 'Fundamentos de React',
@@ -91,7 +100,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({ technology }) =>
     },
   };
 
-
   const courses: CourseInfo = courseData[technology] || {
     title: '',
     lessons: 0,
@@ -105,13 +113,13 @@ export const Courses: React.FC<{ technology: Technology }> = ({ technology }) =>
       <div className="bg-white rounded-lg shadow-lg p-8 mx-auto max-w-lg">
         <ul className="list-none pl-6 mb-4">
           <li className="font-bold">{courses.lessons} Lecciones</li>
-          <li className="font-bold">{courses.hours} Horas de video bajo demanda</li>
+          <li className="font-bold">
+            {courses.hours} Horas de video bajo demanda
+          </li>
         </ul>
         <ul className="list-decimal pl-6">
           {courses.topics &&
-            courses.topics.map((topic, index) => (
-              <li key={index}>{topic}</li>
-            ))}
+            courses.topics.map((topic, index) => <li key={index}>{topic}</li>)}
         </ul>
       </div>
     </div>

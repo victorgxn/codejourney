@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-
 const config = {
   darkMode: ['class'],
   content: [
@@ -78,6 +77,15 @@ const config = {
         'nextjs-primary': '#000000',
         'nextjs-accent': '#FF4500',
       },
+      backgroundImage: any => ({
+        'gradient-react': 'linear-gradient(135deg, #61DAFB 30%, #61BFAD 60%)',
+        'gradient-tailwind': 'linear-gradient(135deg, #38B2AC 30%, #F6E05E 80%)',
+        'gradient-astro': 'linear-gradient(135deg, #FFD369 50%, #47B881 80%)',
+        'gradient-mysql': 'linear-gradient(135deg, #00758F 30%, #F0F0F0 70%)',
+        'gradient-laravel': 'linear-gradient(135deg, #FF2D20 30%, #F2A30F 100%)',
+        'gradient-java': 'linear-gradient(135deg, #007396 35%, #FFA500 80%)',
+        'gradient-nextjs': 'linear-gradient(135deg, #000000 15%, #FF4500 80%)',
+      }),
       fontFamily: {
         body: [
           'Inter',
