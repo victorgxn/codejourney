@@ -65,6 +65,7 @@ export function Cursos() {
                     <Image
                       src={course.banner.url}
                       alt={course.name}
+                      priority={true}
                       width={1000}
                       height={500}
                     />

@@ -49,6 +49,7 @@ export default function Integrantes() {
                     src={integrante.imagen}
                     className="block mx-auto w-28 h-28 rounded-full"
                     alt="Camera"
+                    priority={true}
                     width={112}
                     height={112}
                   />

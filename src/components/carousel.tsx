@@ -126,6 +126,7 @@ export const Carousel = () => {
                                 src={image.url}
                                 alt={image.alt}
                                 width={200}
+                                priority={true}
                                 height={200}
                                 className="object-contain h-20 w-20 items-center justify-center flex mx-auto"
                             />
