@@ -7,6 +7,9 @@ Codejourney is a Nextjs / Tailwind web page project.
 ![GraphQL](https://img.shields.io/badge/GraphQL-lightgrey?logo=graphql&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
+<img src='./readme/movil.jpg' width="100%" alt="movil" />
+<img src='./readme/pc.jpg' width="100%" alt="ordenador" />
+
 ## 🛠️ Stack
 
 - [Next](https://nextjs.org/): React framework for building web applications with server-side rendering.
@@ -170,7 +173,9 @@ Codejourney is a Nextjs / Tailwind web page project.
 │  │     └─ use-toast.ts
 ```
 
+## 📐 Excalidraw
 
+<img src='./readme/excalidraw.png' width="100%" alt="ordenador" />
 
 
 
