@@ -5,6 +5,7 @@ import { ChapterNavigation } from '@/app/(watch-course)/(routes)/view-course/[co
 import { ChapterVideoPlayer } from '@/app/(watch-course)/(routes)/view-course/[courseId]/_components/VideoPlayer';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
+
 import {
   PublishCourse,
   getCourseById,
@@ -40,7 +41,7 @@ export default function ChapterPage({ params }: any) {
   const getCourse = async () => {
     try {
       await getCourseById(params?.courseId).then(response => {
-        console.log('respuesta del getCourseByid', response);
+        //console.log('respuesta del getCourseByid', response);
         // @ts-ignore
         setCourse(response.courseList);
       });

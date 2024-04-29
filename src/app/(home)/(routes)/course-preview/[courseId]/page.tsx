@@ -100,7 +100,7 @@ export default async function CoursePreview({params}: Props) {
     const {userEnrollCourses} = await isUserEnrollCourse(params.courseId, userResponse.emailAddresses[0].emailAddress);
 
     //console.log(courseList);
-    console.log(userEnrollCourses);
+    //console.log(userEnrollCourses);
 
     return (
         <div className='p-6 max-w-screen-xl mx-auto'>
@@ -117,7 +117,7 @@ export default async function CoursePreview({params}: Props) {
         </div>
     );
     } catch (error) {
-        console.log(error);
+        //console.log(error);
         notFound();
     }
 }

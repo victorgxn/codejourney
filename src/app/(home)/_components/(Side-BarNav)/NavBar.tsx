@@ -58,6 +58,7 @@ export const NavBar = () => {
                         <Link href="/">Inicio</Link>
                         <Link href="/dashboard">Cursos</Link>
                         <Link href="/upgrade">Plan premium</Link>
+                        <Link href="/inscrito">Mis cursos</Link>
                         <Link href="/newsletter">Promociones</Link>
                       </div>
                     </div>
