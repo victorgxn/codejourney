@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import { TopMenu, Footer } from '@/components';
+import { CategoryProvider } from '@/context/CategoryContext';
 
 const font = Outfit({ subsets: ['latin'] });
 export const metadata: Metadata = {
@@ -14,10 +15,12 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${font.className} bg-gray-50 min-h-screen`}>
-      <TopMenu />
-      {children}
-      <Footer />
-    </div>
+    <CategoryProvider>
+      <div className={`${font.className} bg-gray-50 min-h-screen`}>
+        <TopMenu />
+        {children}
+        <Footer />
+      </div>
+    </CategoryProvider>
   );
 }

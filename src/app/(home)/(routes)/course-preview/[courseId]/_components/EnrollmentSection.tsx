@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import fetch from "node-fetch";
+import Link from 'next/link';
 
 export default function EnrollmentSection({
   courseDetails,
@@ -52,7 +53,7 @@ export default function EnrollmentSection({
     } catch (error) {
       console.error('Error enrolling in course:', error);
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
   {
@@ -94,8 +95,7 @@ export default function EnrollmentSection({
               límites.
             </p>
             <button className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700">
-              {' '}
-              Explora la membresía
+              <Link href="/plan-premium"> Explora la membresía</Link>
             </button>
           </div>
         </>
@@ -143,8 +143,7 @@ export default function EnrollmentSection({
               límites.
             </p>
             <button className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700">
-              {' '}
-              Explora la membresía
+              <Link href="/plan-premium"> Explora la membresía</Link>
             </button>
           </div>
         </>
