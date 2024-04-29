@@ -130,7 +130,7 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         className="bg-gradient-to-r
             from-blue-900
             to-blue-500 text-white hover:bg-emerald-100 mt-8 block w-full py-3 px-6 border-w-0 border-transparent rounded-md text-center font-medium"
-        href="/auth/login"
+        href="/dashboard"
       >
         Ver curso
       </a>
