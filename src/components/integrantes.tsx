@@ -32,12 +32,12 @@ export default function Integrantes() {
       <section className="text-gray-600 body-font">
         <div className="container px-4 py-24 mx-auto">
           <h1
-            className="text-4xl font-semibold text-center pb-10 text-gradient
-            bg-gradient-to-r
-            from-blue-500
-            to-green-300
-            bg-clip-text
-            text-transparent"
+            className="text-4xl sm:text-6xl font-semibold text-center pb-10  text-gradient
+    bg-gradient-to-r
+    from-blue-500
+    to-green-300
+    bg-clip-text
+    text-transparent"
           >
             El equipo de Codejourney
           </h1>
