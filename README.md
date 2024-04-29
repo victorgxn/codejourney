@@ -19,8 +19,9 @@ Codejourney is a Nextjs / Tailwind web page project.
 - [Lucide Icons](https://lucide.dev/): Icons.
 - [Clerk](https://clerk.com/): Module for Nextjs applications to manager users and middleware.
 - [Uptash](https://upstash.com/): Serverless Data Platform (Redis). 
-- [Zod](https://zod.dev/): TypeScript-first schema validation with static type inference.
+- [Zod](https://zod.dev/): Schema validation with static type inference.
 - [Stripe](https://stripe.com/es): Payment gateway.
+- [Tanstack](https://tanstack.com/query/latest): Powerful asynchronous state management.
   
 ## 🚀 Run application
 
