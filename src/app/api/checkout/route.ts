@@ -9,7 +9,7 @@ export async function POST(request: any) {
     //console.log(course);
 
     const session = await stripe.checkout.sessions.create({
-        success_url: `http://localhost:3000/view-course/${course.id}`,
+        success_url: `https://www.codejourney.es/view-course/${course.id}`,
         line_items: [
             {
                 price_data: {

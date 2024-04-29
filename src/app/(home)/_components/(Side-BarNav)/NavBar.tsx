@@ -57,7 +57,7 @@ export const NavBar = () => {
                       <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
                         <Link href="/">Inicio</Link>
                         <Link href="/dashboard">Cursos</Link>
-                        <Link href="/upgrade">Plan premium</Link>
+                        <Link href="/plan-premium">Plan premium</Link>
                         <Link href="/inscrito">Mis cursos</Link>
                         <Link href="/newsletter">Promociones</Link>
                       </div>
