@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import fetch from "node-fetch";
 
 export default function EnrollmentSection({
   courseDetails,
@@ -57,6 +58,15 @@ export default function EnrollmentSection({
   {
     /*Primer ternario comprueba si el usuario está inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/
   }
+
+  const handlePay = async (courseList : any) => {
+    const response = await fetch('/api/checkout', {
+      method : 'POST'
+    })
+
+    console.log(response);
+  }
+
   return (
     <div>
       {userEnrollCourses.some(
@@ -119,7 +129,8 @@ export default function EnrollmentSection({
                 Adquiere el curso con un único pago de forma vitalicia, con
                 acceso a la comunidad y posibles actualizaciones futuras.
               </p>
-              <button className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700">
+              <button className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700"
+              onClick={() => handlePay(courseDetails)} >
                 Comprar ahora por 3,99€
               </button>
             </div>
