@@ -13,11 +13,22 @@ import {
 } from '@/app/_microservices';
 
 export default function ChapterPage({ params }: any) {
+
+  interface UserCourseType {
+    id: string; // replace 'string' with the actual type of 'id'
+    // include other properties as needed
+  }
+
+  interface ActiveChapterType {
+    chapterNumber: number; // replace 'number' with the actual type of 'chapterNumber'
+    // include other properties as needed
+  }
+
   const { user } = useUser();
   const [course, setCourse] = useState([]);
-  const [userCourse, setUserCourse] = useState();
-  const [activeChapter, setActiveChapter] = useState();
+  const [userCourse, setUserCourse] = useState<UserCourseType[] | undefined>();
   const [completedChapter, setCompletedChapter] = useState();
+  const [activeChapter, setActiveChapter] = useState<ActiveChapterType | undefined>();
 
   useEffect(() => {
     if (user) {
@@ -38,38 +49,45 @@ export default function ChapterPage({ params }: any) {
     }
   };
 
-  const userEnrollCourses = async () => {
-    try {
-      // @ts-ignore
+  interface ResponseType {
+    userEnrollCourses: {
+      completedChapter: any; // replace 'any' with the actual type
+    }[];
+  }
+
+ const userEnrollCourses = async () => {
+  try {
+    if (user && user.primaryEmailAddress) {
       await isUserEnrollCourse(
         params?.courseId,
         user.primaryEmailAddress.emailAddress
-      ).then(response => {
-        //console.log('respuesta del userEnrollCourses -->', response)
-        //console.log('Complete chapter',response.userEnrollCourses[0].completedChapter)
+      ).then((response: unknown) => {
+        const typedResponse = response as ResponseType;
         // @ts-ignore
-        setUserCourse(response.userEnrollCourses);
-        // @ts-ignore
-        setCompletedChapter(response.userEnrollCourses[0].completedChapter);
+        setUserCourse(typedResponse.userEnrollCourses);
+        setCompletedChapter(typedResponse.userEnrollCourses[0].completedChapter);
       });
-    } catch (error) {
-      console.error(error);
     }
-  };
+  } catch (error) {
+    console.error(error);
+  }
+}
 
   const updatedCompletedChapter = async () => {
-    try {
+  try {
+    if (user?.primaryEmailAddress?.emailAddress && userCourse?.[0]?.id && activeChapter?.chapterNumber) {
       await updateCompletedChapter(
-        user?.primaryEmailAddress?.emailAddress,
-        userCourse?.[0]?.id,
-        activeChapter?.chapterNumber
+        user.primaryEmailAddress.emailAddress,
+        userCourse[0].id,
+        activeChapter.chapterNumber
       ).then((response: any) => {
         setCompletedChapter(response.updateUserEnrollCourse.completedChapter);
       });
-    } catch (error) {
-      console.error(error);
     }
-  };
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   try {
     return (

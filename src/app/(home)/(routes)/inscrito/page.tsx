@@ -36,16 +36,21 @@ export default function CursosInscritos() {
     user ? getUserCourse() : null;
   }, [user]);
 
-  const getUserCourse = async () => {
-    await getEnrollCourses(user?.primaryEmailAddress?.emailAddress)
-      .then(response => {
-        console.log('userEnrollList', response);
-        if (response) {
-          setUserCourseList(response?.userEnrollCourses);
-        }
-      })
-      .finally(() => setLoading(false));
-  };
+ interface ResponseType {
+  userEnrollCourses: UserEnrollCourse[];
+}
+
+const getUserCourse = async () => {
+  await getEnrollCourses(user?.primaryEmailAddress?.emailAddress)
+    .then((response: unknown) => {
+      const typedResponse = response as ResponseType;
+      console.log('userEnrollList', typedResponse);
+      if (typedResponse) {
+        setUserCourseList(typedResponse.userEnrollCourses);
+      }
+    })
+    .finally(() => setLoading(false));
+};
 
   if (loading) {
     return <div>Cargando...</div>;

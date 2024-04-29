@@ -156,9 +156,9 @@ export const getEnrollCourses = async (userEmail: string | undefined) => {
 // Actualizar cursos completados
 
 export const updateCompletedChapter = async (
-  userEmail: string | undefined,
-  userEnrollId: string,
-  chapterId: string
+    userEmail: string | undefined,
+    userEnrollId: string,
+    chapterId: number
 ) => {
   const mutationQuery = gql`
     mutation CompletedChapter {

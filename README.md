@@ -5,3 +5,4 @@
 3.  Crear una copia del ```.env.local.template``` y renombrarlo a ```.env.local``` y cambiar las variables de entorno (API key).
 3. Instalar dependencias ```npm install```
 4. Inicializar el proyecto con ```npm run dev```.
+5. Limpiar el local, session storage para asegurar un uso correcto de la aplicacion (en principio no deberia ser necesario).
