@@ -3,23 +3,30 @@ import Stripe from "stripe";
 
 const stripe = new Stripe('sk_test_51PAdj407ovt5wjWdI9B0wbdMTgh1Z0HbMWaMNT6Jg2VKyvORnZcToFurGd4Dcp0ObeglcnSz2BkoZZO5Ih3lyDn6003dLIM5ea');
 
-export function POST  (request: any) {
+export async function POST(request: any) {
+
+    const course = await request.json();
+    console.log(course);
 
     const session = await stripe.checkout.sessions.create({
-        success_url: 'https://localhost:3000/success',
+        success_url: `http://localhost:3000/view-course/${course.id}`,
         line_items: [
             {
                 price_data: {
                     currency: "eur",
                     product_data: {
-                        name: "Camiseta",
-                        images: ["https://i.ingur.com/EHyR2np.png"]
-                    }
+                        name: course.name,
+                        images: [course.banner.url]
+                    },
+                    unit_amount: 399
                 },
+                quantity: 1
             },
         ],
         mode: 'payment',
     });
 
-    return NextResponse.json("Pagando producto")
+    console.log(session);
+
+    return NextResponse.json(session)
 }

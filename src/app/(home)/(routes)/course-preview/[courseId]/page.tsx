@@ -55,6 +55,9 @@ const getCourseById = async (id: string) => {
             totalChapters
             tag
             author
+            banner {
+                url
+            }
         }
     }`
     return await request(MASTER_URL, query);

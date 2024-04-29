@@ -35,7 +35,7 @@ export default function EnrollmentSection({
         courseDetails?.id,
         user?.primaryEmailAddress?.emailAddress
       ).then(async response => {
-        console.log('EnrollCourseResponse -->', response);
+        //console.log('EnrollCourseResponse -->', response);
         if (response) {
           // @ts-ignore
           const { createUserEnrollCourse } = response;
@@ -62,10 +62,15 @@ export default function EnrollmentSection({
 
   const handlePay = async (courseList : any) => {
     const response = await fetch('/api/checkout', {
-      method : 'POST'
+      method : 'POST',
+      body: JSON.stringify(courseList),
+      headers : {
+        "Content-Type" : "application/json"
+      }
     })
 
-    console.log(response);
+    const session = await response.json();
+    window.location = session.url;
   }
 
   return (
