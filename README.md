@@ -1,13 +1,36 @@
-## Correr en dev
+# 📌 Overview
 
-1. Clonar el repositorio.
-2. Crear una copia del ```.env.template``` y renombrarlo a ```.env``` y cambiar las variables de entorno (API Keys etc).
-3.  Crear una copia del ```.env.local.template``` y renombrarlo a ```.env.local``` y cambiar las variables de entorno (API key).
-3. Instalar dependencias ```npm install```
-4. Inicializar el proyecto con ```npm run dev```.
-5. Limpiar el local, session storage para asegurar un uso correcto de la aplicacion (en principio no deberia ser necesario).
+Codejourney is a Nextjs / Tailwind web page project.
+<br><br>
+![Nextjs](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-0F172A?logo=tailwind-css&logoColor=38BDF9)
+![GraphQL](https://img.shields.io/badge/GraphQL-lightgrey?logo=graphql&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
+## 🛠️ Stack
 
+- [Next](https://nextjs.org/): React framework for building web applications with server-side rendering.
+- [Tailwindcss](https://tailwindcss.com/): CSS framework for rapid UI development.
+- [Typescript](https://www.typescriptlang.org/): Strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- [Hygraph](https://hygraph.com/): Cloud GraphQL API.
+- [Shadcn](https://ui.shadcn.com/): React components library.
+- [Resend](https://resend.com/): Module for Nextjs applications to allow easy email sending.
+- [Shadcn](https://ui.shadcn.com/): React components library.
+- [Lucide Icons](https://lucide.dev/): Icons.
+- [Clerk](https://clerk.com/): Module for Nextjs applications to manager users and middleware.
+- [Uptash](https://upstash.com/): Serverless Data Platform (Redis). 
+- [Zod](https://zod.dev/): TypeScript-first schema validation with static type inference.
+- [Stripe](https://stripe.com/es): Payment gateway.
+  
+## 🚀 Run application
+
+1. Clone the repository.
+2. Create a copy of ```.env.template``` and rename it to ```.env``` and change the environment variables (API Keys etc).
+3.  Create a copy of ```.env.local.template ``` and rename it to ```.env.local``` and change the environment variables (API key).
+3. Install ``npm install`` dependencies.
+4. Initialise the project with ```npm run dev```.
+
+## 📁 Project Structure
 ```
 ├─ src
 │  ├─ app
@@ -145,3 +168,8 @@
 │  │     ├─ typewriter-effect.tsx
 │  │     └─ use-toast.ts
 ```
+
+
+
+
+
