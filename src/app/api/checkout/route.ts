@@ -6,7 +6,7 @@ const stripe = new Stripe('sk_test_51PAdj407ovt5wjWdI9B0wbdMTgh1Z0HbMWaMNT6Jg2VK
 export async function POST(request: any) {
 
     const course = await request.json();
-    console.log(course);
+    //console.log(course);
 
     const session = await stripe.checkout.sessions.create({
         success_url: `http://localhost:3000/view-course/${course.id}`,
@@ -26,7 +26,7 @@ export async function POST(request: any) {
         mode: 'payment',
     });
 
-    console.log(session);
+    //console.log(session);
 
     return NextResponse.json(session)
 }

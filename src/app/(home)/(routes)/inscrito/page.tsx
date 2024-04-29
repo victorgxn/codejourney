@@ -44,7 +44,7 @@ const getUserCourse = async () => {
   await getEnrollCourses(user?.primaryEmailAddress?.emailAddress)
     .then((response: unknown) => {
       const typedResponse = response as ResponseType;
-      console.log('userEnrollList', typedResponse);
+      //console.log('userEnrollList', typedResponse);
       if (typedResponse) {
         setUserCourseList(typedResponse.userEnrollCourses);
       }

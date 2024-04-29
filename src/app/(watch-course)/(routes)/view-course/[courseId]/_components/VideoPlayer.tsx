@@ -1,11 +1,13 @@
 import { CheckCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { useToast } from "@/components/ui/use-toast"
 
 export const ChapterVideoPlayer = ({
   activeChapter,
   handleCompletedChapter,
   completedChapter,
 }: any) => {
+  const { toast } = useToast()
   // console.log(activeChapter);
   const [isChapterCompleted, setIsChapterCompleted] = useState<boolean>(false);
   useEffect(() => {
@@ -17,6 +19,7 @@ export const ChapterVideoPlayer = ({
     setIsChapterCompleted(!!completed);
   }, [activeChapter, completedChapter]);
   {
+
     /*Skeleton*/
   }
   if (!activeChapter || !activeChapter.video) {
@@ -49,11 +52,16 @@ export const ChapterVideoPlayer = ({
           <span className="text-blue-600">Capitulo: </span> {activeChapter.name}
         </h2>
         <button
-          disabled={isChapterCompleted}
-          onClick={handleCompletedChapter}
-          className="bg-blue-500 text-white p-2 px-5 rounded-lg flex gap-2 hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:text-gray-700"
+            disabled={isChapterCompleted}
+            onClick={() => {
+              handleCompletedChapter();
+              toast({
+                title: "Capitulo marcado como completado ✅",
+              });
+            }}
+            className="bg-blue-500 text-white p-2 px-5 rounded-lg flex gap-2 hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:text-gray-700"
         >
-          <CheckCircle color="#ffffff" /> <h2>Marcar como completado</h2>
+          <CheckCircle color="#ffffff"/> <h2>Marcar como completado</h2>
         </button>
       </div>
     </div>

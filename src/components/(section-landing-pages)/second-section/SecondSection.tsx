@@ -18,7 +18,7 @@ export const SecondSection = () => {
                         Conversa y debate con otros estudiantes sobre los cursos. Únete a nuestra comunidad en Discord. O accede a nuestra comunidad de cursos con Acceso Anticipado desde tu portal de estudiante con tu suscripción Codejourney PRO.
                     </div>
                 </div>
-                <Image src="/images/vaso.jpeg" alt='vaso-codejourney' width={500} height={250} priority={true}/>
+                <Image src="/images/vaso.jpeg" alt='vaso-codejourney' width={500} height={300} priority={true}/>
             </div>
         </div>
     );
