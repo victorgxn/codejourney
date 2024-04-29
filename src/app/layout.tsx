@@ -4,7 +4,6 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { esES } from '@clerk/localizations';
 import { Toaster } from '@/components/ui/toaster';
-import Head from 'next/head';
 
 const font = Outfit({ subsets: ['latin'] });
 

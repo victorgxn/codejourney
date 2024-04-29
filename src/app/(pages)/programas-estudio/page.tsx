@@ -1,5 +1,6 @@
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Categories } from './_components/Categories';
+import { Course } from './_components/Courses';
 
 export const metadata = {
   title: 'Programas de Estudios | Codejourney',
@@ -22,8 +23,8 @@ export default function ProgramaEstudio() {
         </div>
         <div className="text-center">
           <p className="mb-8">
-            Agrupados por tecnología que ofrecen nuestros cursos. Podrá ver que
-            cursos están disponibles para cada tecnología.
+            Agrupados por tecnología que ofrecen nuestros cursos. Podrá ver
+            algunos que estén disponibles para cada tecnología.
           </p>
         </div>
         <div className="text-center mb-8">
@@ -33,7 +34,9 @@ export default function ProgramaEstudio() {
           </div>
         </div>
         {/* //TODO Curso seleccionado */}
-        <div className="container mx-auto px-4 py-8"></div>
+        <div className="container mx-auto px-4 py-8">
+          <Course />
+        </div>
       </div>
     </>
   );

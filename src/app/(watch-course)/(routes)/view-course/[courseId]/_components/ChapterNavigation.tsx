@@ -1,8 +1,7 @@
 'use client';
 
 import { CheckCircle, PauseCircle, PlayCircle } from 'lucide-react';
-import { useContext, useEffect, useState } from 'react';
-import { useCompletedChapter } from '@/app/_context/CompletedChapterContext';
+import { useEffect, useState } from 'react';
 
 export const ChapterNavigation = ({
   course,

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Carousel, FirstSection, Footer, TopMenu } from '@/components';
 import Integrantes from '@/components/integrantes';
 import { Cursos } from '@/components/cursos';

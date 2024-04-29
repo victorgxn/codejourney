@@ -479,7 +479,7 @@ export default function Page() {
             </p>
             <ul className="mb-4 list-disc list-inside">
               <p className="mb-2">
-                <li>Por correo electrónico: info@startup.com</li>
+                <li>Por correo electrónico: codejourneytech@gmail.com</li>
               </p>
             </ul>
           </div>
