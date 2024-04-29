@@ -3,15 +3,12 @@ import { useState } from 'react';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Categories } from './_components/Categories';
 import { Courses } from './_components/Courses';
-import { Technology } from './_components/Categories'; // Importa el tipo Technology de Categories
+import { Technology } from './_components/Categories'; 
 
-// Define el componente ProgramaEstudio
 export default function ProgramaEstudio() {
-  // Define el estado para la tecnología seleccionada
   const [selectedTechnology, setSelectedTechnology] =
-    useState<Technology>('react'); // Por defecto, establece la tecnología seleccionada en 'react'
+    useState<Technology>('react'); 
 
-  // Retorna el JSX del componente ProgramaEstudio
   return (
     <>
       <div className="container mx-auto px-4 py-8">

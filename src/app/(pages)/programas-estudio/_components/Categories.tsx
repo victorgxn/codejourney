@@ -18,8 +18,8 @@ export type Technology =
   | 'mysql'
   | 'laravel'
   | 'java'
-  | 'nextjs'; // Exporta el tipo Technology
-
+  | 'nextjs'; 
+  
 interface CategoriesProps {
   selectedTechnology: Technology;
   setSelectedTechnology: (technology: Technology) => void;

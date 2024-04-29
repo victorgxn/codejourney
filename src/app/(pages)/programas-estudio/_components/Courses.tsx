@@ -51,7 +51,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         "Introducción a Astro",
         "Construcción de Sitios Estáticos con Astro",
         "Funcionalidades Dinámicas con Astro",
-        // Agregar más temas si es necesario
       ],
     },
     mysql: {
@@ -62,7 +61,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         "Introducción a MySQL",
         "Diseño de Base de Datos y Normalización",
         "Consulta de Datos con SQL",
-        // Agregar más temas si es necesario
       ],
     },
     laravel: {
@@ -73,7 +71,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         "Empezando con Laravel",
         "Construcción de Aplicaciones Web con Laravel",
         "Desarrollo de API con Laravel",
-        // Agregar más temas si es necesario
       ],
     },
     java: {
@@ -84,7 +81,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         "Introducción a Java",
         "Programación Orientada a Objetos en Java",
         "Programación de Interfaces Gráficas de Usuario en Java",
-        // Agregar más temas si es necesario
       ],
     },
     nextjs: {
@@ -95,7 +91,6 @@ export const Courses: React.FC<{ technology: Technology }> = ({
         "Empezando con Next.js",
         "Enrutamiento y Navegación en Next.js",
         "Renderizado en el Lado del Servidor con Next.js",
-        // Agregar más temas si es necesario
       ],
     },
   };
