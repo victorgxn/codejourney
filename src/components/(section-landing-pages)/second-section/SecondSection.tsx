@@ -3,7 +3,7 @@ import Image from "next/image";
 export const SecondSection = () => {
 
     return (
-        <div className="">
+        <div className="" id="comunidad">
             <div className=" md:flex-row flex-col items-center flex  justify-center pb-10 ">
                 <div className="p-5 justify-center md:w-1/3">
                     <div className="text-4xl sm:text-6xl pb-10 font-bold mt-10 text-gradient

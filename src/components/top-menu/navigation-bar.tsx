@@ -33,7 +33,7 @@ export const NavigationBar = () => {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    {/* <LeftLogo /> */}
+                     <LeftLogo />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       CodeJourney
                     </div>
@@ -43,12 +43,12 @@ export const NavigationBar = () => {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem title="Introducción">¿Quienes somos?</ListItem>
-              <ListItem title="Demo">
-                How to build a store in 60 seconds with Bird
+              <ListItem title="Descubre nuestra comunidad" href="/#comunidad">Conversa y debate con otros estudiantes sobre los cursos</ListItem>
+              <ListItem title="Cursos que ofrecemos" href="/#cursos">
+                Carrousel interactivo con nuestros cursos mas populares
               </ListItem>
-              <ListItem title="Comunidad">
-                Unete para ayuda y consejos.
+              <ListItem title="El equipo de codejourney" href="/#equipo">
+                Nuestros miembros
               </ListItem>
             </ul>
           </NavigationMenuContent>

@@ -39,6 +39,7 @@ export default function ProgramaEstudio() {
             className="rounded-xl w-full mt-5"
             width="100%"
             height="auto"
+
             autoPlay
             muted
             loop

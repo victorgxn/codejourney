@@ -9,7 +9,7 @@ export default function Home() {
             <FirstSection/>
             <Carousel/>
             <SecondSection/>
-            <div className="flex flex-wrap flex-col justify-center items-center">
+            <div className="flex flex-wrap flex-col justify-center items-center" id="cursos">
                 <h1
                     className="text-4xl sm:text-6xl pb-10 font-bold mt-10 text-gradient
               bg-gradient-to-r

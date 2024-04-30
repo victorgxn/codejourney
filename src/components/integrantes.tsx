@@ -29,7 +29,7 @@ export default function Integrantes() {
 
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font" id="equipo">
         <div className="container px-4 py-24 mx-auto">
           <h1
             className="text-4xl sm:text-6xl font-semibold text-center pb-10  text-gradient
