@@ -56,11 +56,35 @@ export default function EnrollmentSection({
       // setLoading(false);
     }
   };
+
+
+  const EnrollCourseFunctionPay = async () => {
+    try {
+      const response = await EnrollCourse(
+          courseDetails?.id,
+          user?.primaryEmailAddress?.emailAddress
+      ).then(async response => {
+        //console.log('EnrollCourseResponse -->', response);
+        if (response) {
+          // @ts-ignore
+          const { createUserEnrollCourse } = response;
+          if (createUserEnrollCourse && createUserEnrollCourse.id) {
+            await PublishCourse(createUserEnrollCourse.id).then(result => {
+              //console.log(result)
+            });
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Error enrolling in course:', error);
+    }
+  };
   {
     /*Primer ternario comprueba si el usuario está inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/
   }
 
   const handlePay = async (courseList : any) => {
+    await EnrollCourseFunctionPay();
     const response = await fetch('/api/checkout', {
       method : 'POST',
       body: JSON.stringify(courseList),
