@@ -5,7 +5,7 @@ const CategoryContext = createContext<{
   selectedCategoryDashboard: string;
   setSelectedCategoryDashboard: React.Dispatch<React.SetStateAction<string>>;
 }>({
-  selectedCategoryDashboard: 'react',
+  selectedCategoryDashboard: 'all',
   setSelectedCategoryDashboard: () => {},
 });
 
@@ -13,7 +13,7 @@ export const CategoryDashboard: FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [selectedCategoryDashboard, setSelectedCategoryDashboard] =
-    useState<string>('react');
+    useState<string>('all');
   return (
     <CategoryContext.Provider
       value={{ selectedCategoryDashboard, setSelectedCategoryDashboard }}
