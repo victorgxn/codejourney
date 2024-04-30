@@ -1,3 +1,5 @@
+import { useCategoryDashboard } from '../_context/CategoryDashboard';
+
 import Image from 'next/image';
 import { Book } from 'lucide-react';
 import Link from 'next/link';
@@ -17,23 +19,18 @@ interface Course {
 
 interface CourseListProps {
   courses?: Course[];
-  selectedCategory: string;
   search?: string;
 }
 
-export const CourseList = ({
-  courses,
-  selectedCategory,
-  search,
-}: CourseListProps) => {
+export const CourseList = ({ courses, search }: CourseListProps) => {
+  const { selectedCategoryDashboard } = useCategoryDashboard();
   const cursosFiltrados = (courses ?? []).filter(course => {
     let categoryMatch = false;
-
-    if (selectedCategory === 'free') {
+    if (selectedCategoryDashboard === 'free') {
       categoryMatch = course.free;
     } else {
       categoryMatch =
-        selectedCategory === 'all' || course.tag.includes(selectedCategory);
+      selectedCategoryDashboard === 'all' || course.tag.includes(selectedCategoryDashboard);
     }
 
     const searchMatch =

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { CourseList } from '@/app/(home)/(routes)/dashboard/_components/CourseList';
 import { SearchBar } from '@/app/(home)/_components/(Side-BarNav)/SearchBar';
 import { useSearch } from '@/context/SearchContext';
+import { useCategoryDashboard } from './_context/CategoryDashboard';
 
 interface Course {
   free: boolean;
@@ -26,7 +27,8 @@ interface CourseListResponse {
 export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
   const { search } = useSearch();
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const { selectedCategoryDashboard, setSelectedCategoryDashboard } =
+    useCategoryDashboard();
 
   useEffect(() => {
     getCourses();
@@ -48,20 +50,11 @@ export default function Dashboard() {
       {/*Categories*/}
       {/* //TODO: Problema linea esta por aqui pero estoy cansado jefe*/}
       <div className="p-6 space-y-4">
-        <Categories
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
+        <Categories />
         {/*Course grid*/}
         <div>
           {/* //TODO:Hacer aqui o tener en cuenta para lo del skeleton */}
-          {courses && (
-            <CourseList
-              courses={courses}
-              selectedCategory={selectedCategory}
-              search={search}
-            />
-          )}
+          {courses && <CourseList courses={courses} search={search} />}
         </div>
       </div>
     </div>

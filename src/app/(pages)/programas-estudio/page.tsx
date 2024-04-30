@@ -2,16 +2,16 @@
 import { useState } from 'react';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Categories } from './_components/Categories';
-import { Courses } from './_components/Courses';
-import { Technology } from './_components/Categories'; // Importa el tipo Technology de Categories
+import { Course } from './_components/Courses';
+import { Title } from './_components/Title';
 
-// Define el componente ProgramaEstudio
+export const metadata = {
+  title: 'Programas de Estudios | Codejourney',
+  description:
+    'Codejourney es tu plataforma para el aprendizaje en línea de desarrollo de software. Ofrecemos una amplia gama de cursos especializados en desarrollo de backend y frontend, diseñados para impulsar tu carrera como desarrollador. ',
+};
+
 export default function ProgramaEstudio() {
-  // Define el estado para la tecnología seleccionada
-  const [selectedTechnology, setSelectedTechnology] =
-    useState<Technology>('react'); // Por defecto, establece la tecnología seleccionada en 'react'
-
-  // Retorna el JSX del componente ProgramaEstudio
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -49,6 +49,19 @@ export default function ProgramaEstudio() {
               <source src="/videos/hero2.mp4" type="video/mp4" />
             </video>
           </div>
+        </div>
+        <Title />
+        <div className="lg:w-full lg:pr-10 lg:py-6">
+          <video
+            className="rounded-xl w-full mt-5"
+            width="100%"
+            height="auto"
+            autoPlay
+            muted
+            loop
+          >
+            <source src="/videos/hero2.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </>
