@@ -4,7 +4,6 @@ import {
   ChatGPTMessage,
   OpenAIStream,
   OpenAIStreamPayload,
-  // @ts-ignore
 } from '@/lib/openai-stream'
 import { MessageArraySchema } from '@/lib/validators/message'
 

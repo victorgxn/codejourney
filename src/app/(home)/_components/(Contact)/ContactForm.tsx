@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useUser } from '@clerk/nextjs';
+import { useUser, useClerk } from '@clerk/nextjs';
 import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -57,6 +57,7 @@ const FormSchema = z.object({
 export function ContactForm() {
   const { user } = useUser();
   const { toast } = useToast();
+  const { openUserProfile }: any = useClerk();
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -200,7 +201,8 @@ export function ContactForm() {
             Puede administrar sus correos electrónicos en{' '}
             <Link
               className="font-medium text-primary-600 dark:text-primary-500 hover:underline"
-              href="/examples/forms"
+              href="#"
+              onClick={openUserProfile}
             >
               los ajustes de usuario
             </Link>
