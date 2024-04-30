@@ -92,8 +92,20 @@ export default function EnrollmentSection({
         'Content-Type': 'application/json',
       },
     });
-
     const session = await response.json();
+    const data: any = {
+      userFirstName: user?.firstName,
+      email: user?.primaryEmailAddress?.emailAddress,
+      courseList: courseList,
+    };
+    await fetch('../../../../../api/sendReceipt', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
     window.location = session.url;
   };
 
