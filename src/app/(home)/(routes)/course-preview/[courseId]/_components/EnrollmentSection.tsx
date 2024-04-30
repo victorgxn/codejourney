@@ -59,6 +59,7 @@ export default function EnrollmentSection({
 
 
   const EnrollCourseFunctionPay = async () => {
+    setLoading(true);
     try {
       const response = await EnrollCourse(
           courseDetails?.id,
