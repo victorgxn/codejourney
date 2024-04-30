@@ -21,7 +21,7 @@ export default function HomeLayout({
           <div className="flex-1">
             <MainEstructure />
             <div className="lg:pl-72 pt-[80px]">{children}</div>
-            <Chat />
+            {/* <Chat /> */}
           </div>
         </div>
       </SearchProvider>
