@@ -1,6 +1,7 @@
 import { UserButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 import { ManageAccount } from './manage-account-button';
+import Image from "next/image";
 
 import {
   Sheet,
@@ -40,6 +41,7 @@ export const RightSideButtons = () => {
               <SheetDescription>
                 <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
                   {/* Contenido del Sheet */}
+                  
                   {userId ? (
                     <Button asChild className="text-md bg-blue-500">
                       <Link href="/dashboard">Dashboard</Link>
@@ -52,10 +54,11 @@ export const RightSideButtons = () => {
                     </SignUpButton>
                   )}
                   {!userId && <SignInButton />}
-
-                  <Link href="/">Pricing</Link>
-                  <Link href="/">Contact</Link>
-                  <Link href="/">About</Link>
+                  
+                  <Link href="/dashboard">Inicio</Link>
+                  <Link href="/programas-estudio">Programas de estudio</Link>
+                  <Link href="/codejourney-empresas">CodeJourney para empresas</Link>
+                  <Link href="/preguntas-y-respuestas">FAQ</Link>
 
                   {/* //TODO: Fix z-index (user profile) */}
                   {userId && <ManageAccount />}

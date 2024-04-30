@@ -88,7 +88,7 @@ export const Carousel = () => {
         from-blue-500
         to-green-300
         bg-clip-text
-        text-transparent
+        text-transparent text-center
 
 
         "

@@ -11,7 +11,7 @@ export const SecondSection = () => {
               from-blue-500
               to-green-300
               bg-clip-text
-              text-transparent">
+              text-transparent text-center">
                         ¡Explora nuestra comunidad!
                     </div>
                     <div className="text-2xl mb-8">
