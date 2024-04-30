@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 import Link from 'next/link';
 
 export default function EnrollmentSection({
@@ -57,13 +57,12 @@ export default function EnrollmentSection({
     }
   };
 
-
   const EnrollCourseFunctionPay = async () => {
     setLoading(true);
     try {
       const response = await EnrollCourse(
-          courseDetails?.id,
-          user?.primaryEmailAddress?.emailAddress
+        courseDetails?.id,
+        user?.primaryEmailAddress?.emailAddress
       ).then(async response => {
         //console.log('EnrollCourseResponse -->', response);
         if (response) {
@@ -84,19 +83,19 @@ export default function EnrollmentSection({
     /*Primer ternario comprueba si el usuario está inscrito en el curso o no, en el caso que no este inscrito si el curso es de pago o no y el div de la membresia siempre sale*/
   }
 
-  const handlePay = async (courseList : any) => {
+  const handlePay = async (courseList: any) => {
     await EnrollCourseFunctionPay();
     const response = await fetch('/api/checkout', {
-      method : 'POST',
+      method: 'POST',
       body: JSON.stringify(courseList),
-      headers : {
-        "Content-Type" : "application/json"
-      }
-    })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
     const session = await response.json();
     window.location = session.url;
-  }
+  };
 
   return (
     <div>
@@ -159,10 +158,14 @@ export default function EnrollmentSection({
                 Adquiere el curso con un único pago de forma vitalicia, con
                 acceso a la comunidad y posibles actualizaciones futuras.
               </p>
-              <button className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700"
-              onClick={() => handlePay(courseDetails)} >
-                Comprar ahora por 3,99€
-              </button>
+              <Button
+                disabled={loading}
+                className="p-2 w-full bg-blue-500 text-white rounded-lg text-[14px] mt-2 hover:bg-blue-700 disabled:bg-gray-200 disabled:cursor-not-allowed"
+                onClick={() => handlePay(courseDetails)}
+              >
+                {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {loading ? 'Cargando...' : 'Comprar ahora por 3,99€'}
+              </Button>
             </div>
           )}
           <div className="mt-5 border rounded-lg p-2 text-center">

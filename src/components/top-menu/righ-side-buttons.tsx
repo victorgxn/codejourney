@@ -1,7 +1,5 @@
 import { UserButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
-import { ManageAccount } from './manage-account-button';
-import Image from "next/image";
 
 import {
   Sheet,
@@ -12,13 +10,13 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-import { SignInButton, SignUpButton, SignOutButton } from '@clerk/nextjs';
+import { SignUpButton } from '@clerk/nextjs';
 
 import { AlignJustify } from 'lucide-react';
 
 import Link from 'next/link';
 
-import { auth, currentUser } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs';
 
 //TODO : Add the links to the buttons
 export const RightSideButtons = () => {
@@ -41,7 +39,7 @@ export const RightSideButtons = () => {
               <SheetDescription>
                 <div className="flex flex-col space-y-4 items-start w-full text-lg text-black mt-10">
                   {/* Contenido del Sheet */}
-                  
+
                   {userId ? (
                     <Button asChild className="text-md bg-blue-500">
                       <Link href="/dashboard">Dashboard</Link>
@@ -53,26 +51,14 @@ export const RightSideButtons = () => {
                       </Button>
                     </SignUpButton>
                   )}
-                  {!userId && <SignInButton />}
-                  
-                  <Link href="/dashboard">Inicio</Link>
+                  {!userId && <Link href="/sign-in">Iniciar Sesión</Link>}
+
+                  <Link href="/">Inicio</Link>
                   <Link href="/programas-estudio">Programas de estudio</Link>
-                  <Link href="/codejourney-empresas">CodeJourney para empresas</Link>
+                  <Link href="/codejourney-empresas">
+                    CodeJourney para empresas
+                  </Link>
                   <Link href="/preguntas-y-respuestas">FAQ</Link>
-
-                  {/* //TODO: Fix z-index (user profile) */}
-                  {userId && <ManageAccount />}
-
-                  {userId && (
-                    <SignOutButton>
-                      <Button
-                        className="text-md bg-red-500"
-                        variant="destructive"
-                      >
-                        Cerrar sesion
-                      </Button>
-                    </SignOutButton>
-                  )}
                 </div>
               </SheetDescription>
             </SheetHeader>

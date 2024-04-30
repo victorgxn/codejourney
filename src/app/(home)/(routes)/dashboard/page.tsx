@@ -6,7 +6,6 @@ import { Categories } from '@/app/(home)/_components';
 import CourseSkeleton from '@/components/CourseSkeleton';
 import { SearchBar } from '@/app/(home)/_components/(Side-BarNav)/SearchBar';
 import { useSearch } from '@/context/SearchContext';
-import { useCategoryDashboard } from './_context/CategoryDashboard';
 
 interface Course {
   free: boolean;
@@ -29,8 +28,6 @@ export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { search } = useSearch();
-  const { selectedCategoryDashboard, setSelectedCategoryDashboard } =
-    useCategoryDashboard();
 
   useEffect(() => {
     getCourses();
