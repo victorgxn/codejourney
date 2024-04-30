@@ -98,7 +98,7 @@ export default function EnrollmentSection({
             email: user?.primaryEmailAddress?.emailAddress,
             courseList: courseList,
         };
-        setTimeout(async () => {
+
             await fetch('../../../../../api/sendReceipt', {
                 method: 'POST',
                 headers: {
@@ -106,7 +106,6 @@ export default function EnrollmentSection({
                 },
                 body: JSON.stringify(data),
             });
-        }, 40000); // 40000 milliseconds = 40 seconds
 
         window.location = session.url;
     };
