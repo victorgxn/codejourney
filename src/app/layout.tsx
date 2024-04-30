@@ -4,6 +4,7 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { esES } from '@clerk/localizations';
 import { Toaster } from '@/components/ui/toaster';
+import { CategoryDashboard } from './(home)/(routes)/dashboard/_context/CategoryDashboard';
 
 const font = Outfit({ subsets: ['latin'] });
 
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <ClerkProvider localization={esES}>
       <html lang="en">
-        <body className={`${font.className} bg-gray-50 min-h-screen`}>
-          {children}
-          <Toaster />
-        </body>
+        <CategoryDashboard>
+          <body className={`${font.className} bg-gray-50 min-h-screen`}>
+            {children}
+            <Toaster />
+          </body>
+        </CategoryDashboard>
       </html>
     </ClerkProvider>
   );

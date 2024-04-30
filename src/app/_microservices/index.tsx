@@ -12,7 +12,7 @@ const MASTER_URL =
 export const getCourseList = async () => {
   const query = gql`
     query courseList {
-      courseLists(first: 16) {
+      courseLists(first: 17) {
         free
         id
         name

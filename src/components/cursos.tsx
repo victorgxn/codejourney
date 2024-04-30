@@ -39,7 +39,7 @@ export function Cursos() {
   const getCourses = () => {
     getCourseList().then((resp: unknown) => {
       const courseListResponse = resp as CourseListResponse;
-      setCourses(courseListResponse.courseLists);
+      setCourses(courseListResponse.courseLists.slice(0,10));
     });
   };
 

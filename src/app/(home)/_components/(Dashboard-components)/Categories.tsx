@@ -1,18 +1,15 @@
+import { useCategoryDashboard } from '../../(routes)/dashboard/_context/CategoryDashboard';
+
 interface FilterOption {
   id: number;
   name: string;
   value: string;
 }
 
-interface CategoriesProps {
-  selectedCategory: string;
-  setSelectedCategory: (value: string) => void;
-}
+export const Categories = () => {
+  const { selectedCategoryDashboard, setSelectedCategoryDashboard } =
+    useCategoryDashboard();
 
-export const Categories = ({
-  selectedCategory,
-  setSelectedCategory,
-}: CategoriesProps) => {
   const filterOptions: FilterOption[] = [
     {
       id: 1,
@@ -65,9 +62,9 @@ export const Categories = ({
       {filterOptions.map(({ name, value }, index) => (
         <button
           key={index}
-          onClick={() => setSelectedCategory(value)}
+          onClick={() => setSelectedCategoryDashboard(value)}
           className={`border p-2 px-4 text-sm rounded-md hover:border-blue-400 font-semibold ${
-            selectedCategory === value
+            selectedCategoryDashboard === value
               ? 'border-blue-500 bg-blue-100 text-blue-700'
               : undefined
           }`}
