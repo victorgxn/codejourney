@@ -12,7 +12,7 @@ export default function CourseLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className='h-full'>
+        <div>
             {children}
             <Toaster />
         </div>);
