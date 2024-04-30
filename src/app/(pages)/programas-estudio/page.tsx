@@ -1,5 +1,3 @@
-'use client';
-import { useState } from 'react';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Categories } from './_components/Categories';
 import { Course } from './_components/Courses';
@@ -26,28 +24,13 @@ export default function ProgramaEstudio() {
         </div>
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-4">Tecnologías</h2>
-          <div className="flex flex-wrap mb-8 bg-white shadow-lg rounded-lg justify-center max-w-ld mx-auto">
-            <Categories
-              selectedTechnology={selectedTechnology}
-              setSelectedTechnology={setSelectedTechnology}
-            />
+          <div className="flex flex-wrap mb-8 bg-white shadow-lg rounded-lg justify-center mx-auto">
+            <Categories />
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-1/2 lg:pr-10 lg:py-6">
-            <Courses technology={selectedTechnology} />
-          </div>
-          <div className="lg:w-1/2 lg:pr-10 lg:py-6">
-            <video
-              className="rounded-xl w-full"
-              width="100%"
-              height="auto"
-              autoPlay
-              muted
-              loop
-            >
-              <source src="/videos/hero2.mp4" type="video/mp4" />
-            </video>
+          <div className="lg:w-full lg:py-6 flex flex-col justify-center items-center">
+            <Course />
           </div>
         </div>
         <Title />
