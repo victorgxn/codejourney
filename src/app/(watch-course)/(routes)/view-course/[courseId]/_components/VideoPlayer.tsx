@@ -54,7 +54,7 @@ export const ChapterVideoPlayer = ({
                         </div>
                     </div>
                 </div>
-                <div className="p-5 border-t mt-4 pt-4 rounded-lg flex justify-between items-center">
+                <div className="  border-t mt-4 pt-4 rounded-lg flex justify-between items-center">
                     <h2 className="text-[20px] font-medium">
                         {' '}
                         <span className="text-blue-600">Capitulo: </span> {activeChapter.name}
