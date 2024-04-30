@@ -23,6 +23,9 @@ export async function POST(request: any) {
                 quantity: 1
             },
         ],
+        metadata: {
+            productId: course.id
+        },
         mode: 'payment',
     });
 
