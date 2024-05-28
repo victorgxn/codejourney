@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { clerkClient, auth } from '@clerk/nextjs/server';
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
     const { userId } = auth();
 
