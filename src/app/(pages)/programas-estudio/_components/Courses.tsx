@@ -121,7 +121,7 @@ export const Course = () => {
   return (
     <>
       {courseData[selectedCategory] && (
-        <div className="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col w-3/6">
+        <div className="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col lg:w-8/12 w-full">
           <div className="flex-1">
             <h3 className="text-xl font-semibold text-center">
               {courseData[selectedCategory].title || 'Courses'}

@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
-import { FooterAside } from "./FooterAside";
+import Link from 'next/link';
+import Image from 'next/image';
+import { UserButton } from '@clerk/nextjs';
+import { FooterAside } from './FooterAside';
 
 import {
   Sheet,
@@ -12,14 +12,14 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { AlignJustify, BellIcon } from "lucide-react";
-import { SearchBar } from "@/app/(home)/_components/(Side-BarNav)/SearchBar";
+} from '@/components/ui/sheet';
+import { AlignJustify, BellIcon } from 'lucide-react';
+import { SearchBar } from '@/app/(home)/_components/(Side-BarNav)/SearchBar';
 
-export const NavBar = () => {
+export const NavBar = async ({ admin }: any) => {
   return (
     <div>
-      {" "}
+      {' '}
       <nav className="p-4 gap-x-4 h-full flex items-center bg-white border-b">
         <div className="lg:hidden">
           <Sheet>
@@ -60,6 +60,9 @@ export const NavBar = () => {
                         <Link href="/plan-premium">Plan premium</Link>
                         <Link href="/inscrito">Mis cursos</Link>
                         <Link href="/newsletter">Promociones</Link>
+                        {admin && (
+                          <Link href="/administracion">Administración</Link>
+                        )}
                       </div>
                     </div>
                     {/*DERECHOS*/}

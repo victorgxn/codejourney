@@ -18,12 +18,12 @@ const baseUrl = process.env.URL ? process.env.URL : '';
 
 interface ReceiptEmailProps {
   email: string;
-  userFirstName: string;
+  username: string;
   courseList: any;
 }
 
 export const ReceiptEmail = ({
-  userFirstName,
+  username,
   email,
   courseList,
 }: ReceiptEmailProps) => (
@@ -100,7 +100,7 @@ export const ReceiptEmail = ({
             <Column style={informationTableColumn} colSpan={2}>
               <Text style={informationTableLabel}>DATOS FACTURACION</Text>
               <Text style={informationTableValue}>Visa .... 7461 (Visa)</Text>
-              <Text style={informationTableValue}>{userFirstName}</Text>
+              <Text style={informationTableValue}>{username}</Text>
               <Text style={informationTableValue}>Bocatas Paco 123</Text>
               <Text style={informationTableValue}>Málaga</Text>
               <Text style={informationTableValue}>España</Text>

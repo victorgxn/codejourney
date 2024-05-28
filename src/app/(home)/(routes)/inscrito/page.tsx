@@ -67,7 +67,7 @@ to-green-300
 bg-clip-text
 text-transparent"
         >
-          Bienvenido de nuevo, {user?.firstName} continua con tus cursos y
+          Bienvenido de nuevo, {user?.username} continua con tus cursos y
           mejora tus conocimientos!
         </div>
         <div>
@@ -83,7 +83,7 @@ text-transparent"
                         alt={course?.name}
                         width={1000}
                         height={500}
-                        className="rounded-lg"
+                        className="w-70 h-40 rounded-lg object-cover"
                         priority={false}
                       />
                       <div className="mt-1.5">

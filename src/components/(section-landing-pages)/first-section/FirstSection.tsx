@@ -1,5 +1,5 @@
 //TODO : Repasar el tema lazyload en los videos para mejorar el rendimiento
-import { auth } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';
 import Link from 'next/link';
 export const FirstSection = () => {
   const { userId } = auth();

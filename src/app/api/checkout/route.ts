@@ -16,7 +16,7 @@ export async function POST(request: any) {
                     currency: "eur",
                     product_data: {
                         name: course.name,
-                        images: [course.banner.url]
+                        images: [course?.banner?.url]
                     },
                     unit_amount: 399
                 },

@@ -12,7 +12,7 @@ const MASTER_URL =
 export const getCourseList = async () => {
   const query = gql`
     query courseList {
-      courseLists(first: 17) {
+      courseLists(first: 40) {
         free
         id
         name
@@ -52,6 +52,7 @@ export const getCourseById = async (id: string) => {
         video {
           url
         }
+        youtubeUrl
       }
     }
     name
@@ -156,9 +157,9 @@ export const getEnrollCourses = async (userEmail: string | undefined) => {
 // Actualizar cursos completados
 
 export const updateCompletedChapter = async (
-    userEmail: string | undefined,
-    userEnrollId: string,
-    chapterId: number
+  userEmail: string | undefined,
+  userEnrollId: string,
+  chapterId: number
 ) => {
   const mutationQuery = gql`
     mutation CompletedChapter {
@@ -188,4 +189,124 @@ export const updateCompletedChapter = async (
     userEnrollId,
     chapterId,
   });
+};
+
+export const createAsset = async (url: string) => {
+  const query = gql`
+    mutation createAsset {
+      createAsset(data: { uploadUrl: "${url}" }) {
+        id
+      }
+    }
+  `;
+  try {
+    return await request(MASTER_URL, query);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const publishAsset = async (id: string) => {
+  const query = gql`
+    mutation publishAsset {
+      publishAsset(where: {id: "${id}"}) {
+        id
+      }
+    }
+  `;
+  try {
+    return await request(MASTER_URL, query);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const publishCourse = async (id: string) => {
+  const query = gql`
+    mutation publishCourse {
+      publishCourseList(where: {id: "${id}"}) {
+        id
+      }
+    }
+  `;
+  try {
+    return await request(MASTER_URL, query);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const createCourse = async (
+  name: string,
+  tag: string[],
+  totalChapters: number,
+  free: boolean,
+  bannerId: string,
+  chapters: { name: string; chapterNumber: number; youtubeUrl: string }[],
+  description?: string,
+  author?: string
+) => {
+  const createCourseMutation = gql`
+    mutation CreateCourse(
+      $name: String!
+      $tag: [Tags!]!
+      $totalChapters: Int!
+      $free: Boolean!
+      $description: String
+      $author: String
+      $bannerId: ID!
+      $chapters: [CourseListchapterUnionCreateInput!]!
+    ) {
+      createCourseList(
+        data: {
+          name: $name
+          free: $free
+          tag: $tag
+          totalChapters: $totalChapters
+          description: $description
+          author: $author
+          banner: { connect: { id: $bannerId } }
+          chapter: { create: $chapters }
+        }
+      ) {
+        id
+      }
+    }
+  `;
+
+  try {
+    return await request(MASTER_URL, createCourseMutation, {
+      name,
+      tag,
+      totalChapters,
+      free,
+      description,
+      author,
+      bannerId,
+      chapters: chapters.map(chapter => ({
+        Chapter: {
+          name: chapter.name,
+          youtubeUrl: chapter.youtubeUrl,
+          chapterNumber: chapter.chapterNumber,
+        },
+      })),
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteCourse = async (id: string) => {
+  const query = gql`
+    mutation deleteCourse {
+      deleteCourseList(where: {id: "${id}"}) {
+        id
+      }
+    }
+  `;
+  try {
+    return await request(MASTER_URL, query);
+  } catch (error) {
+    throw error;
+  }
 };

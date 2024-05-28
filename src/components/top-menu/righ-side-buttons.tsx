@@ -16,7 +16,7 @@ import { AlignJustify } from 'lucide-react';
 
 import Link from 'next/link';
 
-import { auth } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';
 
 //TODO : Add the links to the buttons
 export const RightSideButtons = () => {
@@ -45,7 +45,7 @@ export const RightSideButtons = () => {
                       <Link href="/dashboard">Dashboard</Link>
                     </Button>
                   ) : (
-                    <SignUpButton redirectUrl="/sign-up">
+                    <SignUpButton>
                       <Button className="text-md bg-blue-500">
                         Registrarse
                       </Button>

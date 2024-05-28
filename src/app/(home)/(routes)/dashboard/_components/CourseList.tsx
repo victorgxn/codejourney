@@ -30,7 +30,8 @@ export const CourseList = ({ courses, search }: CourseListProps) => {
       categoryMatch = course.free;
     } else {
       categoryMatch =
-      selectedCategoryDashboard === 'all' || course.tag.includes(selectedCategoryDashboard);
+        selectedCategoryDashboard === 'all' ||
+        course.tag.includes(selectedCategoryDashboard);
     }
 
     const searchMatch =
@@ -45,11 +46,11 @@ export const CourseList = ({ courses, search }: CourseListProps) => {
         <Link href={'/course-preview/' + course.id} key={course.id}>
           <div className="border rounded-lg p-2 hover:border-blue-400 cursor-pointer">
             <Image
-              src={course.banner.url}
+              src={course?.banner?.url}
               alt={course.name}
               width={1000}
               height={500}
-              className="rounded-lg"
+              className="w-70 h-40 rounded-lg object-cover"
               priority={false}
             />
             <div className="mt-1.5">

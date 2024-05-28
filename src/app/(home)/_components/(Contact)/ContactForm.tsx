@@ -38,7 +38,7 @@ const FormSchema = z.object({
       required_error: 'Por favor, elija un correo.',
     })
     .email(),
-  userFirstName: z.string(),
+  username: z.string(),
   subject: z.string({
     required_error: 'Por favor, indique el asunto de su mensaje.',
   }),
@@ -64,13 +64,13 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      userFirstName: 'user',
+      username: 'user',
     },
   });
 
   useEffect(() => {
     if (user?.firstName) {
-      form.setValue('userFirstName', user.firstName);
+      form.setValue('username', user.username || 'user');
     }
   }, [user, form]);
 

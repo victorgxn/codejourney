@@ -20,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider localization={esES}>
-      <html lang="en">
+    <html lang="en">
+      <ClerkProvider localization={esES}>
         <CategoryDashboard>
           <body className={`${font.className} bg-gray-50 min-h-screen`}>
             {children}
             <Toaster />
           </body>
         </CategoryDashboard>
-      </html>
-    </ClerkProvider>
+      </ClerkProvider>
+    </html>
   );
 }

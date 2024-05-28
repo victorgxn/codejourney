@@ -1,14 +1,15 @@
-"use client";
+'use client';
 import {
   Home,
   BookOpenCheck,
   Shield,
   MailPlus,
   MonitorPlay,
-} from "lucide-react";
-import Link from "next/link";
-import React, { useState } from "react";
-import { FooterAside } from "@/app/(home)/_components/(Side-BarNav)/FooterAside";
+  Wrench,
+} from 'lucide-react';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { FooterAside } from '@/app/(home)/_components/(Side-BarNav)/FooterAside';
 
 interface MenuItem {
   id: number;
@@ -17,38 +18,45 @@ interface MenuItem {
   path: string;
 }
 
-export const Aside = () => {
+export const Aside = ({ admin }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
   const menuList: MenuItem[] = [
     {
       id: 1,
-      name: "Cursos",
+      name: 'Cursos',
       icon: BookOpenCheck,
-      path: "/dashboard",
+      path: '/dashboard',
     },
     {
       id: 2,
-      name: "Inicio",
+      name: 'Inicio',
       icon: Home,
-      path: "/",
+      path: '/',
     },
     {
       id: 3,
-      name: "Plan premium",
+      name: 'Plan premium',
       icon: Shield,
-      path: "/plan-premium",
+      path: '/plan-premium',
     },
     {
       id: 4,
-      name: "Mis cursos",
+      name: 'Mis cursos',
       icon: MonitorPlay,
-      path: "/inscrito",
+      path: '/inscrito',
     },
     {
       id: 5,
-      name: "Promociones",
+      name: 'Promociones',
       icon: MailPlus,
-      path: "/newsletter",
+      path: '/newsletter',
+    },
+    {
+      id: 6,
+      name: 'Administración',
+      icon: Wrench,
+      path: '/administracion',
     },
   ];
   return (
@@ -59,25 +67,31 @@ export const Aside = () => {
       <div className="h-full flex flex-col bg-white border-r overflow-y-auto">
         <div className="flex flex-col w-full flex-1">
           <ul className="flex flex-col w-full space-y-1.5 p-3">
-            {menuList.map((item, index: number) => (
-              <li key={item.id}>
-                <Link
-                  href={item.path}
-                  className={`flex items-center p-3 text-gray-700 rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                    activeIndex === index ? "bg-gray-100 dark:bg-gray-900" : ""
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  <item.icon className="w-6 h-6 mr-2" />
-                  <span>{item.name}</span>
-                  {item.id === 3 && (
-                    <div className="inline-flex items-center border rounded-md px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-sky-500/10 text-sky-800 ml-auto">
-                      Nuevo
-                    </div>
-                  )}
-                </Link>
-              </li>
-            ))}
+            {menuList.map((item, index: number) => {
+              if (!admin && item.id === 6) return null;
+
+              return (
+                <li key={item.id}>
+                  <Link
+                    href={item.path}
+                    className={`flex items-center p-3 text-gray-700 rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                      activeIndex === index
+                        ? 'bg-gray-100 dark:bg-gray-900'
+                        : ''
+                    }`}
+                    onClick={() => setActiveIndex(index)}
+                  >
+                    <item.icon className="w-6 h-6 mr-2" />
+                    <span>{item.name}</span>
+                    {item.id === 3 && (
+                      <div className="inline-flex items-center border rounded-md px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-sky-500/10 text-sky-800 ml-auto">
+                        Nuevo
+                      </div>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="p-3.5">

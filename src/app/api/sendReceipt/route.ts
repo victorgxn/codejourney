@@ -4,15 +4,15 @@ import { NextResponse } from 'next/server';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { email, userFirstName, courseList } = await req.json();
-    console.log('buenas');
+  const { email, username, courseList } = await req.json();
+
   try {
     const { data, error } = await resend.emails.send({
       from: 'Codejourney <codejourney@codejourney.es>',
       to: [email],
-      subject: `Tu pedido se ha completado, ${userFirstName}!`,
+      subject: `Tu pedido se ha completado, ${username}!`,
       react: ReceiptEmail({
-        userFirstName: userFirstName,
+        username: username,
         email: email,
         courseList: courseList,
       }),

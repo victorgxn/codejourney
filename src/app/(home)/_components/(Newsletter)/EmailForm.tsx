@@ -34,7 +34,7 @@ const FormSchema = z.object({
       required_error: 'Por favor, elija un correo.',
     })
     .email(),
-  userFirstName: z.string(),
+    username: z.string(),
 });
 
 export function EmailForm() {
@@ -47,13 +47,13 @@ export function EmailForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      userFirstName: 'user',
+      username: 'user',
     },
   });
 
   useEffect(() => {
     if (user?.firstName) {
-      form.setValue('userFirstName', user.firstName);
+      form.setValue('username', user.firstName);
     }
   }, [user, form]);
 

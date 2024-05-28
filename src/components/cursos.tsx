@@ -63,7 +63,7 @@ export function Cursos() {
                 <div className="p-1 border-2 border-blue-100">
                   <Link href={`/course-preview/${course.id}`}>
                     <Image
-                      src={course.banner.url}
+                      src={course?.banner?.url}
                       alt={course.name}
                       priority={true}
                       width={1000}
