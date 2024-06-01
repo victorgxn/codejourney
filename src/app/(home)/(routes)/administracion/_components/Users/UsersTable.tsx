@@ -1,7 +1,9 @@
+'use client';
 import { DataTableDemo } from './DataTable';
+import { useQuery } from '@tanstack/react-query';
 
-export async function getUsers() {
-  const response = await fetch(`${process.env.URL}/api/getUsers`, {
+const fetchUsers = async () => {
+  const response = await fetch('/api/getUsers', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -9,10 +11,16 @@ export async function getUsers() {
   });
   const data = await response.json();
   return data;
-}
+};
 
-export const UserTable = async () => {
-  const data = await getUsers();
+export const UserTable = () => {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['users'],
+    queryFn: fetchUsers,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="container mx-auto">

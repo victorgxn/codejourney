@@ -21,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider localization={esES}>
+      <ClerkProvider localization={esES} appearance={{
+        elements: {
+          logoImage: 'max-w-full h-auto p-20',
+        }
+      }}>
         <CategoryDashboard>
           <body className={`${font.className} bg-gray-50 min-h-screen`}>
             {children}

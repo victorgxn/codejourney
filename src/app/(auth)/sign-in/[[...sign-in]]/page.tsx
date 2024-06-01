@@ -1,10 +1,10 @@
-import { SignIn } from "@clerk/nextjs";
+import { SignIn } from '@clerk/nextjs';
 
 export const metadata = {
-    title: 'Inicio sesion | Codejourney',
-    description: 'En esta pagina nuestros usuarios podran iniciar sesion'
-}
+  title: 'Inicio sesion | Codejourney',
+  description: 'En esta pagina nuestros usuarios podran iniciar sesion',
+};
 
 export default function Page() {
-    return <SignIn routing="hash" />;
+  return <SignIn routing="hash" />;
 }
