@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '@clerk/nextjs';
-import { useToast } from '@/components/ui/use-toast';
 
 import {
   ColumnDef,
@@ -41,7 +40,7 @@ import {
 } from '@/components/ui/table';
 
 const setAdmin = async (id: string, role: string, adminChange: any) => {
-  const resp = await fetch('../../../../api/userMetadata', {
+  await fetch('../../../../api/userMetadata', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -194,6 +193,7 @@ export function DataTableDemo({ data }: any) {
   useEffect(() => {
     setCurrentUser();
   }, [userId]);
+
   const table = useReactTable({
     data: internalData,
     columns,

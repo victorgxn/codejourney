@@ -15,14 +15,6 @@ import {
   publishAsset,
 } from '@/app/_microservices';
 
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from '@/components/ui/select';
-
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 const animatedComponents = makeAnimated();
@@ -434,25 +426,6 @@ export const CourseForm = () => {
                         </FormItem>
                       )}
                     />
-                    {/* <FormField
-                      control={form.control}
-                      name={
-                        `chapters[${index}].chapterNumber` as `chapters.${number}.chapterNumber`
-                      }
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input
-                              type="hidden"
-                              defaultValue={index + 1}
-                              // value={index + 1}
-                              readOnly
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    /> */}
                   </div>
                 ))}
               </div>

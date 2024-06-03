@@ -302,6 +302,13 @@ export const deleteCourse = async (id: string) => {
       deleteCourseList(where: {id: "${id}"}) {
         id
       }
+      deleteManyUserEnrollCoursesConnection(where: {courseId: "${id}"}) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
     }
   `;
   try {

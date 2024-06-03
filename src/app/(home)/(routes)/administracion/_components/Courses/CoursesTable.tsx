@@ -13,7 +13,6 @@ import {
 import { getCourseList, deleteCourse } from '@/app/_microservices';
 
 import { CourseForm } from './CourseForm';
-import Image from 'next/image';
 interface Course {
   free: boolean;
   id: string;
