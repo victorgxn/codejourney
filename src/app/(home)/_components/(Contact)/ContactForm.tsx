@@ -194,7 +194,7 @@ export function ContactForm() {
                                         disabled:border-none"
         >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {loading ? 'Enviando...' : 'Suscribirse'}
+          {loading ? 'Enviando...' : 'Enviar'}
         </Button>
         <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-htmlForm-footer dark:text-gray-300">
           <FormDescription>

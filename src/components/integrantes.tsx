@@ -47,7 +47,7 @@ export default function Integrantes() {
                 <div className="h-full bg-white px-6 pt-12 pb-20 rounded-lg overflow-hidden text-center relative shadow-sm">
                   <Image
                     src={integrante.imagen}
-                    className="block mx-auto w-28 h-28 rounded-full"
+                    className="block mx-auto w-28 h-28 rounded-full object-cover"
                     alt="Camera"
                     priority={true}
                     width={112}
