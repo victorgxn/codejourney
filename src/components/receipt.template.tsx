@@ -37,7 +37,7 @@ export const ReceiptEmail = ({
           <Row>
             <Column>
               <Img
-                src={`${baseUrl}/images/logo/codejourneyLogo.png`}
+                src='https://www.codejourney.es/images/logo/codejourneyLogo.png'
                 width="42"
                 height="42"
                 alt="Codejourney"
@@ -148,7 +148,7 @@ export const ReceiptEmail = ({
           <Row>
             <Column align="center" style={footerIcon}>
               <Img
-                src={`${baseUrl}/images/logo/codejourneyLogo.png`}
+                src='https://www.codejourney.es/images/logo/codejourneyLogo.png'
                 width="26"
                 height="26"
                 alt="Codejourney logo"

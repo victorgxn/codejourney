@@ -82,7 +82,7 @@ export default function Page() {
                   <strong>Sitio Web</strong> se refiere a CodeJourney, accesible
                   desde{' '}
                   <a
-                    href="codejourney.es"
+                    href={process.env.URL}
                     rel="external nofollow noopener"
                     target="_blank"
                     className="text-blue-500"
